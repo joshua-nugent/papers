@@ -1,6 +1,6 @@
 ---
 title: "Type I Error Control for Cluster Randomized Trials with Small Samples"
-author: "Josh Nugent, Ken Kleinman, Bianca Doone"
+author: "Josh Nugent, Bianca Doone, Ken Kleinman"
 output:
   pdf_document:
     fig_width: 12 
