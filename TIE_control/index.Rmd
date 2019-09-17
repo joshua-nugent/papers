@@ -1,0 +1,233 @@
+---
+title: "Type I Error Control for Cluster Randomized Trials with Small Samples"
+author: "Josh Nugent, Ken Kleinman, Bianca Doone"
+output:
+  pdf_document:
+    fig_width: 12 
+    fig_height: 6
+bibliography: tie_naive.bib
+---
+
+```{r echo=F, message=F, warning=F}
+library(tidyverse)
+
+add_lower_upper <- function(dat){
+  lower <- vector(length = length(dat$TIE_naive))
+  upper <- vector(length = length(dat$TIE_naive))
+  for(i in 1:length(dat$TIE_naive)){
+    lower[i] <- binom.test(x = round(dat$TIE_naive[i] * dat$nsim[i]), n = dat$nsim[i])[[4]][1]
+    upper[i] <- binom.test(x = round(dat$TIE_naive[i] * dat$nsim[i]), n = dat$nsim[i])[[4]][2]
+  }
+  dat <- cbind.data.frame(dat, lower, upper)
+  return(dat)
+}
+
+sas_lrt <- readRDS("lrt_sas_10000sims.rds")
+sas_lrt <- add_lower_upper(sas_lrt) %>% mutate(Method = "LRT, SAS", package = "SAS", method = "LRT", df = "LRT", nicename = "LRT")
+sas_model <- readRDS("model_sas_default_10000sims.rds")
+sas_model <- add_lower_upper(sas_model) %>% mutate(Method = "Wald, SAS, default", package = "SAS", method = "Wald", df = "default", nicename = "Containment")
+
+sas_model_bw <- readRDS("model_sas_bw_10000sims.rds")
+sas_model_bw <- add_lower_upper(sas_model_bw) %>% mutate(Method = "Wald, SAS, BW", package = "SAS", method = "Wald", df = "BW", nicename = "Between-Within")
+
+sas_model_sat <- readRDS("model_sas_sat_10000sims.rds")
+sas_model_sat <- add_lower_upper(sas_model_sat) %>% mutate(Method = "Wald, SAS, Satt", package = "SAS", method = "Wald", df = "Satt", nicename = "Satterthwaite")
+
+sas_model_kr <- readRDS("model_sas_kr_10000sims.rds")
+sas_model_kr <- add_lower_upper(sas_model_kr) %>% mutate(Method = "Wald, SAS, KR", package = "SAS", method = "Wald", df = "KR", nicename = "Kenward-Roger")
+
+lme4_lrt <- data.frame(readRDS("lrt_lme4_10000sims.rds"))
+lme4_lrt <- add_lower_upper(lme4_lrt) %>% mutate(Method = "LRT, lme4", package = "lme4", method = "LRT", df = "LRT", nicename = "LRT")
+lme4_model <- data.frame(readRDS("model_lme4_10000sims.rds"))
+lme4_model <- add_lower_upper(lme4_model) %>% mutate(Method = "Wald, lme4, Satt", package = "lme4", method = "Wald", df = "Satt", nicename = "Satterthwaite")
+
+t_tests <- add_lower_upper(data.frame(readRDS("t_test_pvals.rds"))) %>% mutate(Method = "t test", package = "base", method = "t", df = "NA", nicename = "t test")
+
+#lme4_kr <- data.frame(readRDS(".rds"))
+#lme4_kr <- add_lower_upper(lme4_kr) %>% mutate(Method = "Wald, lme4, KR df", package = "lme4", method = "Wald", df = "KR")
+
+lme4_PL <- data.frame(readRDS("model_lme4_PL_10000sims.rds"))
+lme4_PL <- add_lower_upper(lme4_PL) %>% mutate(Method = "LRT, lme4, PL", package = "lme4", method = "LRT", df = "LRT", nicename = "LRT")
+
+nlme_lrt <- data.frame(readRDS("lrt_nlme_10000sims.rds"))
+nlme_lrt <- add_lower_upper(nlme_lrt) %>% mutate(Method = "LRT, nlme", package = "nlme", method = "LRT", df = "LRT", nicename = "LRT")
+nlme_model <- data.frame(readRDS("model_nlme_10000sims.rds"))
+nlme_model <- add_lower_upper(nlme_model) %>% mutate(Method = "Wald, nlme, BW", package = "nlme", method = "Wald", df = "BW",  nicename = "Between-Within")
+
+all_dat <- rbind.data.frame(sas_lrt, sas_model, sas_model_kr, sas_model_sat,
+                            lme4_model, lme4_lrt, lme4_PL,
+                            nlme_model, sas_model_bw, nlme_lrt,
+                            t_tests
+                            ) %>% mutate(ICC = signif((sb2 / (se2 + sb2)), digits = 2))
+
+my_grid_theme <- theme(
+        axis.text.x = element_text(size = 11),
+        axis.text.y = element_text(size = 11),  
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16),
+        strip.text.x = element_text(size = 10),
+        strip.text.y = element_text(size = 10),
+        legend.text=element_text(size=12),
+        plot.caption=element_text(hjust=0,size=12))
+```
+
+
+# Introduction
+
+In many biomedical and social science settings, observations are clustered and interventions are applied to these randomized clusters rather than randomized individuals. In these cluster-randomized trials (CRTs), also called group randomized trials, the outcomes within a cluster may be correclated with one another - for example, patients within hospitals or students within classrooms. This clustering complicates data analysis because the study design violates the traditional regression assumption that observations are independent. When the reponse variable of interest is continuous, linear mixed models (LMMs), which assume that observations are independent conditional on cluster membership, are the preferred approach to the data analysis. CRTs are a widely used experimental design (see for example @moon_effect_2017, @vinereanu_multifaceted_2017, and @huang_targeted_2013), and LMMs are an attractive option for data analysis of CRTs because they can flexibly accommodate nested levels of clustering, differing cluster sizes, and are robust to missing completely at random (MCAR) or missing at random (MAR) data. Generalized linear mixed models (GLMMs) extend the approach to non-normally-distributed data, such as with binary, count, or multinomial outcomes.
+
+When fitting LMMs to CRT data, the confidence intervals generated are typically derived from asymptotic results, and in settings where the number of clusters is small they can generate Type I error rates well above or below the nominal level. It is usually more expensive to add more clusters to a study than more individuals to a cluster, so small cluster counts are not uncommon in the literature. Despite common heuristics such as 'at least 30 units at each level of analysis' (@kreft_introducing_1998), in a sample of 140 recently published cluster randomized trials in various medical journals we found that over 30% had fewer than 20 clusters, and the number of subjects per cluster varied from less than 5 to over 10,000. Here, we examine the performance of several LMM inference approaches in a variety of plausible CRT scenarios, varying cluster size, number of clusters, and variance between clusters. We hope to alert data analysts to the situations that may lead to incorrect Type I error rates with LMMs.
+
+## Model
+
+We consider here a version of the linear mixed-effects model of @laird_random-effects_1982:
+$$
+Y_{ij} = X_{ij}'\mathbf{\beta} + Z_{ij}'b_i + \epsilon_{ij}
+$$
+where $Y_{ij}$ is a continuous response variable for individual $j$ in cluster $i$, $X_{ij}'$ are that individual's covariates for a vector of fixed effects regression parameters $\mathbf{\beta}$, $Z_{ij}'$ is a matrix of covariates for a set of random effects $b_i$ for cluster $i$, and $\epsilon_{ij}$ is residual error of the observation. In our case we will restrict the random-effects structure to include only a random intercept term, so the term $Z_{ij}'b_i$ reduces to $b_{0i}$. We assume $\epsilon_{ij} \sim N(0, \sigma^2)$, constant across all individuals, and $b_{0i} \sim N(0, \sigma_b^2)$.
+
+In a CRT, there are typically two assumed sources of variability in outcomes: between clusters, denoted here as $\sigma^2_b$, and within clusters, denoted as $\sigma^2$. One way of quantifying the amount of clustering is via the *intracluster correlation coefficient* (ICC) $\rho$, defined as $\rho = \frac{\sigma^2_b}{\sigma^2_b + \sigma^2}$, or the proportion of total variance due to the cluster variability. When analyzing the data with a LMM, standard errors for fixed effect coefficient estimates have to be adjusted relative to the independence assumption. This adjustment, the *variance inflation factor* (VIF), depends on the ICC. If the clusters are large, even a very small value of the ICC from a relatively small value of $\sigma^2_b$ can generate a large VIF and meaningfully change inferences. For this reason, it is recommended that potential between-cluster variation be explicitly modeled in the data analysis.
+
+
+## Small Sample Performance of LMM Fixed Effect Estimators
+
+Two ways of estimating a treatment effect $\hat{\beta}_1$ in a linear mixed model are by maximum likelihood (ML) and restricted maximum likelihood (REML), and most major statistical software packages can perform estimation by either method. Inference about $\hat{\beta}_1$ can be made using the likelihood ratio test (LRT) if fitting via ML, or by a Wald test if fitting via REML. The LRT compares the log-likelihood $\ell$ of a model without $\beta_1$ ($\ell_0$) to a model that includes it ($\ell_1$), and the test statistic $\lambda = -2(\ell_0 - \ell_1)$ has an asymptotic $\chi^2_p$ distribution, with $p$ the difference in parameter dimension between the two models. In our case, as in many CRTs, we have one treatment effect parameter, so $p=1$.
+
+Unfortunately, the $\chi^2$ distribution may be a poor approximation of the distribution of $\lambda$ when the amount of information in a sample, for example, cluster count, is small. @pinheiro_mixed-effects_2009 found that p-values for fixed effects generated from the LRT with 60 observations were anti-conservative, leading to inflated Type I error rates. @schluchter_small-sample_1990, examining a wider variety of convariance structures with just 8 clusters of 4 observations, also observed inflated Type I error rates using the LRT. @zucker_improved_2000, @melo_improved_2009, @manor_small_2004, and @stein_alternatives_2014 also observed inflated Type I error rates under LRT testing with small samples and suggested improvments to the LRT involving the Bartlett correction (@bartlett_properties_1937), but it is not clear how widely they are used, and there is no simple way to implement the Bartlett correction in SAS or R.
+
+Alternatively, a Wald test can be applied to coefficients, generating a test statistic from $\hat{\beta}_1^2 / SE(\hat{\beta}_1^2)$ and comparing it to a $t$ distribution with the appropriate degrees of freedom (DF). For some designs, such as the balanced random-intercept design considered here, the appropriate DF ($K-2$, where $K$ is the total number of clusters) value is known, since it is equivalent to a balanced one-way ANOVA on the cluster means. However, in most cases there is no clear correct value (@bates_fitting_2015). Choices include:
+
+  + Residual: $N - rank(X)$, where $N$ is the total number of observations and $rank(X)$ is the number of linearly independent columns in the design matrix $X$. In the two-arm CRT design assumed here, $rank(X)=2$. Since the number of observations is usually much larger than the number of parameters in the model, this will generate similar results to the '$t$ as $z$' approach described below.
+  + Between-Within:
+  + Satterthwaite:
+  + Kenward-Roger:
+  + Containment:
+  + Infinite ('$t$ as $z$'): The statistic is compared to a standard normal distribution, equivalent to a $t$ distribution with infinte DF.
+
+Some previous work has examined DF choice and its impact on inferences using the Wald test described above. @luke_evaluating_2017, using the '$t$ as $z$' approach for mixed models with random slopes and intercepts, found inflated Type I error rates, though the problem was alleviated when using the Satterthwaite or Kenward-Roger approximation. That study did not break down the results by ICC. @maas_sufficient_2005, using a minimum number of 30 clusters in a model with random slopes and intercepts, found inflated non-coverage rate for fixed effects, but did not examine the interactions of ICC, cluster size, and number of clusters on the results, and did not report the DF choice. @bell_dancing_2010, fitting simulated data with a random slope and random intercept structure, choosing the Kenward-Roger DF approximation, and with the number of clusters as low as 10, found Type I error rates ranging from .021 - .066, close to the nominal level of .05, though the results were not broken down by the design factors.
+
+Finally, @li_comparing_2015 examined Type I error rates for random-intercept GLMMs with binary outcomes across different cluster sizes, number of clusters, and ICCs, and allowed for varying cluster size as well. They found that the Between-Within method provided Type I error rates closest to the nominal level, the Containment method was anti-conservative, and the Kenward-Roger and Satterthwaite approximations were conservative, espeically when the number of clusters is small and the number of observations per cluster is large. Our study builds on that work, considering continous outcomes, and comparing Wald results to the LRT.
+
+## Alternative estimation approaches
+
+The Wald and likelihood ratio tests are not the only options for generating confidence intervals and performing inference. @browne_comparison_2006 and @baldwin_bayesian_2013, for example, have also used Bayesian methods with mixed models, which, under the study designs considered here, showed no major improvements over frequentist approaches in small-sample settings, so we chose not to include Bayesian methods in this analysis. Alternatively, confidence intervals for LMM fixed effects can be generated by a parametric, semi-parametric, or non-parametric bootstrap; however, all are computationally intensive, require careful implementation due to the clustered nature of the original samples, and/or require the use of add-on functions or packages, so we chose not to investigate that approach, though it has been recommended by some authors (for example, @ukyo_improved_2019).
+
+
+## Frequency of small samples and awareness of potential problems
+
+It is unclear how aware data analysts are of the small-sample problems that may arise in mixed models. A review of LMM applications in education and social sciences @dedrick_multilevel_2009 found minimal reporting of estimation and inference methods and assumptions, and that cluster sizes could be as low as 2 and the number of clusters as low as 8. Our own review, referenced earlier, confirmed that small custer counts are not unusual in biomedical settings as well. Therefore, we hope to provide analysts with some 
+
+
+# Study design
+
+This study examines the realized Type I error (TIE) rates in LMMs, under plausible CRT conditions, via Monte Carlo simulation, using a) Wald tests with different methods of calculating the degrees of freedom and b) likelihood ratio tests. We used R version 3.6.0 and SAS 9.4 for all analyses. The results in R and SAS were equivalent, though some default settings for the software packages vary.
+
+## Data generation
+
+We generated clustered, balanced data sets from the null model
+
+$$
+y_{ij} = b_{0i} + e_{ij} 
+$$
+
+for clusters $i = 1, 2, ..., K$ and individuals $j = 1, 2, ..., N$ within each cluster. The random intercept $b_{0i}$ for cluster $i$ was distributed $\sim N(0, \sigma_b^2)$, and the residual error term $e_{ij} \sim N(0, \sigma^2)$.
+
+For each data set, we then fit models using SAS PROC MIXED, the **lme4** package in R, and the **nlme** package in R. These models assumed the clusters were evenly divided into two arms $x \in \{0, 1\}$ for treatment and control, allowing for clustering:
+
+$$
+y_{ij} = \beta_0 + \beta_1 x_{ij} + b_{0i} + e_{ij}
+$$
+
+Assuming an $\alpha$ level of $.05$, We gathered p-values for the $\beta_1$ coefficients and, since the data-generating mechanism had a true $\beta_1$ value of zero, we compared the TIE rate to the nominal $\alpha = .05$ level.
+
+We performed our analysis on 10,000 simulated data sets for all possible combinations of the following data-generating parameters:
+
+ + total number of clusters $K\in \{10, 20, 40, 100\}$, divided evenly among the two treatment arms
+ 
+ + subjects per cluster $N \in \{ 3, 5, 10, 20, 50\}$
+ 
+ + $\sigma_b^2 \in \{0.001, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5\}$
+ 
+ + $\sigma^2$ was fixed at 1 after finding that ratios of $\sigma_b^2$ to $\sigma^2$ and the ICC were the more important than the magnitudes thereof.
+
+## Determining p-values
+
+### Choice of DF in Wald tests
+
+Fitting models using the SAS PROC MIXED, **nlme**, and **lme4**  allows testing for the significance of the $\hat{\beta}_1$ coefficient via a Wald-style $t$-test. Maximum likelihood estimation can result in biased estimates, so in these cases, the models were fit using restricted maximum likelihood (REML). The t-values generated by these methods were compared to a distributions with four choices of DF: Between-Within, Satterthwaite, Kenward-Roger, and Containment. The resulting p-values were collected and TIE rates calculated, assuming an $\alpha$ level of .05.
+
+### Likelihood ratio test
+
+Finally, all software packages allow for model fitting using maximum likelihood, which allows for model comparison and hence an alternative method for determining a p-value for $\hat{\beta}_1$. First, a null model was fit, with the only fixed effect being an intercept term, allowing for clustering. Second, a model with an added term for $x_{ij}$ was fit, also allowing for clustering. Using the standard LRT approach, the doubled difference in maximized log-likelihood was compared to a $\chi^2_1$ distribution since there was a one-parameter difference in model dimension. The LRT is an asymptotic test (@wilks_large-sample_1938), meaning it is only valid as the information in the sample tends toward infinity. The software packages utilized here rely on the asymptotic test.
+
+
+
+# Results
+
+## Wald tests
+
+All three software packages generated identical $\hat{\beta}_1$ estimates and standard errors when fitting with REML, so the differences in TIE rates was driven by the method of calculating degrees of freedom (df). A simple random-intercept design with two treatment arms using the between-within method gives $K-2$ df, [**cite needed**] which was the default for **nlme** and an option in SAS. Our results show this method to be overly conservative when there are a small number of clusters, a small cluster size, or a small ICC.
+
+The default method for determining DF in SAS is 'containment.' Coding each treatment arm as a factor in SAS resulted in $N-K$ df, which led to anti-conservative results when the number of clusters was small, the cluster size was large, and the ICC was large.
+
+The Satterthwaite and Kenward-Roger methods of calculating the degrees of freedom resulted in identical DF approximations and the most consistent Type I error control, though it is slightly conservative when the ICC is small, the number of clusters is small, and/or the cluster size is small.
+
+```{r}
+ggplot(data = all_dat %>% filter(Method %in% c("Wald, SAS, KR", "Wald, SAS, BW", "Wald, SAS, Satt", "Wald, SAS, default"))) +
+  geom_hline(yintercept = .05, color = "black", alpha = .6) + 
+    geom_line(aes(x = as.factor(nclust), y = TIE_naive, group = nicename, color = nicename, linetype = nicename), alpha = .5) +
+  geom_pointrange(aes(x = as.factor(nclust), y = TIE_naive, ymin = lower, ymax = upper, fatten = 2, color = nicename)) +
+  labs(y = "Type I Error rate", x = "Clusters per arm", title = "Wald test-based, with different DF methods") +
+  facet_grid(cols = vars(sb2), rows = vars(nsub), labeller = label_bquote(cols = atop(sigma[b]^2== .(sb2)*"," ~~ sigma^2 == 1, "ICC" ==.(signif((sb2 / (1 + sb2)), digits = 2))), rows = "Cluster size" == .(nsub))) +
+    ylim(c(.015, .1)) +
+  my_grid_theme
+
+```
+
+## Likelihood Ratio Tests
+
+LRT-based p-values were anti-conservative when the ICC was large, the number of clusters was small, and/or the cluster size was large, and slightly conservative when the ICC was small and the cluster size was large. Curious about the robustness of this result, we tested the the effect of an ICC of .09 generated from $\sigma^2_b = 1$ rather than .1, and $\sigma^2 = 10$ rather than 1. The results did not differ qualitatively, which suggests that this pattern of TIE rate inflation with the LRT is insensitive to the absolute size of the $\sigma^2_b$ and $\sigma^2$ values, only their relative size.
+
+```{r message=F, echo = F, warning=F}
+ggplot(data = all_dat %>% filter(Method %in% c("LRT, SAS", "t test"))) +
+  geom_hline(yintercept = .05, color = "black", alpha = .6) + 
+    geom_line(aes(x = as.factor(nclust), y = TIE_naive, group = nicename, color = nicename, linetype = nicename), alpha = .5) +
+  geom_pointrange(aes(x = as.factor(nclust), y = TIE_naive, ymin = lower, ymax = upper, fatten = 2, color = nicename), alpha = .6) +
+  labs(y = "Type I Error rate", x = "Clusters per arm", title = "LRT-based, via different software packages") +
+  facet_grid(cols = vars(sb2), rows = vars(nsub), labeller = label_bquote(cols = atop(sigma[b]^2== .(sb2)*"," ~~ sigma^2 == 1, "ICC" ==.(signif((sb2 / (1 + sb2)), digits = 2))), rows = "Cluster size" == .(nsub))) +
+  ylim(c(.015, .1)) +
+  my_grid_theme
+```
+
+
+# Discussion
+
+No approaches studied meet the nominal alpha level in all cases, and the departures from the nominal level are most evident when the number of clusters is small and the number of subjects per cluster is large. With a Wald test, some choices of DF can avoid anti-conservatism, such as the Kenward-Roger and Satterthwaite df approximation methods, though a tradeoff exists, and they are slightly too conservative when the ICC, the number of clusters, and/or cluster size is small. Alternatively, the likelihood ratio test has the desirable property of not creating a symmetric confidence interval, but these simulations show that assuming the $\chi^2$ distribution for the test statistic, while valid asymptotically, does not perform well in these finite-sample cases.
+
+Awareness of the TIE rate departures from the nominal levels across different methods may allow data analysts to choose an approach that best suits their data; for example, if the ICC is expected to be small and the number of observations per cluster is small, the likelihood ratio test and a Wald test with the Satterthwaite approximation should perform well.
+ 
+The default DF option in SAS when coding treatment arms as a factor is containment, which demonstrated some of the most inflated TIE rates, because for this model structure it defaults to the residual DF, which is often a very large value. In the R package **nlme**, the default for this model structure is Between-Within, and in **lme4**, using the **lmerTest** add-on, p-values are calculated with the Satterthwaite DF approximation. Each of those choices performs poorly in certain cases, and hence analysts should take care to understand default settings and change them as needed.
+
+# References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
