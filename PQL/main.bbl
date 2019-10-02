@@ -1,0 +1,576 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{agresti_categorical_2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5d5378769fa0ac2dcdf2ce4273755303}{%
+           family={Agresti},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \strng{fullhash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \strng{bibnamehash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \strng{authorbibnamehash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \strng{authornamehash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \strng{authorfullhash}{5d5378769fa0ac2dcdf2ce4273755303}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Wiley {Series} in {Probability} and {Statistics}}
+      \field{title}{Categorical {Data} {Analysis}}
+      \field{year}{2013}
+    \endentry
+    \entry{breslow_approximate_1993}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c2bf7ead9470f52ac82f00932093fd8b}{%
+           family={Breslow},
+           familyi={B\bibinitperiod},
+           given={N.\bibnamedelimi E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=d184efb09d9eb36f34acbcf754924548}{%
+           family={Clayton},
+           familyi={C\bibinitperiod},
+           given={D.\bibnamedelimi G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{632918681b09dd37e87b3b4b3e6ff071}
+      \strng{fullhash}{632918681b09dd37e87b3b4b3e6ff071}
+      \strng{bibnamehash}{632918681b09dd37e87b3b4b3e6ff071}
+      \strng{authorbibnamehash}{632918681b09dd37e87b3b4b3e6ff071}
+      \strng{authornamehash}{632918681b09dd37e87b3b4b3e6ff071}
+      \strng{authorfullhash}{632918681b09dd37e87b3b4b3e6ff071}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{month}{3}
+      \field{number}{421}
+      \field{title}{Approximate {Inference} in {Generalized} {Linear} {Mixed} {Models}}
+      \field{volume}{88}
+      \field{year}{1993}
+      \field{pages}{9\bibrangedash 25}
+      \range{pages}{17}
+    \endentry
+    \entry{breslow_bias_1995}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5ec9422cc5a0fd9e6a1f6f79a9c6a202}{%
+           family={Breslow},
+           familyi={B\bibinitperiod},
+           given={Norman\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=715abbf13771af0330339351e0874aa3}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Xihong},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee833798b1a570b1bc748b8083a1a860}
+      \strng{fullhash}{ee833798b1a570b1bc748b8083a1a860}
+      \strng{bibnamehash}{ee833798b1a570b1bc748b8083a1a860}
+      \strng{authorbibnamehash}{ee833798b1a570b1bc748b8083a1a860}
+      \strng{authornamehash}{ee833798b1a570b1bc748b8083a1a860}
+      \strng{authorfullhash}{ee833798b1a570b1bc748b8083a1a860}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{number}{1}
+      \field{title}{Bias {Correction} in {Generalised} {Linear} {Mixed} {Models} with a {Single} {Component} of {Dispersion}}
+      \field{volume}{82}
+      \field{year}{1995}
+      \field{pages}{81\bibrangedash 91}
+      \range{pages}{11}
+    \endentry
+    \entry{engel_simple_1994}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5c9a89c93ee4a82ae31a9817fa0c9f79}{%
+           family={Engel},
+           familyi={E\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1e22e4751c7b90df2b166981098fdd47}{%
+           family={Keen},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c9b7ef6d958016f8de4302439322f39}
+      \strng{fullhash}{3c9b7ef6d958016f8de4302439322f39}
+      \strng{bibnamehash}{3c9b7ef6d958016f8de4302439322f39}
+      \strng{authorbibnamehash}{3c9b7ef6d958016f8de4302439322f39}
+      \strng{authornamehash}{3c9b7ef6d958016f8de4302439322f39}
+      \strng{authorfullhash}{3c9b7ef6d958016f8de4302439322f39}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Statistica Neerlandica}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{A simple approach for the analysis of generalizea linear mixed models}
+      \field{volume}{48}
+      \field{year}{1994}
+      \field{pages}{1\bibrangedash 22}
+      \range{pages}{22}
+    \endentry
+    \entry{lin_estimation_2007}{article}{}
+      \name{author}{1}{}{%
+        {{hash=715abbf13771af0330339351e0874aa3}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Xihong},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{715abbf13771af0330339351e0874aa3}
+      \strng{fullhash}{715abbf13771af0330339351e0874aa3}
+      \strng{bibnamehash}{715abbf13771af0330339351e0874aa3}
+      \strng{authorbibnamehash}{715abbf13771af0330339351e0874aa3}
+      \strng{authornamehash}{715abbf13771af0330339351e0874aa3}
+      \strng{authorfullhash}{715abbf13771af0330339351e0874aa3}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lifetime Data Analysis}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Estimation using penalized quasilikelihood and quasi-pseudo-likelihood in {Poisson} mixed models}
+      \field{volume}{13}
+      \field{year}{2007}
+      \field{pages}{533\bibrangedash 544}
+      \range{pages}{12}
+    \endentry
+    \entry{lin_bias_1996}{article}{}
+      \name{author}{2}{}{%
+        {{hash=715abbf13771af0330339351e0874aa3}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Xihong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=5ec9422cc5a0fd9e6a1f6f79a9c6a202}{%
+           family={Breslow},
+           familyi={B\bibinitperiod},
+           given={Norman\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{90147dfdb5596c8c40b6315adbe50503}
+      \strng{fullhash}{90147dfdb5596c8c40b6315adbe50503}
+      \strng{bibnamehash}{90147dfdb5596c8c40b6315adbe50503}
+      \strng{authorbibnamehash}{90147dfdb5596c8c40b6315adbe50503}
+      \strng{authornamehash}{90147dfdb5596c8c40b6315adbe50503}
+      \strng{authorfullhash}{90147dfdb5596c8c40b6315adbe50503}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{435}
+      \field{title}{Bias {Correction} in {Generalized} {Linear} {Mixed} {Models} {With} {Multiple} {Components} of {Dispersion}}
+      \field{volume}{91}
+      \field{year}{1996}
+      \field{pages}{1007\bibrangedash 1016}
+      \range{pages}{10}
+    \endentry
+    \entry{liu_note_1994}{article}{}
+      \name{author}{2}{}{%
+        {{hash=38189fe02b562b8892bd694420804211}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qing},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=92893de3ce752031041505662659dd0a}{%
+           family={Pierce},
+           familyi={P\bibinitperiod},
+           given={Donald\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \strng{fullhash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \strng{bibnamehash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \strng{authorbibnamehash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \strng{authornamehash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \strng{authorfullhash}{7d87b18d17a3d969680ce5fab7ac54f7}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrika}
+      \field{number}{3}
+      \field{title}{A {Note} on {Gauss}-{Hermite} {Quadrature}}
+      \field{volume}{81}
+      \field{year}{1994}
+      \field{pages}{624\bibrangedash 629}
+      \range{pages}{6}
+    \endentry
+    \entry{nakagawa_shinichi_coefficient_2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d82685c11a69b204e57f67aa3d63cdaa}{%
+           family={{Nakagawa Shinichi}},
+           familyi={N\bibinitperiod}}}%
+        {{hash=8cfb91de628b7a5ed6b0a6df21d6bcca}{%
+           family={{Johnson Paul C. D.}},
+           familyi={J\bibinitperiod}}}%
+        {{hash=96c62fd9790d7e1d92aca8e1eeb5c57a}{%
+           family={{Schielzeth Holger}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{01d41335e39ef14f979f268d439d126c}
+      \strng{fullhash}{01d41335e39ef14f979f268d439d126c}
+      \strng{bibnamehash}{01d41335e39ef14f979f268d439d126c}
+      \strng{authorbibnamehash}{01d41335e39ef14f979f268d439d126c}
+      \strng{authornamehash}{01d41335e39ef14f979f268d439d126c}
+      \strng{authorfullhash}{01d41335e39ef14f979f268d439d126c}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of The Royal Society Interface}
+      \field{month}{9}
+      \field{number}{134}
+      \field{title}{The coefficient of determination {R}2 and intra-class correlation coefficient from generalized linear mixed-effects models revisited and expanded}
+      \field{volume}{14}
+      \field{year}{2017}
+      \field{pages}{20170213}
+      \range{pages}{1}
+    \endentry
+    \entry{ng_estimation_2006}{article}{}
+      \name{author}{4}{}{%
+        {{hash=351c3b82f3aa261c8eed5844dd8ca869}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Edmond\bibnamedelima SW},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=119754214eca647de8e514b349f73f08}{%
+           family={Carpenter},
+           familyi={C\bibinitperiod},
+           given={James\bibnamedelima R},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=dd6a10c71c7e9717c06bdb5e632fe163}{%
+           family={Goldstein},
+           familyi={G\bibinitperiod},
+           given={Harvey},
+           giveni={H\bibinitperiod}}}%
+        {{hash=107113a8a05f1e6940429beb54e067b7}{%
+           family={Rasbash},
+           familyi={R\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{edb3a0355a2a0f9a0ef261ec928ca187}
+      \strng{fullhash}{8bc7a3c243cbe0fc2d1cc752b7861e91}
+      \strng{bibnamehash}{edb3a0355a2a0f9a0ef261ec928ca187}
+      \strng{authorbibnamehash}{edb3a0355a2a0f9a0ef261ec928ca187}
+      \strng{authornamehash}{edb3a0355a2a0f9a0ef261ec928ca187}
+      \strng{authorfullhash}{8bc7a3c243cbe0fc2d1cc752b7861e91}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Statistical Modelling: An International Journal}
+      \field{month}{4}
+      \field{number}{1}
+      \field{title}{Estimation in generalised linear mixed models with binary outcomes by simulated maximum likelihood}
+      \field{volume}{6}
+      \field{year}{2006}
+      \field{pages}{23\bibrangedash 42}
+      \range{pages}{20}
+    \endentry
+    \entry{pinheiro_approximations_1995}{article}{}
+      \name{author}{2}{}{%
+        {{hash=140d1e6cf67f5d2e688e462c4cdc3de5}{%
+           family={Pinheiro},
+           familyi={P\bibinitperiod},
+           given={Jos{é}\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=aba9984ed65d42d0471db1af971f8518}{%
+           family={Bates},
+           familyi={B\bibinitperiod},
+           given={Douglas\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \strng{fullhash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \strng{bibnamehash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \strng{authorbibnamehash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \strng{authornamehash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \strng{authorfullhash}{e6d651ec7cd8912a0caba35830dbc3fc}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational and Graphical Statistics}
+      \field{number}{1}
+      \field{title}{Approximations to the {Log}-{Likelihood} {Function} in the {Nonlinear} {Mixed}-{Effects} {Model}}
+      \field{volume}{4}
+      \field{year}{1995}
+      \field{pages}{12\bibrangedash 35}
+      \range{pages}{24}
+    \endentry
+    \entry{pinheiro_efficient_2006}{article}{}
+      \name{author}{2}{}{%
+        {{hash=140d1e6cf67f5d2e688e462c4cdc3de5}{%
+           family={Pinheiro},
+           familyi={P\bibinitperiod},
+           given={Jos{é}\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=bdb3f6c2a44bf439ce8616ae12271167}{%
+           family={Chao},
+           familyi={C\bibinitperiod},
+           given={Edward\bibnamedelima C.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c77d47316e80247c9018fb4696d09a86}
+      \strng{fullhash}{c77d47316e80247c9018fb4696d09a86}
+      \strng{bibnamehash}{c77d47316e80247c9018fb4696d09a86}
+      \strng{authorbibnamehash}{c77d47316e80247c9018fb4696d09a86}
+      \strng{authornamehash}{c77d47316e80247c9018fb4696d09a86}
+      \strng{authorfullhash}{c77d47316e80247c9018fb4696d09a86}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational and Graphical Statistics}
+      \field{number}{1}
+      \field{title}{Efficient {Laplacian} and {Adaptive} {Gaussian} {Quadrature} {Algorithms} for {Multilevel} {Generalized} {Linear} {Mixed} {Models}}
+      \field{volume}{15}
+      \field{year}{2006}
+      \field{pages}{58\bibrangedash 81}
+      \range{pages}{24}
+    \endentry
+    \entry{rodriguez_assessment_1995}{article}{}
+      \name{author}{2}{}{%
+        {{hash=865ccc7b3b19e271d3a6444f9a80bb98}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={German},
+           giveni={G\bibinitperiod}}}%
+        {{hash=922cf0c622902989b81b265b4509f7bc}{%
+           family={Goldman},
+           familyi={G\bibinitperiod},
+           given={Noreen},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{f790f5d88244ae8672f1d2f3b557556c}
+      \strng{fullhash}{f790f5d88244ae8672f1d2f3b557556c}
+      \strng{bibnamehash}{f790f5d88244ae8672f1d2f3b557556c}
+      \strng{authorbibnamehash}{f790f5d88244ae8672f1d2f3b557556c}
+      \strng{authornamehash}{f790f5d88244ae8672f1d2f3b557556c}
+      \strng{authorfullhash}{f790f5d88244ae8672f1d2f3b557556c}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series A (Statistics in Society)}
+      \field{number}{1}
+      \field{title}{An {Assessment} of {Estimation} {Procedures} for {Multilevel} {Models} with {Binary} {Responses}}
+      \field{volume}{158}
+      \field{year}{1995}
+      \field{pages}{73}
+      \range{pages}{1}
+    \endentry
+    \entry{statacorp_stata_2017}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8402f20eb2f83aacb569a915446f09f6}{%
+           family={StataCorp},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{fullhash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{bibnamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authorbibnamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authornamehash}{8402f20eb2f83aacb569a915446f09f6}
+      \strng{authorfullhash}{8402f20eb2f83aacb569a915446f09f6}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stata 15 {Base} {Reference} {Manual}}
+      \field{year}{2017}
+    \endentry
+    \entry{wolfinger_generalized_1993}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d7591cce9285712846083afaaf26fc40}{%
+           family={Wolfinger},
+           familyi={W\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4f474cc29c6afbe7639bd9ea80f555ce}{%
+           family={O'connell},
+           familyi={O\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae52376e2e8d59d6a0418a543662ab02}
+      \strng{fullhash}{ae52376e2e8d59d6a0418a543662ab02}
+      \strng{bibnamehash}{ae52376e2e8d59d6a0418a543662ab02}
+      \strng{authorbibnamehash}{ae52376e2e8d59d6a0418a543662ab02}
+      \strng{authornamehash}{ae52376e2e8d59d6a0418a543662ab02}
+      \strng{authorfullhash}{ae52376e2e8d59d6a0418a543662ab02}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Computation and Simulation}
+      \field{month}{12}
+      \field{number}{3-4}
+      \field{title}{Generalized linear mixed models a pseudo-likelihood approach}
+      \field{volume}{48}
+      \field{year}{1993}
+      \field{pages}{233\bibrangedash 243}
+      \range{pages}{11}
+    \endentry
+    \entry{wu_comparison_2012}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8181911cfa97deff852e1ca3340ad8af}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ad692ebf930ad4d8bab03190b1970185}{%
+           family={Crespi},
+           familyi={C\bibinitperiod},
+           given={Catherine\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7e804b0646af74726e9f4e10a61b675a}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Weng\bibnamedelima Kee},
+           giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f96275bd6161300ed0b095316eb1177b}
+      \strng{fullhash}{f96275bd6161300ed0b095316eb1177b}
+      \strng{bibnamehash}{f96275bd6161300ed0b095316eb1177b}
+      \strng{authorbibnamehash}{f96275bd6161300ed0b095316eb1177b}
+      \strng{authornamehash}{f96275bd6161300ed0b095316eb1177b}
+      \strng{authorfullhash}{f96275bd6161300ed0b095316eb1177b}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Contemporary Clinical Trials}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{Comparison of methods for estimating the intraclass correlation coefficient for binary responses in cancer prevention cluster randomized trials}
+      \field{volume}{33}
+      \field{year}{2012}
+      \field{pages}{869\bibrangedash 880}
+      \range{pages}{12}
+    \endentry
+    \entry{zeger_models_1988}{article}{}
+      \name{author}{3}{}{%
+        {{hash=73b25f0d5d5c9411f2f6dc196f0c98ce}{%
+           family={Zeger},
+           familyi={Z\bibinitperiod},
+           given={Scott\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=3259647b1e22a631b8fee654fb161889}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Kung-Yee},
+           giveni={K\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=0a7f3e4798f5192db5b9f4acc340000f}{%
+           family={Albert},
+           familyi={A\bibinitperiod},
+           given={Paul\bibnamedelima S.},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{18de3945c18864597f5d39e34d17a285}
+      \strng{fullhash}{18de3945c18864597f5d39e34d17a285}
+      \strng{bibnamehash}{18de3945c18864597f5d39e34d17a285}
+      \strng{authorbibnamehash}{18de3945c18864597f5d39e34d17a285}
+      \strng{authornamehash}{18de3945c18864597f5d39e34d17a285}
+      \strng{authorfullhash}{18de3945c18864597f5d39e34d17a285}
+      \field{sortinit}{Z}
+      \field{sortinithash}{156173bd08b075d7295bc3e0f4735a04}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrics}
+      \field{number}{4}
+      \field{title}{Models for {Longitudinal} {Data}: {A} {Generalized} {Estimating} {Equation} {Approach}}
+      \field{volume}{44}
+      \field{year}{1988}
+      \field{pages}{1049\bibrangedash 1060}
+      \range{pages}{12}
+    \endentry
+    \entry{zhang_fitting_2011}{article}{}
+      \name{author}{6}{}{%
+        {{hash=0f5b8b674eea6432492c32e093925682}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=30ce701ac7955b238029dc7c32eb2bda}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Naiji},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a9a9859d81aed63d7d59ed2271b29d90}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Changyong},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f21d63f33bc6ae75ea9eb5f59849a5e3}{%
+           family={Thurston},
+           familyi={T\bibinitperiod},
+           given={Sally\bibnamedelima W.},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=395fded8f5b035cf43fd9623be876649}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Yinglin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5d5950e600e225602348a9e7a8051315}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Xin\bibnamedelima M.},
+           giveni={X\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{fullhash}{410bd1e3fefc1dfe081989668da2048b}
+      \strng{bibnamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authorbibnamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authornamehash}{7dcb6fb220abeaa87c2593669ba6a46f}
+      \strng{authorfullhash}{410bd1e3fefc1dfe081989668da2048b}
+      \field{sortinit}{Z}
+      \field{sortinithash}{156173bd08b075d7295bc3e0f4735a04}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Statistics in medicine}
+      \field{month}{9}
+      \field{number}{20}
+      \field{title}{On {Fitting} {Generalized} {Linear} {Mixed}-effects {Models} for {Binary} {Responses} using {Different} {Statistical} {Packages}}
+      \field{volume}{30}
+      \field{year}{2011}
+      \field{pages}{2562\bibrangedash 2572}
+      \range{pages}{11}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
