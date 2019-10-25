@@ -3,8 +3,6 @@ title: Type I Error Control for Cluster Randomized Trials Under Varying Small Sa
   Structures
 author: "Josh Nugent, Bianca Doone, Ken Kleinman"
 output:
-  html_document:
-    df_print: paged
   pdf_document:
     fig_height: 6
     fig_width: 12
