@@ -121,6 +121,10 @@ The distribution of $\hat{\beta_1}$ estimates from each method was compared to t
 
 \section{Results}
 
+
+JN-- Let's use another notation for the size of the cluster.  P and n don't work for me.  I'd rather keep "number of clusters/arm" and "obs/cluster" throughout, if possible.
+
+
 Results of the literature review are shown in Table~\ref{tab:lit_review}. Of the 85 articles, only 9 identified the specific procedure (meglm or GLIMMIX, for example) used. Among the 24 articles that identified SAS as one of the software packages, only 3 specified which SAS procedure was used and only one identified the model fitting algorithm.
 
 \begin{table}[]
@@ -191,9 +195,6 @@ JN-- let's make sure to talk about convergence issues.
 The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_sbs_single_comparison}. The results show bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. When the odds ratio is less than one, conversely, there a positive bias towards 1. Further, while the data are noisy, the bias is more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is lowest. The bias occurs, to a differing extent, across all values of prevalence, treatment effect, cluster size, and number of clusters. Figure \ref{fig:_bias_pql_sbs_single_comparison} demonstrates that the effect of high between-cluster variability is more pronounced bias.
 
 Further, the standard errors of the estimate for $\beta_1$ are quite large in these simulations. For example, in the setting where $p=25$,
-
-JN-- $p = .25$, maybe??
-
 $n=100$, and $\sigma_0^2=1$, it was not uncommon to have standard errors ten times larger than the bias. This means that even a small amount of bias on a large estimated value could pull a finding above the $p<.05$ threshold.
 
 JN-- I don't follow the logic, here.
