@@ -98,7 +98,7 @@ Our data-generating mechanism for the simulations was a simple logistic-link GLM
 \end{equation}
 with $x_{ij}$ an indicator for treatment (1) or control (0) arm of the study for observation $i$ in cluster $j$; $\pi(y_{ij}|b_j)$ the probability of the outcome for individual $i$ in cluster $j$; $e^{\beta_0}$ the baseline odds of the outcome across all clusters; $e^{b_j}$ the odds ratio compared to baseline for the outcome, specific to observations in cluster $j$ relative to the mean cluster, with assumed distribution $b_j \sim N(0, \sigma_{0}^2)$; and $\beta_1$, our parameter of interest, the log odds ratio due to the treatment. 
 
-JN-- why not just have Pr(y_ij|b_j) = 1), instead of \pi(y_ij|b_j) on the LHS?  Also, in either case, you have to also describe what y_ij means.  Also aso, why not just \sigma^2, instead of \sigma^2_0?
+JN-- why not just have $Pr(y_ij|b_j) = 1)$, instead of $\pi(y_ij|b_j)$ on the LHS?  Also, in either case, you have to also describe what $y_ij$ means.  Also aso, why not just $\sigma^2$, instead of $\sigma^2_0$?
 
 
 From that model, populations were generated with the following parameter values, informed by the literature review (see Table \ref{tab:lit_review_numbers}):
