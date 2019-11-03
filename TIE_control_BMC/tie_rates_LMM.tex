@@ -7,33 +7,10 @@
 %%It must be present to enable the BMC Submission system to
 %%recognise this template!!
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                     %%
-%%  LaTeX template for BioMed Central  %%
-%%     journal article submissions     %%
-%%                                     %%
-%%          <8 June 2012>              %%
-%%                                     %%
-%%                                     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                 %%
-%% For instructions on how to fill out this Tex template           %%
-%% document please refer to Readme.html and the instructions for   %%
-%% authors page on the biomed central website                      %%
-%% http://www.biomedcentral.com/info/authors/                      %%
-%%                                                                 %%
-%% Please do not use \input{...} to include other tex files.       %%
-%% Submit your LaTeX manuscript as one .tex document.              %%
 %%                                                                 %%
 %% All additional figures and files should be attached             %%
 %% separately and not embedded in the \TeX\ document itself.       %%
-%%                                                                 %%
-%% BioMed Central currently use the MikTex distribution of         %%
-%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
-%% http://www.miktex.org                                           %%
 %%                                                                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -76,11 +53,9 @@
 \def\includegraphics{}
 
 
-
 %%% Put your definitions there:
 \startlocaldefs
 \endlocaldefs
-
 
 %%% Begin ...
 \begin{document}
@@ -200,9 +175,6 @@ Depending on the structure of the CRT, analysts should choose a hypothesis testi
 %% and include the section headings         %%
 %% accordingly for your article type.       %%
 %%                                          %%
-%% See the Results and Discussion section   %%
-%% for details on how to create sub-sections%%
-%%                                          %%
 %% use \cite{...} to cite references        %%
 %%  \cite{koon} and                         %%
 %%  \cite{oreg,khar,zvai,xjon,schn,pond}    %%
@@ -219,15 +191,15 @@ Depending on the structure of the CRT, analysts should choose a hypothesis testi
 \section*{Background}
 
 
-In cluster-randomized trials (CRTs), also called group randomized trials, subjects are organized in groups. These groups, rather than the subjects directly, are randomized to the trial interventions \cite{hayes_cluster_2017}. In these studies, outcomes within a cluster -- for example, patients within hospitals or students within classrooms -- are almost certainly correlated with one another. This clustering complicates data analysis because the common regression assumption that observations are independent is violated. When the response variable of interest is continuous, linear mixed models (LMMs), which require that observations are independent only after conditioning on cluster membership, are a common approach to the data analysis. CRTs are a widely used experimental design (see for example \cite{moon_effect_2017}, \cite{vinereanu_multifaceted_2017}, and \cite{huang_targeted_2013}), and LMMs are an attractive option for data analysis. Some reasons for this attractiveness are that LMMs are robust to certain missing data mechanisms and can flexibly accommodate nested levels of clustering and/or varying cluster sizes \cite{fitzmaurice_applied_2012}. Generalized linear mixed models (GLMMs) extend the approach to non-Gaussian data, such as binary, count, or multinomial outcomes.
+In cluster-randomized trials (CRTs), also called group randomized trials, subjects are organized in groups. These groups, rather than the subjects directly, are randomized to the trial interventions \cite{hayes_cluster_2017}. In these studies, outcomes within a cluster -- for example, patients within hospitals or students within classrooms -- are almost certainly correlated with one another. This clustering complicates data analysis because the common regression assumption that observations are independent is violated. When the response variable of interest is continuous, linear mixed models (LMMs), which require that observations are independent only after conditioning on cluster membership, are a common approach to the data analysis. CRTs are a widely used experimental design (see for example \cite{moon_effect_2017, vinereanu_multifaceted_2017, huang_targeted_2013}), and LMMs are an attractive option for data analysis. Some reasons for this attractiveness are that LMMs are robust to certain missing data mechanisms and can flexibly accommodate nested levels of clustering and/or varying cluster sizes \cite{fitzmaurice_applied_2012}. Generalized linear mixed models (GLMMs) extend the approach to non-Gaussian data, such as binary, count, or multinomial outcomes.
 
 When fitting LMMs to CRT data, inference on parameters depends on asymptotic results, and in settings where the number of clusters is small they can generate Type I error rates well above or below the nominal level \cite{pinheiro_mixed-effects_2009}. All frequentist null hypothesis testing theory depends on tests having the nominal size -- a test with a nominal 5\% error rate should produce false rejections 5\% of the time. If not, data analysts in a CRT could be led to inappropriate conclusions, for example, producing too many false positives or false negatives when evaluating a treatment effect.
 
 Unfortunately, small cluster counts are not uncommon in the literature, because it is often more expensive to add more clusters to a study than more individuals to a cluster. Despite common heuristics such as 'at least 30 units at each level of analysis' \cite{kreft_introducing_1998}, in a sample of 140 recently published cluster randomized trials in various medical journals, we found that over 30\% had fewer than 20 clusters. Another review of 100 CRTs \cite{kahan_increased_2016} found 37\% with fewer than 20 clusters and minimal reporting of any small-sample corrections employed.
 
-Some investigations of the problems with (G)LMM small sample inference have been conducted. \cite{pinheiro_mixed-effects_2009}, mentioned above, examined a very restricted parameter space. \cite{schluchter_small-sample_1990} reviewed the issue from a slightly different angle, examining approaches for longitudinal data with different covariance structures, which have different interpretations than a typical CRT. Several studies \cite{zucker_improved_2000}, \cite{melo_improved_2009}, \cite{manor_small_2004}, and \cite{stein_alternatives_2014} suggested improving small-sample inference by applying the Bartlett correction \cite{bartlett_properties_1937}, also under a smaller set of parameters than we apply here. However, as far as we are aware there is no simple way for data analysts to implement the Bartlett correction in SAS or R.  
+Some limited investigations of the problems with (G)LMM small sample inference have been conducted. Pinheiro and Bates \cite{pinheiro_mixed-effects_2009} examined a very restricted parameter space, while Schluchter and Elashoff \cite{schluchter_small-sample_1990} reviewed the issue from a slightly different angle, examining approaches for longitudinal data with different covariance structures, which have different interpretations than a typical CRT. Several studies \cite{zucker_improved_2000, melo_improved_2009, manor_small_2004, stein_alternatives_2014} suggested improving small-sample inference by applying the Bartlett correction \cite{bartlett_properties_1937}, also under a smaller set of parameters than we apply here. However, as far as we are aware there is no simple way for data analysts to implement the Bartlett correction in SAS or R.  
 
-\cite{luke_evaluating_2017}, \cite{maas_sufficient_2005}, and \cite{bell_dancing_2010}, all examine issues around small numbers of clusters, but include both random intercepts and slopes, which is not applicable for trials of groups of individuals. Closer to our setting in this article, \cite{leyrat_cluster_2018} evaluated the power and Type I error rates of different degrees of freedom (DF) choices for LMMs with Wald hypothesis tests for CRT designs under various design factors. They found both conservative and anti-conservative results, depending on the DF method chosen. \cite{kahan_increased_2016} reviewed small sample issues, but limited investigation to a small set of parameters and methods. \cite{johnson_recommendations_2015} examined LMM Type I error rates, but only for Wald tests with two DF choices, and did not break down their results by design factors. In the GLMM context, for binary outcomes only, \cite{li_comparing_2015} examined Type I error rates under different DF choices and found that the rates varied widely by method and design factors.
+Other studies \cite{luke_evaluating_2017, maas_sufficient_2005, bell_dancing_2010} examine issues around small numbers of clusters, but include both random intercepts and slopes, which is not applicable for trials of groups of individuals. Closer to our setting in this article, Leyrat et al. \cite{leyrat_cluster_2018} evaluated the power and Type I error rates of different degrees of freedom (DF) choices for LMMs with Wald hypothesis tests for CRT designs under various design factors. They found both conservative and anti-conservative results, depending on the DF method chosen. Kahan et al. \cite{kahan_increased_2016} reviewed small sample issues, but limited investigation to a small set of parameters and methods. Johnson et al. \cite{johnson_recommendations_2015} examined LMM Type I error rates, but only for Wald tests with two DF choices, and did not break down their results by design factors. In the GLMM context, for binary outcomes only, Li and Redden \cite{li_comparing_2015} examined Type I error rates under different DF choices and found that the rates varied widely by method and design factors.
 
 The work discussed above either does not break down the small-sample problems by design factors (interactions between cluster size and number of clusters, for example), does not compare results to the likelihood ratio test, and/or examines a limited set of data-generating parameters. Our work aims to add to this literature by examining in more detail the Type I error control of several LMM inference approaches in a variety of plausible CRT scenarios. We examine both likelihood ratio test and Wald test results, including different DF choices for the latter. We also vary cluster size, number of clusters, and intracluster correlation coefficient, and look at the interactions between these features under the different approaches. We hope to provide enough detail to alert data analysts to the situations that may lead to incorrect Type I error rates with LMMs, and give guidance on which methods have the best error control given those factors.
 
@@ -238,11 +210,11 @@ We performed a Monte Carlo simulation study to examine the Type I error control 
 
 \subsection*{Model}
 
-We consider here a version of the linear mixed-effects model of \cite{laird_random-effects_1982}:
+We consider here a version of the linear mixed-effects model of Laird and Ware \cite{laird_random-effects_1982}:
 
 \begin{equation}
   \label{eq:1}
-  Y_{ij} = X_{ij}^T\boldsymbol{\beta} + Z_{ij}^T \boldsymbol{b}_i + \epsilon_{ij}
+  Y_{ij} = \mathbf{X}_{ij}^T\boldsymbol{\beta} + \mathbf{Z}_{ij}^T \boldsymbol{b}_i + \mathbf{\epsilon}_{ij}
 \end{equation}
 
 where $Y_{ij}$ is a continuous response variable for individual $j$ in cluster $i$, $X_{ij}^T$ are that individual's covariates for a vector of fixed effect regression parameters $\boldsymbol{\beta}$, $Z_{ij}^T$ are the cluster-level values for a vector of random effects $\boldsymbol{b}_i$ for cluster $i$, and $\epsilon_{ij}$ is the residual error of the observation. In our case, matching common practice in CRTs, we restricted the random-effects structure to include only a random intercept term, so the term $Z_{ij}^T \boldsymbol{b}_i$ reduces to $b_{0i}$. We let $\epsilon_{ij} \sim N(0, \sigma^2)$ for all individuals, and cluster-level variance $b_{0i}$ was distributed $N(0, \sigma_b^2)$, with $b_{0i}$ independent of $\epsilon _{0i}$. We further assumed that cluster size is uniform for all clusters, and that there are two treatment arms with an equal number of clusters in each arm, modeled with an indicator variable $x_{i}\in \{0,1\}$ for control or treatment arm, with $\beta_1$ being the treatment effect. Thus, for the remainder of the article, our model is:
@@ -269,14 +241,14 @@ Alternatively, a Wald test statistic under the null hypothesis $H_0: \beta_1=0$ 
 \begin{itemize}
   \item Residual: $N - p$, where $N$ is the total number of observations and $p$ is the number of fixed-effects coefficients to be estimated in the model. In the CRT design assumed here, $p=2$. Since the number of observations is usually much larger than the number of parameters in the model, this will generate similar results to the '$t$ as $z$' approach described below.
   \item Between-within: The residual DF are partitioned into between-subject and within-subject groups, equivalent in this case to a one-way ANOVA decomposition, meaning $DF = K-2$, where $K$ is the number of clusters.
-  \item Satterthwaite approximation: This method, based on the ideas of \cite{satterthwaite_approximate_1946}, is quite complex, but it essentially uses the variance of the $\beta_1$ estimate in its calculation of the DF. For more detail, see \cite{mcculloch_generalized_2008}, Ch. 6.
-  \item Kenward-Roger approximation: This method, elaborated in \cite{kenward_small_1997}, inflates the fixed and random effects variance-covariance matrix, and calculates Satterthwaite DF based on these inflated values. Under our model with one treatment effect, it generates DF equivalent to the Satterthwaite approximation.
+  \item Satterthwaite approximation: This method, based on the ideas of Satterthwaite \cite{satterthwaite_approximate_1946}, is quite complex, but it essentially uses the variance of the $\beta_1$ estimate in its calculation of the DF. For more detail, see McCulloch et al. \cite{mcculloch_generalized_2008}, Ch. 6.
+  \item Kenward-Roger approximation: This method \cite{kenward_small_1997} inflates the fixed and random effects variance-covariance matrix, and calculates Satterthwaite DF based on these inflated values. Under our model with one treatment effect, it generates DF equivalent to the Satterthwaite approximation.
   \item Infinite ('$t$ as $z$'): The statistic is compared to a standard normal distribution, equivalent to a $t$ distribution with infinite DF.
 \end{itemize}
 
 \subsection*{Alternative inferential approaches}
 
-The Wald and likelihood ratio tests are not the only options for generating confidence intervals and performing inference in CRTs. \cite{browne_comparison_2006} and \cite{baldwin_bayesian_2013}, for example, have used Bayesian methods with mixed models.  Under the study designs considered here, these reports showed no major improvements over frequentist approaches in small-sample settings, so we chose not to include Bayesian methods in this analysis. Alternatively, confidence intervals for LMM fixed effects can be generated by a parametric, semi-parametric, or non-parametric bootstrap. All are computationally intensive and require careful implementation due to the clustered nature of the original sample, so we chose not to investigate those approaches, though the parametric boostrap has been recommended by some authors, for example \cite{ukyo_improved_2019}.
+The Wald and likelihood ratio tests are not the only options for generating confidence intervals and performing inference in CRTs. Bayesian methods have been implemented with mixed models \cite{browne_comparison_2006, baldwin_bayesian_2013}, though under the study designs considered here, these reports showed no major improvements over frequentist approaches in small-sample settings, so we chose not to include Bayesian methods in this analysis. Alternatively, confidence intervals for LMM fixed effects can be generated by a parametric, semi-parametric, or non-parametric bootstrap. All are computationally intensive and require careful implementation due to the clustered nature of the original sample, so we chose not to investigate those approaches, though the parametric boostrap has been recommended by some authors \cite{ukyo_improved_2019}.
 
 
 \subsection*{Data generation}
@@ -351,7 +323,7 @@ Finally, we caution analysts to be careful when using defaults settings in softw
 
 It is unclear how aware data analysts may be about the small-sample problems that may arise in making inference from mixed models. A review of LMM applications in education and social sciences \cite{dedrick_multilevel_2009} found minimal reporting of estimation and inference methods and assumptions, and that cluster sizes could be as low as 2 and the number of clusters as low as 8. Our own review and that of Kahan et al., referenced earlier, confirmed that small cluster counts are not unusual in biomedical settings as well. Therefore, we hope this will provide analysts with some recommendations of which approaches control Type I error at appropriate rates under different circumstances, and we encourage more reporting of DF choices and analytic methods in CRT publications.
 
-Given that small sample sizes are not uncommon in CRT literature, there is need for more investigation of which methods control Type I error in other contexts. An immediate next step, following on the work of \cite{li_comparing_2015}, would be to examine TIE rates for Poisson outcomes under these study conditions and add comparisons to the LRT under both binary and count outcomes. Additionally, more parameters could be added to the simulations, such as unbalanced cluster sizes or varying ICC by treatment arm. Finally, the impact of these data/approach interactions on statistical power should be determined so that analysts can make appropriate sample size calculations during the design phase of a CRT.
+Given that small sample sizes are not uncommon in CRT literature, there is need for more investigation of which methods control Type I error in other contexts. An immediate next step, following on the work of Li and Redden \cite{li_comparing_2015}, would be to examine TIE rates for Poisson outcomes under these study conditions and add comparisons to the LRT under both binary and count outcomes. Additionally, more parameters could be added to the simulations, such as unbalanced cluster sizes or varying ICC by treatment arm. Finally, the impact of these data/approach interactions on statistical power should be determined so that analysts can make appropriate sample size calculations during the design phase of a CRT.
 
 
 
@@ -399,11 +371,6 @@ Given that small sample sizes are not uncommon in CRT literature, there is need 
 % b) uncomment next line
 %\nocite{label}
 
-% or include bibliography directly:
-% \begin{thebibliography}
-% \bibitem{b1}
-% \end{thebibliography}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
 %% Figures                       %%
@@ -420,9 +387,7 @@ Given that small sample sizes are not uncommon in CRT literature, there is need 
 
 \section*{Figures}
   \begin{figure}[h!]
-  \caption{\csentence{Sample figure title.}
-      A short description of the figure content
-      should go here.}
+  \caption{Relationship between Type I error rate and design factors.}
       \end{figure}
 
 
