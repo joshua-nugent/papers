@@ -1,0 +1,441 @@
+%% BioMed_Central_Tex_Template_v1.06
+%%                                      %
+%  bmc_article.tex            ver: 1.06 %
+%                                       %
+
+%%IMPORTANT: do not delete the first line of this template
+%%It must be present to enable the BMC Submission system to
+%%recognise this template!!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                     %%
+%%  LaTeX template for BioMed Central  %%
+%%     journal article submissions     %%
+%%                                     %%
+%%          <8 June 2012>              %%
+%%                                     %%
+%%                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% For instructions on how to fill out this Tex template           %%
+%% document please refer to Readme.html and the instructions for   %%
+%% authors page on the biomed central website                      %%
+%% http://www.biomedcentral.com/info/authors/                      %%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%% BioMed Central currently use the MikTex distribution of         %%
+%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
+%% http://www.miktex.org                                           %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% additional documentclass options:
+%  [doublespacing]
+%  [linenumbers]   - put the line numbers on margins
+
+%%% loading packages, author definitions
+
+\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
+%\documentclass{bmcart}
+
+%%% Load packages
+\usepackage{amsthm,amsmath}
+\RequirePackage{natbib}
+%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+%\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\includegraphic{}
+\def\includegraphics{}
+
+
+
+%%% Put your definitions there:
+\startlocaldefs
+\endlocaldefs
+
+
+%%% Begin ...
+\begin{document}
+
+%%% Start of article front matter
+\begin{frontmatter}
+
+\begin{fmbox}
+\dochead{Research}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the title of your article here     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Type I Error Control for Cluster Randomized Trials Under Varying Small Sample Structures}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors here                   %%
+%%                                          %%
+%% Specify information, if available,       %%
+%% in the form:                             %%
+%%   <key>={<id1>,<id2>}                    %%
+%%   <key>=                                 %%
+%% Comment or delete the keys which are     %%
+%% not used. Repeat \author command as much %%
+%% as required.                             %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author[
+   addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
+   corref={aff1},                       % id of corresponding address, if any
+   %noteref={n1},                        % id's of article notes, if any
+   email={jnugent@umass.edu}   % email address
+]{\inits{JN}\fnm{Joshua R} \snm{Nugent}}
+\author[
+   addressref={aff1},
+   %noteref={n2},
+]{\inits{BD}\fnm{Bianca N} \snm{Doone}}
+\author[
+   addressref={aff1},
+   %noteref={n3},
+]{\inits{KK}\fnm{Ken P} \snm{Kleinman}}
+
+
+\address[id=aff1]{%                           % unique id
+  \orgname{Department of Biostatistics and Epidemiology, School of Public Health and Health Sciences, University of Massachusetts Amherst}, % university, etc
+  \street{715 North Pleasant Street},                     %
+  \postcode{01003}                                % post or zip code
+  \city{Amherst},                              % city
+  \state{Massachusetts}
+  \cny{USA}                                    % country
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter short notes here                   %%
+%%                                          %%
+%% Short notes will be after addresses      %%
+%% on first page.                           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{artnotes}
+%\note{Sample of title note}     % note to the article
+%\note[id=n1]{Equal contributor} % note, connected to author
+\end{artnotes}
+
+%\end{fmbox}% comment this for two column layout
+
+\begin{abstractbox}
+
+\begin{abstract} % abstract
+\parttitle{Background}
+Linear mixed models (LMM) are a common approach to analyzing data from cluster randomized trials (CRTs). Inference on parameters can be performed via Wald tests or likelihood ratio tests (LRT), but both approaches may give incorrect Type I error rates in common finite sample settings. The impact of interactions of cluster size, number of clusters, intraclass correlation coefficient (ICC), and analysis approach on Type I error rates have not been well studied. Reviews of published CRTs find that small sample sizes are not uncommon, so the performance of different inferential approaches in these settings can guide data analysts to the best choices.
+
+\parttitle{Methods}
+Using a random-intercept LMM stucture, we use simulations to study Type I error rates with the LRT and Wald test with different degrees of freedom (DF) choices across different combinations of cluster size, number of clusters, and ICC.
+
+\parttitle{Results}
+Our simulations show that the LRT can be anti-conservative when the ICC is large and the number of clusters is small, with the effect most pronouced when the cluster size is relatively large. Wald tests with the Between-Within DF method or the Satterthwaite DF approximation maintain Type I error control at the stated level, though they are conservative when the number of clusters, the cluster size, and the ICC are small.
+
+\parttitle{Conclusions}
+Depending on the structure of the CRT, analysts should choose a hypothesis testing approach that will maintain the appropriate Type I error rate for their data. Wald tests with the Satterthwaite DF approximation work well in many circumstances, but in other cases the LRT may have Type I error rates closer to the nominal level.
+
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The keywords begin here                  %%
+%% Put each keyword in separate \kwd{}.     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{keyword}
+\kwd{Linear mixed models}
+\kwd{Wald test}
+\kwd{Likelihood ratio test}
+\kwd{Type I error}
+\end{keyword}
+
+\end{abstractbox}
+%
+\end{fmbox}% uncomment this for twcolumn layout
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Main Body begins here                %%
+%%                                          %%
+%% Please refer to the instructions for     %%
+%% authors on:                              %%
+%% http://www.biomedcentral.com/info/authors%%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%% See the Results and Discussion section   %%
+%% for details on how to create sub-sections%%
+%%                                          %%
+%% use \cite{...} to cite references        %%
+%%  \cite{koon} and                         %%
+%%  \cite{oreg,khar,zvai,xjon,schn,pond}    %%
+%%  \nocite{smith,marg,hunn,advi,koha,mouse}%%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% start of article main body
+% <put your article body there>
+
+%%%%%%%%%%%%%%%%
+%% Background %%
+%%
+\section*{Background}
+
+
+In cluster-randomized trials (CRTs), also called group randomized trials, subjects are organized in groups. These groups, rather than the subjects directly, are randomized to the trial interventions \cite{hayes_cluster_2017}. In these studies, outcomes within a cluster -- for example, patients within hospitals or students within classrooms -- are almost certainly correlated with one another. This clustering complicates data analysis because the common regression assumption that observations are independent is violated. When the response variable of interest is continuous, linear mixed models (LMMs), which require that observations are independent only after conditioning on cluster membership, are a common approach to the data analysis. CRTs are a widely used experimental design (see for example \cite{moon_effect_2017}, \cite{vinereanu_multifaceted_2017}, and \cite{huang_targeted_2013}), and LMMs are an attractive option for data analysis. Some reasons for this attractiveness are that LMMs are robust to certain missing data mechanisms and can flexibly accommodate nested levels of clustering and/or varying cluster sizes \cite{fitzmaurice_applied_2012}. Generalized linear mixed models (GLMMs) extend the approach to non-Gaussian data, such as binary, count, or multinomial outcomes.
+
+When fitting LMMs to CRT data, inference on parameters depends on asymptotic results, and in settings where the number of clusters is small they can generate Type I error rates well above or below the nominal level \cite{pinheiro_mixed-effects_2009}. All frequentist null hypothesis testing theory depends on tests having the nominal size -- a test with a nominal 5\% error rate should produce false rejections 5\% of the time. If not, data analysts in a CRT could be led to inappropriate conclusions, for example, producing too many false positives or false negatives when evaluating a treatment effect.
+
+Unfortunately, small cluster counts are not uncommon in the literature, because it is often more expensive to add more clusters to a study than more individuals to a cluster. Despite common heuristics such as 'at least 30 units at each level of analysis' \cite{kreft_introducing_1998}, in a sample of 140 recently published cluster randomized trials in various medical journals, we found that over 30\% had fewer than 20 clusters. Another review of 100 CRTs \cite{kahan_increased_2016} found 37\% with fewer than 20 clusters and minimal reporting of any small-sample corrections employed.
+
+Some investigations of the problems with (G)LMM small sample inference have been conducted. \cite{pinheiro_mixed-effects_2009}, mentioned above, examined a very restricted parameter space. \cite{schluchter_small-sample_1990} reviewed the issue from a slightly different angle, examining approaches for longitudinal data with different covariance structures, which have different interpretations than a typical CRT. Several studies \cite{zucker_improved_2000}, \cite{melo_improved_2009}, \cite{manor_small_2004}, and \cite{stein_alternatives_2014} suggested improving small-sample inference by applying the Bartlett correction \cite{bartlett_properties_1937}, also under a smaller set of parameters than we apply here. However, as far as we are aware there is no simple way for data analysts to implement the Bartlett correction in SAS or R.  
+
+\cite{luke_evaluating_2017}, \cite{maas_sufficient_2005}, and \cite{bell_dancing_2010}, all examine issues around small numbers of clusters, but include both random intercepts and slopes, which is not applicable for trials of groups of individuals. Closer to our setting in this article, \cite{leyrat_cluster_2018} evaluated the power and Type I error rates of different degrees of freedom (DF) choices for LMMs with Wald hypothesis tests for CRT designs under various design factors. They found both conservative and anti-conservative results, depending on the DF method chosen. \cite{kahan_increased_2016} reviewed small sample issues, but limited investigation to a small set of parameters and methods. \cite{johnson_recommendations_2015} examined LMM Type I error rates, but only for Wald tests with two DF choices, and did not break down their results by design factors. In the GLMM context, for binary outcomes only, \cite{li_comparing_2015} examined Type I error rates under different DF choices and found that the rates varied widely by method and design factors.
+
+The work discussed above either does not break down the small-sample problems by design factors (interactions between cluster size and number of clusters, for example), does not compare results to the likelihood ratio test, and/or examines a limited set of data-generating parameters. Our work aims to add to this literature by examining in more detail the Type I error control of several LMM inference approaches in a variety of plausible CRT scenarios. We examine both likelihood ratio test and Wald test results, including different DF choices for the latter. We also vary cluster size, number of clusters, and intracluster correlation coefficient, and look at the interactions between these features under the different approaches. We hope to provide enough detail to alert data analysts to the situations that may lead to incorrect Type I error rates with LMMs, and give guidance on which methods have the best error control given those factors.
+
+\section*{Methods}
+
+
+We performed a Monte Carlo simulation study to examine the Type I error control of different LMM inference approaches under varying, plausible CRT circumstances. First, we describe the statistical model in question and the difficulties with small-sample inference, then we outline our specific study design. For all data analysis in this article, we used the SAS/STAT 13.2 (SAS Institute Inc., Cary, NC) and R 3.6.0 (R Foundation for Statistical Computing) software packages.
+
+\subsection*{Model}
+
+We consider here a version of the linear mixed-effects model of \cite{laird_random-effects_1982}:
+
+\begin{equation}
+  \label{eq:1}
+  Y_{ij} = X_{ij}^T\boldsymbol{\beta} + Z_{ij}^T \boldsymbol{b}_i + \epsilon_{ij}
+\end{equation}
+
+where $Y_{ij}$ is a continuous response variable for individual $j$ in cluster $i$, $X_{ij}^T$ are that individual's covariates for a vector of fixed effect regression parameters $\boldsymbol{\beta}$, $Z_{ij}^T$ are the cluster-level values for a vector of random effects $\boldsymbol{b}_i$ for cluster $i$, and $\epsilon_{ij}$ is the residual error of the observation. In our case, matching common practice in CRTs, we restricted the random-effects structure to include only a random intercept term, so the term $Z_{ij}^T \boldsymbol{b}_i$ reduces to $b_{0i}$. We let $\epsilon_{ij} \sim N(0, \sigma^2)$ for all individuals, and cluster-level variance $b_{0i}$ was distributed $N(0, \sigma_b^2)$, with $b_{0i}$ independent of $\epsilon _{0i}$. We further assumed that cluster size is uniform for all clusters, and that there are two treatment arms with an equal number of clusters in each arm, modeled with an indicator variable $x_{i}\in \{0,1\}$ for control or treatment arm, with $\beta_1$ being the treatment effect. Thus, for the remainder of the article, our model is:
+
+\begin{equation}
+  \label{eq:2}
+  Y_{ij} = \beta_0 + \beta_1 x_{i} + b_{0i} + \epsilon_{ij}
+\end{equation}
+
+
+\subsection*{Impact of clustering on inference}
+
+In a CRT, there are typically two assumed sources of variability in outcomes: between-cluster, denoted here as $\sigma^2_b$, and within-cluster, denoted as $\sigma^2$. The marginal variance of $y_{ij} = \sigma_b^2 + \sigma^2$. One way of quantifying the amount of clustering is via the \textit{intracluster correlation coefficient} (ICC) $\rho$, defined as $\frac{\sigma^2_b}{\sigma^2_b + \sigma^2}$, or the proportion of total variance due to the cluster-level variability. If one were to incorrectly analyze the data using a linear model rather than a linear mixed model, standard errors for the coefficient estimates would have to be adjusted, since observations are correlated 
+in violation of the model assumptions. An approximation of this adjustment, the \textit{design effect} \cite{kish_survey_1965}, is the standard error multiplier $[(n-1)\rho + 1]$, where $n$ is the number of subjects per cluster. For example, with 10 observations per cluster and an ICC of .01, the design effect is 1.09, meaning that the linear model standard errors would have to be increased by about 10\% to account for clustering. However, with 100 observations per cluster and an ICC of .01, the mulitplier increases to 2, and for 1000 observations per cluster it increases to 11, meaning that even a very small ICC can drastically change inferences as cluster size grows. This approximation demonstrates the necessity of accounting for between-cluster variation in the data analysis, even if the ICC is expected to be small.
+
+\subsection*{Inference with LMM fixed effect estimators}
+
+
+Two ways of fitting a linear mixed model are by maximum likelihood (ML) and restricted maximum likelihood (REML), and most major statistical software packages can perform estimation by either method. Inference about $\hat{\beta}_1$ can be made using the likelihood ratio test (LRT) if fitting via ML, or by a Wald test if fitting via REML. A third test based on the maximum likelihood, the score test, is rarely used in this setting and is not discussed here. The LRT compares the log-likelihood of a model without $\beta_1$ ($\ell_0$) to a model that includes it ($\ell_1$), and the test statistic $\lambda = -2(\ell_0 - \ell_1)$ has a $\chi^2_p$ distribution, asymptotically, with degrees of freedom $p$ the difference in parameter dimension between the two models. In our case, as in many CRTs, there is one treatment effect parameter, so $p=1$. In general, the LRT is recommended over the Wald test, as its asymptotic properties are superior \cite{cox_theoretical_1979}.  Unfortunately, the $\chi^2$ distribution may be a poor approximation of the distribution of $\lambda$ when the amount of information in a sample, for example, cluster count, is small.
+
+
+Alternatively, a Wald test statistic under the null hypothesis $H_0: \beta_1=0$ can be generated by dividing the estimated treatment effect by its standard error: $t^* =\hat{\beta}_1 / SE(\hat{\beta}_1)$.  This value can then be compared to a central $t$ distribution. Unfortunately, for many designs, it is unclear what the appropriate degrees of freedom (DF) for that distribution should be \cite{bates_fitting_2015}. Choices include:
+
+\begin{itemize}
+  \item Residual: $N - p$, where $N$ is the total number of observations and $p$ is the number of fixed-effects coefficients to be estimated in the model. In the CRT design assumed here, $p=2$. Since the number of observations is usually much larger than the number of parameters in the model, this will generate similar results to the '$t$ as $z$' approach described below.
+  \item Between-within: The residual DF are partitioned into between-subject and within-subject groups, equivalent in this case to a one-way ANOVA decomposition, meaning $DF = K-2$, where $K$ is the number of clusters.
+  \item Satterthwaite approximation: This method, based on the ideas of \cite{satterthwaite_approximate_1946}, is quite complex, but it essentially uses the variance of the $\beta_1$ estimate in its calculation of the DF. For more detail, see \cite{mcculloch_generalized_2008}, Ch. 6.
+  \item Kenward-Roger approximation: This method, elaborated in \cite{kenward_small_1997}, inflates the fixed and random effects variance-covariance matrix, and calculates Satterthwaite DF based on these inflated values. Under our model with one treatment effect, it generates DF equivalent to the Satterthwaite approximation.
+  \item Infinite ('$t$ as $z$'): The statistic is compared to a standard normal distribution, equivalent to a $t$ distribution with infinite DF.
+\end{itemize}
+
+\subsection*{Alternative inferential approaches}
+
+The Wald and likelihood ratio tests are not the only options for generating confidence intervals and performing inference in CRTs. \cite{browne_comparison_2006} and \cite{baldwin_bayesian_2013}, for example, have used Bayesian methods with mixed models.  Under the study designs considered here, these reports showed no major improvements over frequentist approaches in small-sample settings, so we chose not to include Bayesian methods in this analysis. Alternatively, confidence intervals for LMM fixed effects can be generated by a parametric, semi-parametric, or non-parametric bootstrap. All are computationally intensive and require careful implementation due to the clustered nature of the original sample, so we chose not to investigate those approaches, though the parametric boostrap has been recommended by some authors, for example \cite{ukyo_improved_2019}.
+
+
+\subsection*{Data generation}
+
+We generated clustered, balanced data sets from the null model
+
+\begin{equation}
+  \label{eq:3}
+    y_{ij} = b_{0i} + \epsilon_{ij} 
+\end{equation}
+
+
+for clusters $i = 1, 2, ..., K$ and individuals $j = 1, 2, ..., N$ within each cluster. The random intercept $b_{0i}$ for cluster $i$ was distributed $\sim N(0, \sigma_b^2)$, and the residual error term $\epsilon_{ij} \sim N(0, \sigma^2)$.  $b_{0i}$ and $\epsilon_{ij}$ were generated as independent pseudorandom variates. We also generated values of $x_{ij}$ such that for clusters $i = 1, ... K/2$,  $x_{ij}=0$, and for $i = K/2 +1, ... K$, $x_{ij}=1$.  This variable represents the treatment indicator, though it was not used in the data generation, as there is no treatment effect under the null hypothesis.
+
+For each data set, we then fit the model shown in equation (\ref{eq:2}) using SAS PROC MIXED and the \textbf{lme4} and \textbf{lmerTest} packages in R. The coefficient of interest in these fitted models, $\hat{\beta}_1$, represents the estimated treatment effect.
+
+We gathered p-values for the $\hat{\beta}_1$ coefficients using the LRT and the Wald test using the various DF options.  We assessed the rejection rate under each test for the null hypothesis that $\beta_1=0$ with $\alpha=.05$.  Since the data-generating mechanism had a true $\beta_1$ value of zero, this estimates the TIE rate for the nominal $\alpha = .05$ level.
+
+We performed our analysis on 10,000 simulated data sets for all possible combinations of the following data-generating parameters:
+\begin{itemize}
+ \item total number of clusters $K\in \{10, 20, 40, 100\}$, divided evenly among the two treatment arms
+ 
+ \item subjects per cluster $N \in \{3, 10, 20, 50\}$
+ 
+ \item $\sigma_b^2 \in \{0.001, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5\}$
+ 
+ \item $\sigma^2 = 1$
+\end{itemize}
+We experimented with different magnitudes of $\sigma_b^2$ and $\sigma^2$ that gave the same ICC, and found that the choice of magnitude did not affect our results, allowing us to simplify our analysis by fixing $\sigma^2$ at 1 and only varying $\sigma^2_b$.
+
+
+\subsection*{Determining p-values}
+
+Both PROC MIXED and \textbf{lme4} report $\hat{\beta}_1$ estimates, their associated standard errors, and $t^*$ statistics. This allows for easy testing of the $\hat{\beta}_1$ coefficient via a Wald test, fitting with REML. The $t^*$ statistics generated were compared to $t$ distributions with three choices of DF: between-within, Satterthwaite/Kenward-Roger, and residual, as described earlier. We then collected the p-values and calculated TIE rates under the three DF choices.
+
+Both software packages also allow for model fitting using ML, allowing for model comparison and p-value determination for $\hat{\beta}_1$ via the LRT. First, a null model (\ref{eq:4}) was fit, with the only fixed effect being an intercept term:
+
+\begin{equation}
+  \label{eq:4}
+  y_{ij} = \beta_0 + b_{0i} + \epsilon_{ij}
+\end{equation}
+
+Second, a model with an added fixed effect for $x_{ij}$, as in model (\ref{eq:2}). The doubled difference in maximized log-likelihood was compared to a $\chi^2_1$ distribution since there was a one-parameter difference in model dimension. P-values from the $\chi^2_1$ distribution were collected and TIE rates calculated.
+
+
+\section*{Results}
+
+Both software packages generated identical $\hat{\beta}_1$ estimates and standard errors when fitting with REML, and identical differences in likelihoods when fitting with ML. Reported results are from SAS. In addition, since the Kenward-Roger and Satterthwaite approximations were indistinguishable in this setting, they are both labeled as "approximate."
+
+Results are displayed in Figure 1.  Under all approaches, departures from the nominal $\alpha$ level were most pronounced when the number of clusters is small.
+
+When the number of observations per cluster is small, and there is a relatively small ICC, the LRT demonstrated appropriate TIE control. Regardless of the number of observations per cluster, the LRT is anti-conservative as the ICC rises. However, the anti-conservatism of the LRT was most apparent with smaller ICC when the number of observations per cluster was larger. Even with as many as 40 clusters and 50 observations per cluster, the LRT was noticeably anti-conservative once the ICC rose above .1. Worse, even when the ICC was very small (.01, .02), the LRT was anti-conservative with as few as 20 clusters of 50 observations per cluster.
+
+As for the Wald tests, the between-within and Satterthwaite approximation led to conservative TIE rates when the ICC was small and/or the cluster size was small, but maintained the appropriate TIE rate with large clusters or a large ICC. The residual DF choice was less conservative in the case of a small ICC, but produced anti-conservative results as the ICC increased, and was more anti-conservative when the cluster size was large. Notably, depending on how the model is fit, the default method for determining DF in SAS may be 'containment', which under this study design leads to SAS assigning residual DF. Since this choice leads to the most anti-conservative results, it may be a concern for SAS analysts.
+
+We also tested the the effect of an ICC of .09 generated with $\sigma^2_b = 1$ and $\sigma^2 = 10$ rather than the values discussed above. The results did not differ notably, which suggests that this pattern of TIE rate inflation with the LRT is insensitive to the absolute size of the $\sigma^2_b$ and $\sigma^2$ values, only their relative size.
+
+Finally, given the balanced nature of our data and the lack of other covariates, we could equivalently have used a $t$-test on the cluster means of each treatment arm to perform a hypothesis test. Using this approach, we achieved close to the nominal $.05$ alpha level in all cases. These results are omitted from the plot.
+
+\section*{Discussion}
+
+
+To our knowledge, the interactions between our data-generating parameters, analysis approach, and TIE rates have not been examined comprehensively in previous reports. Our results show that none of the approaches meet the nominal alpha level in all cases examined, and the departures from the nominal level are directionally different based on the approach and data structure. Hence, there is no one-size-fits all recommendation for data analysts in these small-sample cases.
+
+The likelihood ratio test, based on an asymptotic $\chi^2$ distribution, does not perform well in these finite-sample cases. Alternatively, with a Wald test, some choices of DF, such as the Satterthwaite approximation, can avoid anti-conservatism. However, a tradeoff exists, as it too conservative when the ICC, the number of clusters, and/or cluster size is small. 
+
+The results here suggest that data analysts should choose an approach that best suits their data. For example, if the ICC is expected to be small and the number of observations per cluster is small, the likelihood ratio test should perform well. For cases where the number of observations per cluster is large, a Wald test with the Satterthwaite approximation is better, though it can be conservative in some situations.
+
+One perhaps unsatisfying conclusion is that analysts may want to generate their own small simulation studies to evaluate different approaches before fitting their final data models, since they will likely know the model structure, number of clusters, and cluster size by that point.
+
+Finally, we caution analysts to be careful when using defaults settings in software. For Wald tests, SAS PROC MIXED may default to the poorly-performing residual DF choice, and the **lmerTest** package in R defaults to the Satterthwaite approximation, which may be too conservative in some cases.
+
+It is unclear how aware data analysts may be about the small-sample problems that may arise in making inference from mixed models. A review of LMM applications in education and social sciences \cite{dedrick_multilevel_2009} found minimal reporting of estimation and inference methods and assumptions, and that cluster sizes could be as low as 2 and the number of clusters as low as 8. Our own review and that of Kahan et al., referenced earlier, confirmed that small cluster counts are not unusual in biomedical settings as well. Therefore, we hope this will provide analysts with some recommendations of which approaches control Type I error at appropriate rates under different circumstances, and we encourage more reporting of DF choices and analytic methods in CRT publications.
+
+Given that small sample sizes are not uncommon in CRT literature, there is need for more investigation of which methods control Type I error in other contexts. An immediate next step, following on the work of \cite{li_comparing_2015}, would be to examine TIE rates for Poisson outcomes under these study conditions and add comparisons to the LRT under both binary and count outcomes. Additionally, more parameters could be added to the simulations, such as unbalanced cluster sizes or varying ICC by treatment arm. Finally, the impact of these data/approach interactions on statistical power should be determined so that analysts can make appropriate sample size calculations during the design phase of a CRT.
+
+
+
+\section*{Conclusions}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Backmatter begins here                   %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{backmatter}
+
+\section*{Competing interests}
+  The authors declare that they have no competing interests.
+
+\section*{Author's contributions}
+    Text for this section \ldots
+
+\section*{Acknowledgements}
+  Text for this section \ldots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  The Bibliography                       %%
+%%                                                         %%
+%%  Bmc_mathpys.bst  will be used to                       %%
+%%  create a .BBL file for submission.                     %%
+%%  After submission of the .TEX file,                     %%
+%%  you will be prompted to submit your .BBL file.         %%
+%%                                                         %%
+%%                                                         %%
+%%  Note that the displayed Bibliography will not          %%
+%%  necessarily be rendered by Latex exactly as specified  %%
+%%  in the online Instructions for Authors.                %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% if your bibliography is in bibtex format, use those commands:
+\bibliographystyle{bmc-mathphys} % Style BST file (bmc-mathphys, vancouver, spbasic).
+\bibliography{tie_rates_LMM}      % Bibliography file (usually '*.bib' )
+% for author-year bibliography (bmc-mathphys or spbasic)
+% a) write to bib file (bmc-mathphys only)
+% @settings{label, options="nameyear"}
+% b) uncomment next line
+%\nocite{label}
+
+% or include bibliography directly:
+% \begin{thebibliography}
+% \bibitem{b1}
+% \end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Figures                       %%
+%%                               %%
+%% NB: this is for captions and  %%
+%% Titles. All graphics must be  %%
+%% submitted separately and NOT  %%
+%% included in the Tex document  %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% Do not use \listoffigures as most will included as separate files
+
+\section*{Figures}
+  \begin{figure}[h!]
+  \caption{\csentence{Sample figure title.}
+      A short description of the figure content
+      should go here.}
+      \end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Additional Files              %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{backmatter}
+\end{document}
+
+
