@@ -90,17 +90,13 @@
 
 \author[
    addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
-   corref={aff1},                       % id of corresponding address, if any
    %noteref={n1},                        % id's of article notes, if any
-   email={jnugent@umass.edu}   % email address
 ]{\inits{JN}\fnm{Joshua R} \snm{Nugent}}
 \author[
    addressref={aff1},
-   %noteref={n2},
-]{\inits{BD}\fnm{Bianca N} \snm{Doone}}
-\author[
-   addressref={aff1},
    %noteref={n3},
+   corref={aff1},                       % id of corresponding address, if any
+   email={ken.kleinman@gmail.com}   % email address
 ]{\inits{KK}\fnm{Ken P} \snm{Kleinman}}
 
 
@@ -195,7 +191,7 @@ In cluster-randomized trials (CRTs), also called group randomized trials, subjec
 
 When fitting LMMs to CRT data, inference on parameters depends on asymptotic results, and in settings where the number of clusters is small they can generate Type I error rates well above or below the nominal level \cite{pinheiro_mixed-effects_2009}. All frequentist null hypothesis testing theory depends on tests having the nominal size -- a test with a nominal 5\% error rate should produce false rejections 5\% of the time. If not, data analysts in a CRT could be led to inappropriate conclusions, for example, producing too many false positives or false negatives when evaluating a treatment effect.
 
-Unfortunately, small cluster counts are not uncommon in the literature, because it is often more expensive to add more clusters to a study than more individuals to a cluster. Despite common heuristics such as 'at least 30 units at each level of analysis' \cite{kreft_introducing_1998}, in a sample of 140 recently published cluster randomized trials in various medical journals, we found that over 30\% had fewer than 20 clusters. Another review of 100 CRTs \cite{kahan_increased_2016} found 37\% with fewer than 20 clusters and minimal reporting of any small-sample corrections employed.
+Unfortunately, small cluster counts are not uncommon in the literature, because it is often more expensive to add more clusters to a study than more individuals to a cluster. Despite common heuristics such as 'at least 30 units at each level of analysis' \cite{kreft_introducing_1998}, CRTs often have as few as 20 clusters. Another review of 100 CRTs \cite{kahan_increased_2016} found 37\% with fewer than 20 clusters and minimal reporting of any small-sample corrections employed.
 
 Some limited investigations of the problems with (G)LMM small sample inference have been conducted. Pinheiro and Bates \cite{pinheiro_mixed-effects_2009} examined a very restricted parameter space, while Schluchter and Elashoff \cite{schluchter_small-sample_1990} reviewed the issue from a slightly different angle, examining approaches for longitudinal data with different covariance structures, which have different interpretations than a typical CRT. Several studies \cite{zucker_improved_2000, melo_improved_2009, manor_small_2004, stein_alternatives_2014} suggested improving small-sample inference by applying the Bartlett correction \cite{bartlett_properties_1937}, also under a smaller set of parameters than we apply here. However, as far as we are aware there is no simple way for data analysts to implement the Bartlett correction in SAS or R.  
 
@@ -319,7 +315,7 @@ The results here suggest that data analysts should choose an approach that best 
 
 One perhaps unsatisfying conclusion is that analysts may want to generate their own small simulation studies to evaluate different approaches before fitting their final data models, since they will likely know the model structure, number of clusters, and cluster size by that point.
 
-Finally, we caution analysts to be careful when using defaults settings in software. For Wald tests, SAS PROC MIXED may default to the poorly-performing residual DF choice, and the **lmerTest** package in R defaults to the Satterthwaite approximation, which may be too conservative in some cases.
+Finally, we caution analysts to be careful when using defaults settings in software. For Wald tests, SAS PROC MIXED may default to the poorly-performing residual DF choice, and the \textbf{lmerTest} package in R defaults to the Satterthwaite approximation, which may be too conservative in some cases.
 
 It is unclear how aware data analysts may be about the small-sample problems that may arise in making inference from mixed models. A review of LMM applications in education and social sciences \cite{dedrick_multilevel_2009} found minimal reporting of estimation and inference methods and assumptions, and that cluster sizes could be as low as 2 and the number of clusters as low as 8. Our own review and that of Kahan et al., referenced earlier, confirmed that small cluster counts are not unusual in biomedical settings as well. Therefore, we hope this will provide analysts with some recommendations of which approaches control Type I error at appropriate rates under different circumstances, and we encourage more reporting of DF choices and analytic methods in CRT publications.
 
@@ -343,10 +339,12 @@ Given that small sample sizes are not uncommon in CRT literature, there is need 
   The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
-    Text for this section \ldots
+JN performed the simulations and drafted the text.  KK supervised the research and edited the manuscript.
 
 \section*{Acknowledgements}
-  Text for this section \ldots
+Support for this work for provided by NIH/NIGMS grant R01GM121370.
+  
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
