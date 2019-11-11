@@ -1,57 +1,51 @@
+% sage_latex_guidelines.tex V1.20, 14 January 2017
 
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{biblatex}
-\usepackage{graphicx}
-\addbibresource{PQL.bib}
-\usepackage{setspace}
-\doublespacing
-\setlength{\parskip}{1em}
-\usepackage[autostyle, english = american]{csquotes}
-\usepackage{amsmath}
+
+\documentclass[Afour,times,sagev,doublespace]{sagej}
+
+\usepackage{moreverb,url}
+
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\def\volumeyear{2019}
 
 \begin{document}
 
-\title{Bias Induced By Fitting GLMMs with Dichotomous Outcomes Using Penalized Quasi-Likelihood}
-\author{Joshua Nugent, Bianca Doone, Ken Kleinman}
-\date{2019}
+\runninghead{Nugent et al.}
 
-%\maketitle
+\title{Bias induced by fitting GLMMs with dichotomous outcomes using penalized quasi-likelihood}
 
-Title: Bias Induced By Fitting GLMMs with Dichotomous Outcomes Using Penalized Quasi-Likelihood
-
-Short Title: PQL Bias With Dichotomous Outcomes
-
-Authors: Joshua Nugent, Bianca Doone, Ken Kleinman, (all: affiliation: Department of Biostatistics and Epidemiology, University of Massachusetts Amherst, Amherst, MA, USA)
-
-Corresponding Author:
-Ken Kleinman, 415 Arnold House, School of Public Health and Health Sciences, University of Massachusetts, 715 North Pleasant Street, Amherst, MA 01003-9304
-
-Telephone: 413-320-6667
-
-jnugent@umass.edu
-
-Grant Support: NIGMS: R01 GM121370
-
-Word Count: ????
-
-Date: Nov 2019
-
-\newpage
-
-Abstract: Generalized linear mixed models (GLMMs) are the most widely-used method for analyzing data from cluster-randomized trials (CRTs). Popular statistical software packages allow for different GLMM fitting algorithms, but one of these algorithms, penalized quasi-likelihood (PQL), has been shown to produce biased parameter estimates. We review the literature to assess how widely PQL may be used, and conduct a literature-informed simulation study to show the extent of the PQL bias in plausible CRT settings. We find that the algorithms employed are rarely reported in the literature, and that PQL bias is most extreme when the cluster size is small and the variability between clusters is large. Further, intraclass correlation coefficient (ICC) estimates from PQL-fitted models are also shown to vary by outcome prevalence and treatment effect. Alternatives to PQL estimation are demonstrated to be unbiased and feasible for most CRT data analysis needs.  Analysts should not use PQL and should report fitting methods when reporting trial results.
+\author{Joshua Nugent\affilnum{1}, Bianca Doone\affilnum{1} and Ken Kleinman\affilnum{1}}
 
 
-Keywords: Cluster randomized trials, generalized linear mixed models, penalized quasi-likelihood, PQL
+\affiliation{\affilnum{1}University of Massachusetts, Amherst\\}
 
-\newpage
+\corrauth{Ken Kleinman,
+Department of Biostatistics and Epidemiology,
+School of Public Health and Health Sciences,
+University of Massachusetts,
+715 North Pleasant Street,
+Amherst, MA
+01003-9304,
+USA}
 
-\begin{flushleft}
-\section{Background / Aims}
+\email{kkleinman@schoolph.umass.edu}
 
+\begin{abstract}
+Generalized linear mixed models (GLMMs) are the most widely-used method for analyzing data from cluster-randomized trials (CRTs). Popular statistical software packages allow for different GLMM fitting algorithms, but one of these algorithms, penalized quasi-likelihood (PQL), has been shown to produce biased parameter estimates. We review the literature to assess how widely PQL may be used, and conduct a literature-informed simulation study to show the extent of the PQL bias in plausible CRT settings. We find that the algorithms employed are rarely reported in the literature, and that PQL bias is most extreme when the cluster size is small and the variability between clusters is large. Further, intraclass correlation coefficient (ICC) estimates from PQL-fitted models are also shown to vary by outcome prevalence and treatment effect. Alternatives to PQL estimation are demonstrated to be unbiased and feasible for most CRT data analysis needs.  Analysts should not use PQL and should report fitting methods when reporting trial results.
+\end{abstract}
+
+\keywords{Cluster randomized trials, generalized linear mixed models, penalized quasi-likelihood, PQL}
+
+\maketitle
+
+\section{Background}
 Generalized linear mixed models (GLMMs) are a commonly used method for analyzing data from cluster randomized trials (CRTs). GLMMs extend generalized linear models (GLMs) by including an additional random-effects term in the linear predictor. This term captures variance between clusters - for example, the group-level differences between hospitals or classrooms. In settings where interventions are applied at the cluster level, GLMMs can disaggregate treatment effects from any preexisting underlying variance between clusters. In medical settings, CRTs with dichotomous outcomes are very common - for example, estimating the effect of a new infection control protocol on MRSA incidence, or the probability of a preterm birth for people enrolled in prenatal support groups - and GLMMs are a commonly-used tool for analysis. 
 
-The optimization problem of fitting a GLMM to data is a non-trivial task. Three common numerical methods for estimating the coefficients are \textit{penalized quasi-likelihood} (PQL), \textit{Gauss-Hermite quadrature} (GHQ), and \textit{Laplace approximation}. Other methods, such as Newton quadrature, Monte Carlo integration, and Markov Chain Monte Carlo can be used as well \cite{zhang_fitting_2011}, but since popular statistical software packages use PQL, GHQ, and Laplace approximation as their standard GLMM fitting algorithms, we will focus on those in this paper. The full mathematical details of these three main methods have been elaborated in other sources \cite{wolfinger_generalized_1993}\cite{pinheiro_efficient_2006}, and an overview of the technical aspects of GLMMs and the algorithms is given in the Appendix.
+The optimization problem of fitting a GLMM to data is a non-trivial task. Three common numerical methods for estimating the coefficients are \textit{penalized quasi-likelihood} (PQL), \textit{Gauss-Hermite quadrature} (GHQ), and \textit{Laplace approximation}. Other methods, such as Newton quadrature, Monte Carlo integration, and Markov Chain Monte Carlo can be used as well \cite{zhang_fitting_2011}, but since popular statistical software packages use PQL, GHQ, and Laplace approximation as their standard GLMM fitting algorithms, we will focus on those in this paper. The full mathematical details of these three main methods have been elaborated in other sources \cite{wolfinger_generalized_1993}\cite{pinheiro_efficient_2006}, and an overview of the technical aspects of GLMMs and the algorithms is given in the Supplemental Material.
 
 Penalized quasi-likelihood was popularized by Breslow and Clayton\cite{breslow_approximate_1993}, though similar methods were developed by others\cite{zeger_models_1988}\cite{engel_simple_1994} around the same time. Though it is computationally efficient, especially for models with many random effects, PQL can induce bias in certain cases, in particular when the response variable distribution is far from normal\cite{agresti_categorical_2013}\cite{rodriguez_assessment_1995}\cite{breslow_bias_1995}\cite{lin_bias_1996}. Additionally, PQL produces Wald-type test statistics, not true likelihoods, making it unsuitable for use in the likelihood ratio test.  Thus is cannot be used in nested model selection\cite{zhang_fitting_2011}\cite{pinheiro_efficient_2006}\cite{ng_estimation_2006}.
 
@@ -68,9 +62,8 @@ Most modern statistical software packages have functions to fit GLMMs with dicho
 Given that many data analysts may be unfamiliar with the fitting options, a function's default settings are influential in the final results. Below, we investigate how often functions and algorithms are reported in the literature and use simulations to describe the bias induced by PQL in a literature-informed, plausible CRT scenario.
 
 
-
-
 \section{Methods}
+
 
 We started by conducting a literature review among recent CRTs with dichotomous outcomes to determine a) common values for cluster size and number of clusters and b) what software, functions, and fitting algorithms were used to analyze the data, if reported. The review, searching for the phrase "cluster randomized trial" in the title or abstract of the article, spanned two databases over two timeframes. First, we searched the The New England Journal of Medicine, The British Medical Journal, The Journal of the American Medical Association, and The Lancet from January 1, 2014 through August 31, 2018, using the Web of Science database. Second, we did a broader search of all articles in the PubMed database published between March 1st, 2018 and August 31, 2018. Full details of this review can be found in Doone et al. (2019).
 
@@ -102,6 +95,7 @@ The distribution of $\hat{\beta_1}$ estimates from each method was compared to t
 
 
 
+
 \section{Results}
 
 Results of the literature review are shown in Table~\ref{tab:lit_review}. Of the 85 articles, only 9 identified the specific procedure (meglm or GLIMMIX, for example) used. Among the 24 articles that identified SAS as one of the software packages, only 3 specified which SAS procedure was used and only one identified the model fitting algorithm.
@@ -125,7 +119,7 @@ Software cited (specific procedures or functions)
 
 Parameters for the simulations were chosen after observing the common values in Table~\ref{tab:lit_review_numbers}. The number of clusters was typically below 100, as was the number of observations per cluster, though the latter showed significantly more variability.
 
-\begin{table}[]
+\begin{table}
 \centering
  \begin{tabular}{ |l||c|c| } 
  \hline
@@ -144,54 +138,49 @@ Parameters for the simulations were chosen after observing the common values in 
 
 
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=\textwidth]{_bias_pql_sbs1.png}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_sbs1.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \}-1$) in PQL estimation, $\sigma^2=1$. Simulation runs with less than 80\% convergence omitted. Note larger scale in the first row.}
     \label{fig:_bias_pql_6}
-\end{center}
 \end{figure}
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=\textwidth]{_bias_pql_sbspt1.png}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_sbspt1.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, $\sigma^2=0.1$. Simulation runs with less than 80\% convergence omitted.}
     \label{fig:_bias_pql_sbs_pt1}
-\end{center}
 \end{figure}
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=\textwidth]{_bias_pql_sbs_p25_n50.png}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_sbs_p25_n50.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \}-1$) in PQL estimation for different $\sigma^2$, 25 units/cluster, 50 clusters.}
     \label{fig:_bias_pql_sbs_single_comparison}
-\end{center}
 \end{figure}
 
 The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_sbs_single_comparison}. The results show bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. When the odds ratio is less than one, conversely, there a positive bias towards 1. Further, while the data are noisy, the bias is more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is lowest. The bias occurs, to a differing extent, across all values of prevalence, treatment effect, cluster size, and number of clusters. Figure \ref{fig:_bias_pql_sbs_single_comparison} demonstrates that the effect of high between-cluster variability is more pronounced bias.
 
 The fitted models using GHQ (a representative example is given in Figure \ref{fig:_bias_pql_ghq4}) and Laplace approximation (Figure \ref{fig:_bias_pql_lap}) did not show a clear bias; in each, PQL is shown for reference. In a small number of simulation runs, particularly with a small number of clusters and rare outcomes, the GHQ and Laplace algorithms became unstable, leading to estimates that tended toward infinity, making the mean bias comparison unhelpful - this can be seen in the outlier in Figure \ref{fig:_bias_pql_lap} when the prevalence is .01 and the treatment effect odds ratio is 2. On the other hand, when the number of clusters is small, the PQL algorithm was less likely to converge, implying that limited data is a challenge for all of the algorithms.
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=8cm]{_bias_pql_ghq4.png}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_ghq4.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in GHQ (4 quadrature points) and PQL, $\sigma^2=1$, 100 units/cluster, 100 clusters.}
   \label{fig:_bias_pql_ghq4}
-\end{center}
 \end{figure}
 
-\begin{figure}[]
-\begin{center}
-\includegraphics[width=8cm]{_bias_pql_lap.png}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_lap.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in Laplace and PQL, $\sigma^2=1$, 25 units/cluster, 50 clusters. Note that the lack on convergence in some of the Laplace models leads to the outlier at odds ratio 2.}
   \label{fig:_bias_pql_lap}
-\end{center}
 \end{figure}
 
 
 Our simulations confirmed that the main advantage of using PQL over GHQ is speed.  In addition, SAS's implementation of PQL outperforms the other methods. The mean CPU time for SAS to fit a single large data set (500 clusters, 500 observations per cluster) on a modern laptop is 3.7 seconds for PQL, 11 seconds for Laplace approximation, 18.4 seconds for GHQ with $N_q=4$, and 27.1 seconds for GHQ with $N_q=10$. Results for GHQ and the Laplace approximation are comparable for R's lme4 package, though the glmmPQL method from the MASS package, with a runtime of at 23.3 seconds, is significantly less efficient than in the SAS implementation.
 
-%\begin{table}[h]
+%\begin{table}
 %\centering
 % \begin{tabular}{| l | c c|} 
 % \hline
@@ -210,11 +199,10 @@ Our simulations confirmed that the main advantage of using PQL over GHQ is speed
 For primarily historical reasons, analysts may be interested in the intraclass correlation coefficient (ICC), though it is not an actual parameter of the model. In normally distributed data, the ICC measures the proportion of total variance that is explained by the variance between groups. However, in the case of a non-normally distributed outcome variable, there has been considerable discussion about how to appropriately characterize and calculate the ICC\cite{wu_comparison_2012}\cite{nakagawa_shinichi_coefficient_2017}. We generated two ICC estimates using the PQL-fitted models from our simulation.  First, a version that assumed a random intercept logistic model, implying an ICC of $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$, based on the estimated between-cluster variance. Second, by fitting a linear mixed model that assumed the outcome variable was normally distributed, leading to the typical ANOVA-based calculation $\frac{\sigma^2}{\sigma^2+\sigma^2_{\epsilon}}$, where $\sigma^2_{\epsilon}$ represents the variance of the residuals. The results are shown in Figure \ref{fig:_icc} for the two values of $\sigma^2$ examined in out simulations. In both cases, the estimated ICC varies significantly by prevalence, treatment effect, and model class. Results when fitting the models with GHQ showed a similar pattern with the assumption of a normal distribution for the outcome, but more consistency when using the $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$ formulation. 
 
 \begin{figure}[]
-\begin{center}
-\includegraphics[width=12cm]{_icc_p100_n50.png}
+\centering
+\includegraphics[width=\linewidth]{_icc_p100_n50.png}
   \caption{ICC estimates from models fit via PQL, $p=100$, $n=50$.}
     \label{fig:_icc}
-\end{center}
 \end{figure}
 
 
@@ -234,14 +222,45 @@ Finally, ICC estimates generated by these algorithms may vary substantially by t
 
 
 
+\section{TEMPLATE STUFF}
 
 
+The standard coding for a table is shown in Figure~\ref{F2}.
+
+\begin{figure}
+\setlength{\fboxsep}{0pt}%
+\setlength{\fboxrule}{0pt}%
+\begin{center}
+\begin{boxedverbatim}
+\begin{table}
+\small\sf\centering
+\caption{<Table caption.>}
+\begin{tabular}{<table alignment>}
+\toprule
+<column headings>\\
+\midrule
+<table entries
+(separated by & as usual)>\\
+<table entries>\\
+.
+.
+.\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{boxedverbatim}
+\end{center}
+\caption{Example table layout.\label{F2}}
+\end{figure}
 
 
+\begin{funding}
+Grant Support: NIGMS: R01 GM121370
+\end{funding}
 
+\begin{sm}
 
-\appendix
-\section{GLMM Fitting}
+\subsection{GLMM Fitting}
 Mathematically, a GLMM can be modeled as
     \begin{equation}
         g(\mu_{it})=\mathbf{x}^T_{it} \boldsymbol{\beta} + \mathbf{z}^T_{it}\mathbf{u}_i
@@ -270,10 +289,22 @@ where $c_k$ are weights, sometimes from a table, and $s_k$ are the each of the q
 
 
 The Laplace method approximates the likelihood using a second-order Taylor expansion \cite{pinheiro_approximations_1995} and is is equivalent to GHQ with a single quadrature point\cite{liu_note_1994}. Simulation studies have found Laplace approximations to exhibit mild bias in coefficient estimates, and significant bias in estimation of the variance components\cite{pinheiro_efficient_2006}.
+\end{sm}
 
-\end{flushleft}
 
-\clearpage
-\printbibliography
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{SageV}
+\bibliography{PQL.bib}
+
 
 \end{document}
