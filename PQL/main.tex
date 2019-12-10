@@ -68,9 +68,7 @@ Given that many data analysts may be unfamiliar with the fitting options, a func
 \section{Methods}
 
 
-We started by conducting a literature review among recent CRTs with dichotomous outcomes to determine a) common values for cluster size and number of clusters and b) what software, functions, and fitting algorithms were used to analyze the data, if reported. The review, searching for the phrase "cluster randomized trial" in the title or abstract of the article, spanned two databases over two timeframes. First, we searched the The New England Journal of Medicine, The British Medical Journal, The Journal of the American Medical Association, and The Lancet from January 1, 2014 through August 31, 2018, using the Web of Science database. Second, we did a broader search of all articles in the PubMed database published between March 1st, 2018 and August 31, 2018. Full details of this review can be found in Doone et al. (2019).
-
-Having identified candidate articles, we filtered to completed CRTs with dichotomous outcomes. The mean number of observations per cluster and number of clusters for each study was recorded, as well as the software and functions/algorithms the authors used, if available.
+We started by conducting a literature review among recent CRTs with dichotomous outcomes to determine a) common values for cluster size and number of clusters and b) what software, functions, and fitting algorithms were used to analyze the data, if reported. In this review, we searched for the phrase "cluster randomized trial" in the title or abstract of all articles in the PubMed database published between March 1st, 2018 and August 31, 2018. Having identified candidate articles, we filtered to completed CRTs with dichotomous outcomes. The mean number of observations per cluster and number of clusters for each study was recorded, as well as the software and functions/algorithms the authors used, if available.
 
 The second phase of our work was a simulation study to investigate the bias of different GLMM fitting algorithms for dichotomous outcomes. To maximize the utility of the results, our simulations used a range of plausible cluster counts and cluster sizes drawn from the literature review.
 
@@ -82,7 +80,7 @@ The data-generating mechanism for the simulations was a simple logistic-link GLM
 
 with $x_{ij}$ an indicator for treatment (1) or control (0) arm of the study for unit $i$ in cluster $j$; $\text{Pr}(y_{ij}|b_j)$ the probability of the outcome $y$ for unit $i$ in cluster $j$; $\beta_0$ the log odds of the outcome for the mean cluster in the control arm; random intercept $b_j$ with assumed distribution $b_j \sim N(0, \sigma^2)$; and $\beta_1$, our parameter of interest, the log odds ratio due to the treatment. 
 
-From that model, populations were generated with the following parameter values, informed by the literature review (see Table \ref{tab:lit_review_numbers}):
+From that model, populations were generated with the following parameter values, informed by the literature review:
 \begin{itemize}
     \item Number of clusters $\in \{20, 50, 100\}$
     \item Number of observations per cluster $\in \{25, 100\}$
@@ -105,54 +103,9 @@ To test the speed of the algorithms, we calculated the mean CPU time for SAS and
 
 \section{Results}
 
-Results of the literature review are shown in Table~\ref{tab:lit_review}. Of the 85 articles, only 9 identified the specific procedure (meglm or GLIMMIX, for example) used. Among the 24 articles that identified SAS as one of the software packages, only 3 specified which SAS procedure was used and only one identified the model fitting algorithm.
+The literature review identified 43 candidate articles. Among them, only 4 identified the specific procedure used (meglm in Stata or PROC GLIMMIX in SAS, for example). Among the 11 articles that identified SAS as one of the software packages, only 2 specified which SAS procedure was used and none identified the model fitting algorithm. Ten articles did not report the software used at all.
 
-
-
-
-
-
-
-\begin{table}[]
-\small\sf\centering
-\resizebox{\linewidth}{!}{ %%%%%%%
- \begin{tabular}{ l c c c c c } 
-\toprule
-      & R & SAS & SPSS & Stata & Unreported\\ 
-\hline
-    Top4 2014 - 2018 ($n=42$) & 11 (2) & 13 (1) & 2 (0) & 18 (2) & 4 (4)  \\ 
-    PubMed Q2 2018 ($n=43$) & 3 (0) & 11 (2) & 8 (0) & 14 (2) & 10 (0) \\ 
-\midrule
-    Total ($n=85$) & 14 (2) & 24 (3) & 10 (0) & 32 (4) & 14 (0) \\ 
-\bottomrule
- \end{tabular}
- }%%%%%%%%%%%%%
-    \caption{Cited software used for data analysis. Numbers in parentheses indicate number of references to specific functions or fitting options within the software package. Some articles used multiple software packages, so the totals differ from $n$. While most articles report the software used, very few of them specifically reference the function or fitting algorithm.}
-    \label{tab:lit_review}
-\end{table}
-
-Parameters for the simulations were chosen after observing the common values in Table~\ref{tab:lit_review_numbers}. The number of clusters was typically below 100, as was the number of observations per cluster, though the latter showed significantly more variability.
-
-\begin{table}
-\small\sf\centering
-\resizebox{\linewidth}{!}{ %%%%%%%
- \begin{tabular}{ l c c } 
- \toprule
-      & Median number of & Median observations per \\ 
-      & clusters (middle 50\%) & cluster (middle 50\%) \\ 
-     \hline
-    Top4 2014 - 2018 ($n=42$) & 46 (24 - 116) & 110 (40 - 487) \\ 
-    PubMed Q2 2018 ($n=43$) & 32 (15 - 70) & 44 (14 - 205) \\ 
-    \midrule
-    Total ($n=85$) & 40 (16 - 90) & 66 (19 - 300) \\
-    \bottomrule
- \end{tabular}
- }%%%%%%%%%%%%%
-    \caption{Common values for units/cluster and number of clusters from the literature review.}
-    \label{tab:lit_review_numbers}
-\end{table}
-
-
+Parameters for the simulations were chosen after observing the common values in the literature review. The median number of clusters was 32, with the middle 50\% between 17 and 70. The number of observations per cluster showed more variability, with a median of 44 and the middle 50\% between 14 and 205.
 
 \begin{figure}
 \centering
@@ -169,9 +122,9 @@ Parameters for the simulations were chosen after observing the common values in 
 \end{figure}
 
 
-The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_sbs_pt1}. When $sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. Further, the bias is slightly more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is low. The bias occurs, to a differing extent, across all values of prevalence, treatment effect, cluster size, and number of clusters.
+The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_sbs_pt1}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. Further, the bias is slightly more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is low. The bias occurs, to a differing extent, across all values of prevalence, treatment effect, cluster size, and number of clusters.
 
-As $sigma^2$ becomes smaller, the negative bias is diminished. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_sbs_pt1}. In these cases, the pattern reverses, and there is a bias away from the null.
+As $\sigma^2$ becomes smaller, the negative bias is diminished. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_sbs_pt1}. In these cases, the pattern reverses, and there is a bias away from the null.
 
 The fitted models using GHQ (a representative example is given in Figure \ref{fig:_bias_pql_ghq4}) did not show a clear bias; PQL is shown for reference.
 
@@ -214,7 +167,7 @@ For CRTs with sample sizes that occurr commonly in the literature, using PQL to 
 
 We note that data analysts experimenting with different nested models can use GHQ with a single quadrature point during the model-selection stage to save time, then larger number of points once the final model has been chosen. GHQ is also preferable to PQL in the model-selection process because PQL only provides quasi-likelihood, and hence it is not suited to nested model comparison with the likelihood ratio test. However, model selection is not usually a task in CRT analysis.
 
-The bias towards the null generated by PQL is more pronounced when clusters are small, between-cluster variance is high, and baseline incidence of an outcome is low. Given our simulations, we suspect that existing studies may have suffered this bias, though it is hard to be sure given that fitting methods are rarely reported in the literature. Trial reports should include methods/functions and the algorithm options in more detail.  We should take care when selecting procedures for fitting GLMMs, particularly in SAS, where PQL is the default option.
+The bias towards the null generated by PQL is more pronounced when clusters are small, between-cluster variance is high, and baseline incidence of an outcome is low. Given our simulations, we suspect that existing studies may have suffered this bias, though it is hard to be sure given that fitting methods are rarely reported in the literature. Trial reports should include methods/functions and the algorithm options in more detail.  We should take care when selecting procedures for fitting GLMMs, particularly in SAS and SPSS, where PQL is the default option.
 
 Previous work investigating PQL estimation in scenarios with dichotomous outcomes has noted the bias\cite{jang_numerical_2009,zhang_fitting_2011}, but not examined the full interactions between cluster size, number of clusters, baseline prevalence, true odds ratio, and cluster-level variance as have here. We hope this will make it easy for analysts to identify situations where bias could be present.
 
