@@ -86,14 +86,14 @@ From that model, populations were generated with the following parameter values,
     \item Number of observations per cluster $\in \{25, 100\}$
     \item $\beta_0$ values corresponding to a baseline prevalence of .02, .03, and .2
     \item $\beta_1$ values corresponding to a treatment effect odds ratio of 1.1, 1.33, 1.5, and 2
-    \item $\sigma^2$ values of 1 (high between-cluster variability) and .1 (low between-cluster variability).
+    \item $\sigma^2$ values of .1 (low between-cluster variability), and 1 (high between-cluster variability); for the data sets with 25 observations per cluster, we also examined $\sigma^2=.25$ and $.5$.
 \end{itemize}
 
 Using 5000 simulated datasets for each combination of parameters, logistic-link GLMMs were fit via PQL and GHQ using SAS/STAT software version 15.1 (SAS Institute Inc., Cary, NC).
 
 The distribution of $\hat{\beta}_1$ estimates from each method was compared to the true value from the data-generating mechanism and absolute bias was measured as the difference between the two. The standard errors of estimates and the estimated cluster variance ($\hat{\sigma}^2$) were also collected from the fitted models, and model-fitting CPU time was measured. Finally, the simulated populations were re-fit under the assumption that the outcome variable was normally distributed, without the logit link, and the intraclass correlation coefficient (ICC) estimated from those models was collected.
 
-A small number of datasets with small cluster sizes resulted in zero events in one or both arms; in this case the estimates of $\beta_1$ will tend toward infinity, so these datasets were excluded from the analysis.
+A small number of datasets with small cluster sizes resulted in zero events in one arm; in this case the estimates of $\beta_1$ will tend toward infinity, so these datasets were excluded from the analysis.
 
 To test the speed of the algorithms, we calculated the mean CPU time for SAS and R to fit large data sets of 500 clusters and 500 observations per cluster using the different methods.
 
@@ -110,21 +110,28 @@ Parameters for the simulations were chosen after observing the common values in 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{_bias_pql_sbs1.png}
-  \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \}-1$) in PQL estimation, $\sigma^2=1$.}
+  \caption{Notable negative odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \}-1$) in PQL estimation, $\sigma^2=1$.}
     \label{fig:_bias_pql_6}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{_bias_pql_sbspt1.png}
-  \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, $\sigma^2=0.1$.}
+  \caption{Minimal or positive odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, $\sigma^2=0.1$.}
     \label{fig:_bias_pql_sbs_pt1}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_all_sbs.png}
+  \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, 25 observations per cluster.}
+    \label{fig:_bias_pql_all_sbs}
+\end{figure}
 
-The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_sbs_pt1}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. Further, the bias is slightly more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is low. The bias occurs, to a differing extent, across all values of prevalence, treatment effect, cluster size, and number of clusters.
 
-As $\sigma^2$ becomes smaller, the negative bias is diminished. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_sbs_pt1}. In these cases, the pattern reverses, and there is a bias away from the null.
+The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_all_sbs}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. In these cases, the bias is slightly more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is low. This negative bias is most pronounced when the number of clusters in large, holding all other factors constant.
+
+As $\sigma^2$ becomes smaller, the negative bias is diminished, holding other factors constant. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_all_sbs}. In these cases, the pattern reverses, and there is a bias away from the null.
 
 The fitted models using GHQ (a representative example is given in Figure \ref{fig:_bias_pql_ghq4}) did not show a clear bias; PQL is shown for reference.
 
@@ -151,12 +158,12 @@ Our simulations confirmed that the main advantage of using PQL over GHQ is speed
     \label{tab:method_speed}
 \end{table}
 
-For primarily historical reasons, analysts may be interested in the intraclass correlation coefficient (ICC), though it is not an actual parameter of the model. In normally distributed data, the ICC measures the proportion of total variance that is explained by the variance between groups. However, in the case of a non-normally distributed outcome variable, there has been considerable discussion about how to appropriately characterize and calculate the ICC\cite{wu_comparison_2012}\cite{nakagawa_shinichi_coefficient_2017}. We generated two ICC estimates using the PQL-fitted models from our simulation.  First, a version that assumed a random intercept logistic model, implying an ICC of $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$, based on the estimated between-cluster variance\cite{wu_comparison_2012}. Second, by fitting a linear mixed model that assumed the outcome variable was normally distributed, leading to the typical ANOVA-based calculation $\frac{\sigma^2}{\sigma^2+\sigma^2_{\epsilon}}$, where $\sigma^2_{\epsilon}$ represents the variance of the residuals\cite{wu_comparison_2012}. The results are shown in Figure \ref{fig:_icc} for the two values of $\sigma^2$ examined in the simulations. In both cases, the estimated ICC varies significantly by prevalence, treatment effect, and model class. Results when fitting the models with GHQ showed a similar pattern with the assumption of a normal distribution for the outcome, but more consistency when using the $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$ formulation. 
+Though it is not an actual parameter of the model, data analysts may be interested in the intraclass correlation coefficient (ICC). In normally distributed data, the ICC measures the proportion of total variance that is explained by the variance between groups. However, in the case of a non-normally distributed outcome variable, there has been considerable discussion about how to appropriately characterize and calculate the ICC\cite{wu_comparison_2012}\cite{nakagawa_shinichi_coefficient_2017}. We generated two ICC estimates using the PQL-fitted models from our simulation.  First, a version that assumed a random intercept logistic model, implying an ICC of $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$, based on the estimated between-cluster variance\cite{wu_comparison_2012}. Second, a linear mixed model was fit that assumed the outcome variable was normally distributed, leading to the ANOVA-based calculation $\frac{\sigma^2}{\sigma^2+\sigma^2_{\epsilon}}$, where $\sigma^2_{\epsilon}$ represents the variance of the residuals\cite{wu_comparison_2012}. The results are shown in Figure \ref{fig:_icc} for two values of $\sigma^2$ examined in the simulations. In both cases, the estimated ICC varies by prevalence, treatment effect, and model class. \textbf{NEED TO CONFIRM NEXT STATEMENT} Results when fitting the models with GHQ showed a similar pattern using the LMM/ANOVA method, but more consistency when using the $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$ formulation. 
 
 \begin{figure}[]
 \centering
-\includegraphics[width=\linewidth]{_icc_p100_n50.png}
-  \caption{ICC estimates from models fit via PQL, 100 units/cluster, 50 clusters.}
+\includegraphics[width=\linewidth]{_icc_p25_n50.png}
+  \caption{ICC estimates from models fit via PQL, 25 observations per cluster, 50 clusters.}
     \label{fig:_icc}
 \end{figure}
 
@@ -167,13 +174,13 @@ For CRTs with sample sizes that occurr commonly in the literature, using PQL to 
 
 We note that data analysts experimenting with different nested models can use GHQ with a single quadrature point during the model-selection stage to save time, then larger number of points once the final model has been chosen. GHQ is also preferable to PQL in the model-selection process because PQL only provides quasi-likelihood, and hence it is not suited to nested model comparison with the likelihood ratio test. However, model selection is not usually a task in CRT analysis.
 
-The bias towards the null generated by PQL is more pronounced when clusters are small, between-cluster variance is high, and baseline incidence of an outcome is low. Given our simulations, we suspect that existing studies may have suffered this bias, though it is hard to be sure given that fitting methods are rarely reported in the literature. Trial reports should include methods/functions and the algorithm options in more detail.  We should take care when selecting procedures for fitting GLMMs, particularly in SAS and SPSS, where PQL is the default option.
+The bias towards the null generated by PQL is more pronounced when clusters are small, between-cluster variance is high, baseline incidence of an outcome is low, and the number of clusters is large. Bias away from the null may arise when the number of clusters, the cluster size, and the between-cluster variance is small. Given our simulations, we suspect that existing studies may have suffered this bias, though it is hard to be sure given that fitting methods are rarely reported in the literature. Trial reports should include methods/functions and the algorithm options in more detail.  We should take care when selecting procedures for fitting GLMMs, particularly in SAS and SPSS, where PQL is the default option.
 
 Previous work investigating PQL estimation in scenarios with dichotomous outcomes has noted the bias\cite{jang_numerical_2009,zhang_fitting_2011}, but not examined the full interactions between cluster size, number of clusters, baseline prevalence, true odds ratio, and cluster-level variance as have here. We hope this will make it easy for analysts to identify situations where bias could be present.
 
 Given the bias it creates, why use PQL? As noted above, PQL fits models much more quickly than GHQ. However, our simulations showed that even for large data sets, none of the runtimes are prohibitively long, given a typical CRT model with one random intercept term. In a situation where many models need to be tested, a single quadrature point could be used to compare models, and then for the final analysis, a more accurate fit could be made with a large number of quadrature points.
 
-Finally, ICC estimates generated by these algorithms may vary substantially by the method used to calculate them and by the baseline prevalence of the outcome, and should be approached with a degree of skepticism.
+Finally, ICC estimates generated by these algorithms may vary substantially by the method used to calculate them and by the baseline prevalence of the outcome, and should be approached with a degree of caution.
 
 
 
