@@ -109,29 +109,23 @@ Parameters for the simulations were chosen after observing the common values in 
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{_bias_pql_sbs1.png}
-  \caption{Notable negative odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \}-1$) in PQL estimation, $\sigma^2=1$.}
-    \label{fig:_bias_pql_6}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{_bias_pql_sbspt1.png}
-  \caption{Minimal or positive odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, $\sigma^2=0.1$.}
-    \label{fig:_bias_pql_sbs_pt1}
-\end{figure}
-
-\begin{figure}
-\centering
 \includegraphics[width=\linewidth]{_bias_pql_all_sbs.png}
   \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, 25 observations per cluster.}
-    \label{fig:_bias_pql_all_sbs}
+    \label{fig:_bias_pql_all_sbs_p25}
 \end{figure}
 
 
-The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_6}-\ref{fig:_bias_pql_all_sbs}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. In these cases, the bias is slightly more pronounced for smaller cluster sizes and when the outcome's baseline prevalence is low. This negative bias is most pronounced when the number of clusters in large, holding all other factors constant.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{_bias_pql_all_sbsP100_temp.png}
+  \caption{Odds ratio bias ($\text{exp} \{ \bar{\hat{\beta_1}} - \beta_1 \} - 1$) in PQL estimation, 100 observations per cluster.}
+    \label{fig:_bias_pql_all_sbs_p100}
+\end{figure}
 
-As $\sigma^2$ becomes smaller, the negative bias is diminished, holding other factors constant. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_all_sbs}. In these cases, the pattern reverses, and there is a bias away from the null.
+
+The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_all_sbs_p25}-\ref{fig:_bias_pql_all_sbs_p100}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. In these cases with a large $\sigma^2$, the bias is slightly more pronounced for smaller cluster sizes when the outcome's baseline prevalence is low. A large number of clusters leads to the most extreme negative bias, holding all other factors constant.
+
+As $\sigma^2$ becomes smaller, the negative bias is diminished, holding other factors constant. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_all_sbs_p25}. In these cases, the pattern reverses, and there is a bias away from the null.
 
 The fitted models using GHQ (a representative example is given in Figure \ref{fig:_bias_pql_ghq4}) did not show a clear bias; PQL is shown for reference.
 
@@ -158,12 +152,12 @@ Our simulations confirmed that the main advantage of using PQL over GHQ is speed
     \label{tab:method_speed}
 \end{table}
 
-Though it is not an actual parameter of the model, data analysts may be interested in the intraclass correlation coefficient (ICC). In normally distributed data, the ICC measures the proportion of total variance that is explained by the variance between groups. However, in the case of a non-normally distributed outcome variable, there has been considerable discussion about how to appropriately characterize and calculate the ICC\cite{wu_comparison_2012}\cite{nakagawa_shinichi_coefficient_2017}. We generated two ICC estimates using the PQL-fitted models from our simulation.  First, a version that assumed a random intercept logistic model, implying an ICC of $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$, based on the estimated between-cluster variance\cite{wu_comparison_2012}. Second, a linear mixed model was fit that assumed the outcome variable was normally distributed, leading to the ANOVA-based calculation $\frac{\sigma^2}{\sigma^2+\sigma^2_{\epsilon}}$, where $\sigma^2_{\epsilon}$ represents the variance of the residuals\cite{wu_comparison_2012}. The results are shown in Figure \ref{fig:_icc} for two values of $\sigma^2$ examined in the simulations. In both cases, the estimated ICC varies by prevalence, treatment effect, and ICC calculation method. The ICC estimates from PQL and GHQ differ somewhat, but the patterns mentioned above are the same.
+Though it is not an actual parameter of the model, data analysts may be interested in the intraclass correlation coefficient (ICC). In normally distributed data, the ICC measures the proportion of total variance that is explained by the variance between groups. However, in the case of a non-normally distributed outcome variable, there has been considerable discussion about how to appropriately characterize and calculate the ICC\cite{wu_comparison_2012}\cite{nakagawa_shinichi_coefficient_2017}. We generated two ICC estimates using the PQL-fitted models from our simulation.  First, a version that assumed a random intercept logistic model, implying an ICC of $\frac{\sigma^2}{\sigma^2+\frac{\pi^2}{3}}$, based on the estimated between-cluster variance\cite{wu_comparison_2012}. Second, a linear mixed model was fit using SAS PROC MIXED that assumed the outcome variable was normally distributed, leading to the ANOVA-based calculation $\frac{\sigma^2}{\sigma^2+\sigma^2_{\epsilon}}$, where $\sigma^2_{\epsilon}$ represents the variance of the residuals\cite{wu_comparison_2012}. The results are shown in Figure \ref{fig:_icc} for two values of $\sigma^2$ examined in the simulations. In both cases, the estimated ICC varies by prevalence, treatment effect, and ICC calculation method. \textbf{ADD MORE ONCE PROC MIXE RESULTS ARE DONE}
 
 \begin{figure}[]
 \centering
-\includegraphics[width=\linewidth]{_icc_p25_n50_both.png}
-  \caption{ICC estimates, 25 observations per cluster, 50 clusters.}
+\includegraphics[width=\linewidth]{_icc_p25_n50.png}
+  \caption{ICC estimates, 25 observations per cluster, 50 clusters. THIS PLOT WILL BE UPDATED SOON WITH PROC MIXED IN THE LEFT COLUMN.}
     \label{fig:_icc}
 \end{figure}
 
