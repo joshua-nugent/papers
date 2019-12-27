@@ -52,17 +52,17 @@ Generalized linear mixed models (GLMMs) are a commonly used method for analyzing
 
 The optimization problem of fitting a GLMM to data is a non-trivial task. Two common numerical methods for estimating the coefficients are \textit{penalized quasi-likelihood} (PQL) \cite{wolfinger_generalized_1993} and \textit{Gauss-Hermite quadrature} (GHQ). A third method, the Laplace approximation, is equivalent in this case to a special case of GHQ\cite{liu_note_1994}, so we will simply consider it a subset of GHQ in this paper. Other methods, such as Newton quadrature, Monte Carlo integration, and Markov Chain Monte Carlo can be used as well \cite{zhang_fitting_2011}, but since popular statistical software packages use PQL and GHQ in their standard GLMM fitting algorithms, we will focus on those in this paper. The full mathematical details of these three main methods have been elaborated in other sources \cite{wolfinger_generalized_1993}\cite{pinheiro_efficient_2006}, and an overview of the technical aspects of GLMMs and the algorithms is given in the Supplemental Material.
 
-Penalized quasi-likelihood was popularized by Breslow and Clayton\cite{breslow_approximate_1993}, though similar methods were developed by others\cite{zeger_models_1988}\cite{engel_simple_1994} around the same time. Though it is computationally efficient, especially for models with many random effects, PQL can induce bias in certain cases, in particular when the response variable distribution is far from normal\cite{agresti_categorical_2013}\cite{rodriguez_assessment_1995}\cite{breslow_bias_1995}\cite{lin_bias_1996}. Additionally, PQL produces Wald-type test statistics, not true likelihoods, making it unsuitable for use in the likelihood ratio test. Thus is cannot be used in nested model selection\cite{zhang_fitting_2011}\cite{pinheiro_efficient_2006}\cite{ng_estimation_2006}.
+Penalized quasi-likelihood was popularized by Breslow and Clayton\cite{breslow_approximate_1993}, though similar methods were developed by others\cite{zeger_models_1988}\cite{engel_simple_1994} around the same time. Though it is computationally efficient, especially for models with many random effects, PQL can induce bias in certain cases, in particular when the response variable distribution is far from normal\cite{agresti_categorical_2013}\cite{rodriguez_assessment_1995}\cite{breslow_bias_1995}\cite{lin_bias_1996}. Additionally, PQL produces Wald-type test statistics, not true likelihoods, making it unsuitable for use in the likelihood ratio test. Thus is cannot be used for nested model selection\cite{zhang_fitting_2011}\cite{pinheiro_efficient_2006}\cite{ng_estimation_2006}.
 
 Gauss-Hermite quadrature is a more computationally demanding method, but results in no discernible bias to coefficient estimates, and can produce true likelihood statistics for model comparison. The accuracy with which it computes the model fit is a function of how many \textit{quadrature points} are used. All else being equal, the computation time is roughly proportional to $(N_q)^u$, where $N_q$ is the number of quadrature points and $u$ is the number of random effects at all levels of the model \cite{statacorp_stata_2017}\cite{pinheiro_efficient_2006}. For a model with 4 random effects and 5 quadrature points, $(N_q)^u = 5^4 = 625$. Doubling the number of points to 10 changes that result to $10,000$, a factor of 16. For data sets with large numbers of random effects, this can limit the utility of GHQ.
 
 Luckily for the data analyst, many CRTs have only one random effect, so computation time will increase linearly with the number of quadrature points, rather than as a power function. Furthermore, if many models need to be compared, using one quadrature point can give preliminary results rapidly. Then, after that model selection process, the number of quadrature points can be increased to make the final estimates as accurate as computationally possible. Empirical results suggest that 7 or fewer quadrature points often give suitably accurate estimates\cite{pinheiro_approximations_1995}.
 
-For reasons of computational efficiency, PQL was a useful method when GLMMs were developed, but with the advent of more modern computers, less biased methods such as GHQ have become an attractive alternative. For CRTs with binary outcomes, where the bias in PQL is the most extreme\cite{ng_estimation_2006}\cite{lin_estimation_2007}, and where the presence of only one random effect is typical, using GHQ is the best option: fast enough, and, more importantly, unbiased.
+For reasons of computational efficiency, PQL was a useful method when GLMMs were developed, but subsequent leaps in compuing power have made less biased methods such as GHQ an attractive alternative. For CRTs with binary outcomes, where the bias in PQL is the most extreme\cite{ng_estimation_2006}\cite{lin_estimation_2007}, and where the presence of only one random effect is typical, using GHQ is the best option: fast enough, and, more importantly, unbiased.
 
 Most modern statistical software packages have functions to fit GLMMs with dichotomous outcomes, such as PROC GLIMMIX in SAS, meglm in Stata, and glmer (from the lme4 package, as well as others) in R. However, the default fitting algorithm in each of those functions varies. In SAS PROC GLIMMIX, the default is PQL, with GHQ available if specified. In R, the glmer function default is GHQ with a single quadrature point, with more points possible if specified; PQL is only available in R via the glmmPQL function in the MASS package. In Stata, meglm defaults to GHQ with 7 quadrature points; PQL is not an option. In SPSS, PQL is the default, with no option to use GHQ.
 
-Given that many data analysts may be unfamiliar with the fitting options, a function's default settings are influential in the final results. Below, we investigate how often functions and algorithms are reported in the literature and use simulations to describe the bias induced by PQL in a literature-informed, plausible CRT scenario.
+Given that many data analysts may be unfamiliar with the fitting options, a function's default settings are influential on the final results. Below, we investigate how often functions and algorithms are reported in the literature and use simulations to describe the bias induced by PQL in a literature-informed, plausible CRT scenario.
 
 
 \section{Methods}
@@ -75,10 +75,10 @@ The second phase of our work was a simulation study to investigate the bias of d
 The data-generating mechanism for the simulations was a simple logistic-link GLMM with a fixed intercept, treatment effect, and one random intercept:
 
 \begin{equation}
-    \text{logit}[\text{Pr}(y_{ij}|b_j)=1]=\beta_0 + \beta_1 x_{ij} + b_j
+    \text{logit}[\text{Pr}(y_{ij}=1|b_j)]=\beta_0 + \beta_1 x_{ij} + b_j
 \end{equation}
 
-with $x_{ij}$ an indicator for treatment (1) or control (0) arm of the study for unit $i$ in cluster $j$; $\text{Pr}(y_{ij}|b_j)$ the probability of the outcome $y$ for unit $i$ in cluster $j$; $\beta_0$ the log odds of the outcome for the mean cluster in the control arm; random intercept $b_j$ with assumed distribution $b_j \sim N(0, \sigma^2)$; and $\beta_1$, our parameter of interest, the log odds ratio due to the treatment. 
+with $x_{ij}$ an indicator for treatment (1) or control (0) arm of the study for unit $i$ in cluster $j$; $\text{Pr}(y_{ij}=1|b_j)$ the probability of the outcome for unit $i$ in cluster $j$; $\beta_0$ the log odds of the outcome for the mean cluster in the control arm; random intercept $b_j$ with assumed distribution $b_j \sim N(0, \sigma^2)$; and $\beta_1$, our parameter of interest, the log odds ratio due to the treatment. 
 
 From that model, populations were generated with the following parameter values, informed by the literature review:
 \begin{itemize}
@@ -86,12 +86,12 @@ From that model, populations were generated with the following parameter values,
     \item Number of observations per cluster $\in \{25, 100\}$
     \item $\beta_0$ values corresponding to a baseline prevalence of .02, .03, and .2
     \item $\beta_1$ values corresponding to a treatment effect odds ratio of 1.1, 1.33, 1.5, and 2
-    \item $\sigma^2$ values of .1 (low between-cluster variability), and 1 (high between-cluster variability); for the data sets with 25 observations per cluster, we also examined $\sigma^2=.25$ and $.5$.
+    \item $\sigma^2$ values of .1 (low between-cluster variability), .25, .5, and 1 (high between-cluster variability).
 \end{itemize}
 
 Using 5000 simulated datasets for each combination of parameters, logistic-link GLMMs were fit via PQL and GHQ using SAS/STAT software version 15.1 (SAS Institute Inc., Cary, NC).
 
-The distribution of $\hat{\beta}_1$ estimates from each method was compared to the true value from the data-generating mechanism and absolute bias was measured as the difference between the two. The standard errors of estimates and the estimated cluster variance ($\hat{\sigma}^2$) were also collected from the fitted models, and model-fitting CPU time was measured. Finally, the simulated populations were re-fit under the assumption that the outcome variable was normally distributed, without the logit link, and the intraclass correlation coefficient (ICC) estimated from those models was collected.
+The distribution of $\hat{\beta}_1$ estimates from each method was compared to the true value from the data-generating mechanism and absolute bias was measured as the difference between the two. The standard errors of estimates and the estimated cluster variance ($\hat{\sigma}^2$) were also collected from the fitted models. Finally, the simulated populations were re-fit under the assumption that the outcome variable was normally distributed, without the logit link, and the intraclass correlation coefficient (ICC) estimated from those models was collected.
 
 A small number of datasets with small cluster sizes resulted in zero events in one arm; in this case the estimates of $\beta_1$ will tend toward infinity, so these datasets were excluded from the analysis.
 
@@ -125,7 +125,7 @@ Parameters for the simulations were chosen after observing the common values in 
 
 The results of the bias investigation in PQL estimation are shown in Figures \ref{fig:_bias_pql_all_sbs_p25}-\ref{fig:_bias_pql_all_sbs_p100}. When $\sigma^2$ is large, there is a bias towards the null: As the true odds ratio rises above 1, there is a negative bias, meaning the mean estimated odds ratio is closer to 1 than it should be. In these cases with a large $\sigma^2$, the bias is slightly more pronounced for smaller cluster sizes when the outcome's baseline prevalence is low. A large number of clusters leads to the most extreme negative bias, holding all other factors constant.
 
-As $\sigma^2$ becomes smaller, the negative bias is diminished, holding other factors constant. In fact, it can even become noticaebly positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_all_sbs_p25}. In these cases, the pattern reverses, and there is a bias away from the null.
+As $\sigma^2$ becomes smaller, the negative bias is diminished, holding other factors constant. In fact, it can even become noticeably positive when the clusters are small, the outcome prevalence low, there are a relatively small number of clusters, and the between-cluster variability is small, as shown in Figure \ref{fig:_bias_pql_all_sbs_p25}. In these cases, the pattern reverses, and there is a bias away from the null.
 
 The fitted models using GHQ (a representative example is given in Figure \ref{fig:_bias_pql_ghq4}) did not show a clear bias; PQL is shown for reference.
 
@@ -141,12 +141,12 @@ Our simulations confirmed that the main advantage of using PQL over GHQ is speed
 
 \begin{table}[h]
 \centering
- \begin{tabular}{l | c c} 
- Method & R & SAS \\ 
+ \begin{tabular}{l | c c c} 
+ Method & R: MASS & R: lme4 & SAS \\ 
  \hline
- PQL & 23.3 & 3.7 \\ 
- GHQ (4 quadrature points) & 16.1 &  18.4 \\
- GHQ (10 quadrature points) & 22.0 &  27.1 \\ 
+ PQL & 23.3 & - & 3.7 \\ 
+ GHQ (4 quadrature points) & - & 16.1 &  18.4 \\
+ GHQ (10 quadrature points) & - & 22.0 &  27.1 \\ 
  \end{tabular}
     \caption{Mean time in seconds to fit a data set with 500 observations per cluster and 500 clusters.}
     \label{tab:method_speed}
