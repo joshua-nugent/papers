@@ -7,19 +7,25 @@
   \urlstyle{rm}\Url}\fi
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{zhang_fitting_2011}
-Zhang H, Lu N, Feng C et~al.
-\newblock On {Fitting} {Generalized} {Linear} {Mixed}-effects {Models} for
-  {Binary} {Responses} using {Different} {Statistical} {Packages}.
-\newblock \emph{Statistics in medicine} 2011; 30(20): 2562--2572.
-\newblock \doi{10.1002/sim.4265}.
-
 \bibitem{wolfinger_generalized_1993}
 Wolfinger R and O'connell M.
 \newblock Generalized linear mixed models a pseudo-likelihood approach.
 \newblock \emph{Journal of Statistical Computation and Simulation} 1993;
   48(3-4): 233--243.
 \newblock \doi{10.1080/00949659308811554}.
+
+\bibitem{liu_note_1994}
+Liu Q and Pierce DA.
+\newblock A {Note} on {Gauss}-{Hermite} {Quadrature}.
+\newblock \emph{Biometrika} 1994; 81(3): 624--629.
+\newblock \doi{10.2307/2337136}.
+
+\bibitem{zhang_fitting_2011}
+Zhang H, Lu N, Feng C et~al.
+\newblock On {Fitting} {Generalized} {Linear} {Mixed}-effects {Models} for
+  {Binary} {Responses} using {Different} {Statistical} {Packages}.
+\newblock \emph{Statistics in medicine} 2011; 30(20): 2562--2572.
+\newblock \doi{10.1002/sim.4265}.
 
 \bibitem{pinheiro_efficient_2006}
 Pinheiro JC and Chao EC.
@@ -96,12 +102,6 @@ Pinheiro JC and Bates DM.
 \newblock \emph{Journal of Computational and Graphical Statistics} 1995; 4(1):
   12--35.
 \newblock \doi{10.2307/1390625}.
-
-\bibitem{liu_note_1994}
-Liu Q and Pierce DA.
-\newblock A {Note} on {Gauss}-{Hermite} {Quadrature}.
-\newblock \emph{Biometrika} 1994; 81(3): 624--629.
-\newblock \doi{10.2307/2337136}.
 
 \bibitem{lin_estimation_2007}
 Lin X.
