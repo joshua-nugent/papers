@@ -25,7 +25,7 @@
 
 %%% Load packages
 \usepackage{amsthm,amsmath}
-\RequirePackage{natbib}
+%\RequirePackage{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
 %\RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
@@ -224,7 +224,7 @@ where $Y_{ij}$ is a continuous response variable for individual $j$ in cluster $
 \subsection*{Impact of clustering on inference}
 
 In a CRT, there are typically two assumed sources of variability in outcomes: between-cluster, denoted here as $\sigma^2_b$, and within-cluster, denoted as $\sigma^2$. The marginal variance of $y_{ij} = \sigma_b^2 + \sigma^2$. One way of quantifying the amount of clustering is via the \textit{intracluster correlation coefficient} (ICC) $\rho$, defined as $\frac{\sigma^2_b}{\sigma^2_b + \sigma^2}$, or the proportion of total variance due to the cluster-level variability. If one were to incorrectly analyze the data using a linear model rather than a linear mixed model, standard errors for the coefficient estimates would have to be adjusted, since observations are correlated 
-in violation of the model assumptions. An approximation of this adjustment, the \textit{design effect} \cite{kish_survey_1965}, is the standard error multiplier $[(n-1)\rho + 1]$, where $n$ is the number of subjects per cluster. For example, with 10 observations per cluster and an ICC of .01, the design effect is 1.09, meaning that the linear model standard errors would have to be increased by about 10\% to account for clustering. However, with 100 observations per cluster and an ICC of .01, the mulitplier increases to 2, and for 1000 observations per cluster it increases to 11, meaning that even a very small ICC can drastically change inferences as cluster size grows. This approximation demonstrates the necessity of accounting for between-cluster variation in the data analysis, even if the ICC is expected to be small.
+in violation of the model assumptions. An approximation of this adjustment, the \textit{design effect} \cite{kish_survey_1965}, is a multiplier for the sampling variance of the treatment effect estimator. It is defined as $[(n-1)\rho + 1]$, where $n$ is the number of subjects per cluster. For example, with 10 observations per cluster and an ICC of .01, the design effect is 1.09, meaning that the treatment effect coefficient standard errors would have to be increased by about $\sqrt{1.09} = 4\%$ to account for clustering. However, with 100 observations per cluster and an ICC of .01, the standard error mulitplier increases to $\sqrt{2} = 41\%$, and for 1000 observations per cluster it increases to $\sqrt{11} = 231\%$, meaning that even a very small ICC can drastically change inferences when the cluster size is large. This approximation demonstrates the necessity of accounting for between-cluster variation in the data analysis, even if the ICC is expected to be small.
 
 \subsection*{Inference with LMM fixed effect estimators}
 
@@ -315,11 +315,11 @@ The results here suggest that data analysts should choose an approach that best 
 
 One perhaps unsatisfying conclusion is that analysts may want to generate their own small simulation studies to evaluate different approaches before fitting their final data models, since they will likely know the model structure, number of clusters, and cluster size by that point.
 
-Finally, we caution analysts to be careful when using defaults settings in software. For Wald tests, SAS PROC MIXED may default to the poorly-performing residual DF choice, and the \textbf{lmerTest} package in R defaults to the Satterthwaite approximation, which may be too conservative in some cases.
+Finally, we caution analysts to be careful when using defaults settings in software. For example, with Wald tests, SAS PROC MIXED may default to the poorly-performing residual DF choice, and the \textbf{lmerTest} package in R defaults to the Satterthwaite approximation, which may be too conservative in some cases.
 
 It is unclear how aware data analysts may be about the small-sample problems that may arise in making inference from mixed models. A review of LMM applications in education and social sciences \cite{dedrick_multilevel_2009} found minimal reporting of estimation and inference methods and assumptions, and that cluster sizes could be as low as 2 and the number of clusters as low as 8. Our own review and that of Kahan et al., referenced earlier, confirmed that small cluster counts are not unusual in biomedical settings as well. Therefore, we hope this will provide analysts with some recommendations of which approaches control Type I error at appropriate rates under different circumstances, and we encourage more reporting of DF choices and analytic methods in CRT publications.
 
-Given that small sample sizes are not uncommon in CRT literature, there is need for more investigation of which methods control Type I error in other contexts. An immediate next step, following on the work of Li and Redden \cite{li_comparing_2015}, would be to examine TIE rates for Poisson outcomes under these study conditions and add comparisons to the LRT under both binary and count outcomes. Additionally, more parameters could be added to the simulations, such as unbalanced cluster sizes or varying ICC by treatment arm. Finally, the impact of these data/approach interactions on statistical power should be determined so that analysts can make appropriate sample size calculations during the design phase of a CRT.
+Given that small sample sizes are not uncommon in CRT literature, there is need for more investigation of which methods control Type I error in other contexts. One limitation of our result is that we did not include any scenarios with repeated measures (for example, baseline, post-treatment, and follow-up), which are common in biomedical settings, and deserve similar scrutiny. Additionally, more parameters could have been added to the simulations, such as unbalanced cluster sizes or varying ICC by treatment arm. Another potential avenue for exploration, following on the work of Li and Redden \cite{li_comparing_2015}, would be to examine TIE rates for Poisson outcomes under these study conditions and add comparisons to the LRT under both binary and count outcomes. Type II errors may also be a concern for researchers, and investigating the role of different analytic methods on these could be an area for future work. Finally, the impact of these data/approach interactions on statistical power should be determined so that analysts can make appropriate sample size calculations during the design phase of a CRT.
 
 
 
@@ -361,6 +361,7 @@ Support for this work for provided by NIH/NIGMS grant R01GM121370.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % if your bibliography is in bibtex format, use those commands:
+
 \bibliographystyle{bmc-mathphys} % Style BST file (bmc-mathphys, vancouver, spbasic).
 \bibliography{tie_rates_LMM}      % Bibliography file (usually '*.bib' )
 % for author-year bibliography (bmc-mathphys or spbasic)
