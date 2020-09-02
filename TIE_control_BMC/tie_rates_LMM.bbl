@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{31}
+\begin{thebibliography}{33}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -734,6 +734,38 @@ doi:\doiurl{10.3390/stats2020013}
 \endbibitem
 
 %%% 31
+\bibitem{moerbeek_comparison_2003}
+\begin{barticle}
+\bauthor{\bsnm{Moerbeek}, \binits{M.}},
+\bauthor{\bparticle{van} \bsnm{Breukelen}, \binits{G.J.P.}},
+\bauthor{\bsnm{Berger}, \binits{M.P.F.}}:
+\batitle{A comparison between traditional methods and multilevel regression for
+  the analysis of multicenter intervention studies}.
+\bjtitle{Journal of Clinical Epidemiology}
+\bvolume{56}(\bissue{4}),
+\bfpage{341}--\blpage{350}
+(\byear{2003}).
+doi:\doiurl{10.1016/S0895-4356(03)00007-6}
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem{halekoh_kenward-roger_2014}
+\begin{barticle}
+\bauthor{\bsnm{Halekoh}, \binits{U.}},
+\bauthor{\bsnm{Højsgaard}, \binits{S.}}:
+\batitle{A {Kenward}-{Roger} {Approximation} and {Parametric} {Bootstrap}
+  {Methods} for {Tests} in {Linear} {Mixed} {Models}  {The} {R} {Package}
+  pbkrtest}.
+\bjtitle{Journal of Statistical Software}
+\bvolume{59}(\bissue{1}),
+\bfpage{1}--\blpage{32}
+(\byear{2014}).
+doi:\doiurl{10.18637/jss.v059.i09}
+\end{barticle}
+\endbibitem
+
+%%% 33
 \bibitem{dedrick_multilevel_2009}
 \begin{barticle}
 \bauthor{\bsnm{Dedrick}, \binits{R.F.}},
@@ -1457,6 +1489,40 @@ doi:\doiurl{10.3102/0034654308325581}
 </bibl>
 
 <bibl id="B31">
+  <title><p>A comparison between traditional methods and multilevel regression
+  for the analysis of multicenter intervention studies</p></title>
+  <aug>
+    <au><snm>Moerbeek</snm><fnm>M</fnm></au>
+    <au><snm>Breukelen</snm><fnm>GJP</fnm></au>
+    <au><snm>Berger</snm><fnm>MPF</fnm></au>
+  </aug>
+  <source>Journal of Clinical Epidemiology</source>
+  <pubdate>2003</pubdate>
+  <volume>56</volume>
+  <issue>4</issue>
+  <fpage>341</fpage>
+  <lpage>-350</lpage>
+  <url>http://www.sciencedirect.com/science/article/pii/S0895435603000076</url>
+</bibl>
+
+<bibl id="B32">
+  <title><p>A {Kenward}-{Roger} {Approximation} and {Parametric} {Bootstrap}
+  {Methods} for {Tests} in {Linear} {Mixed} {Models}  {The} {R} {Package}
+  pbkrtest</p></title>
+  <aug>
+    <au><snm>Halekoh</snm><fnm>U</fnm></au>
+    <au><snm>Højsgaard</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Journal of Statistical Software</source>
+  <pubdate>2014</pubdate>
+  <volume>59</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-32</lpage>
+  <url>https://www.jstatsoft.org/index.php/jss/article/view/v059i09</url>
+</bibl>
+
+<bibl id="B33">
   <title><p>Multilevel modeling: {A} review of methodological issues and
   applications</p></title>
   <aug>
