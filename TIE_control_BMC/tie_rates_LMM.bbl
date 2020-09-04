@@ -1,0 +1,1088 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{32}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{hayes_cluster_2017}
+\begin{bbook}
+\bauthor{\bsnm{Hayes}, \binits{R.J.}},
+\bauthor{\bsnm{Moulton}, \binits{L.H.}}:
+\bbtitle{Cluster {Randomised} {Trials}},
+\bedition{2 edition} edn.
+\bpublisher{Chapman and Hall/CRC},
+\blocation{Boca Raton}
+(\byear{2017})
+\end{bbook}
+\endbibitem
+
+%%% 2
+\bibitem{moon_effect_2017}
+\begin{barticle}
+\bauthor{\bsnm{Moon}, \binits{R.Y.}},
+\bauthor{\bsnm{Hauck}, \binits{F.R.}},
+\bauthor{\bsnm{Colson}, \binits{E.R.}},
+\bauthor{\bsnm{Kellams}, \binits{A.L.}},
+\bauthor{\bsnm{Geller}, \binits{N.L.}},
+\bauthor{\bsnm{Heeren}, \binits{T.}},
+\bauthor{\bsnm{Kerr}, \binits{S.M.}},
+\bauthor{\bsnm{Drake}, \binits{E.E.}},
+\bauthor{\bsnm{Tanabe}, \binits{K.}},
+\bauthor{\bsnm{McClain}, \binits{M.}},
+\bauthor{\bsnm{Corwin}, \binits{M.J.}}:
+\batitle{The {Effect} of {Nursing} {Quality} {Improvement} and {Mobile}
+  {Health} {Interventions} on {Infant} {Sleep} {Practices}: {A} {Randomized}
+  {Clinical} {Trial}}.
+\bjtitle{JAMA}
+\bvolume{318}(\bissue{4}),
+\bfpage{351}--\blpage{359}
+(\byear{2017}).
+doi:\doiurl{10.1001/jama.2017.8982}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{huang_targeted_2013}
+\begin{barticle}
+\bauthor{\bsnm{Huang}, \binits{S.S.}},
+\bauthor{\bsnm{Septimus}, \binits{E.}},
+\bauthor{\bsnm{Kleinman}, \binits{K.}},
+\bauthor{\bsnm{Moody}, \binits{J.}},
+\bauthor{\bsnm{Hickok}, \binits{J.}},
+\bauthor{\bsnm{Avery}, \binits{T.R.}},
+\bauthor{\bsnm{Lankiewicz}, \binits{J.}},
+\bauthor{\bsnm{Gombosev}, \binits{A.}},
+\bauthor{\bsnm{Terpstra}, \binits{L.}},
+\bauthor{\bsnm{Hartford}, \binits{F.}},
+\bauthor{\bsnm{Hayden}, \binits{M.K.}},
+\bauthor{\bsnm{Jernigan}, \binits{J.A.}},
+\bauthor{\bsnm{Weinstein}, \binits{R.A.}},
+\bauthor{\bsnm{Fraser}, \binits{V.J.}},
+\bauthor{\bsnm{Haffenreffer}, \binits{K.}},
+\bauthor{\bsnm{Cui}, \binits{E.}},
+\bauthor{\bsnm{Kaganov}, \binits{R.E.}},
+\bauthor{\bsnm{Lolans}, \binits{K.}},
+\bauthor{\bsnm{Perlin}, \binits{J.B.}},
+\bauthor{\bsnm{Platt}, \binits{R.}}:
+\batitle{Targeted versus {Universal} {Decolonization} to {Prevent} {ICU}
+  {Infection}}.
+\bjtitle{New England Journal of Medicine}
+\bvolume{368}(\bissue{24}),
+\bfpage{2255}--\blpage{2265}
+(\byear{2013}).
+doi:\doiurl{10.1056/NEJMoa1207290}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{fitzmaurice_applied_2012}
+\begin{bbook}
+\bauthor{\bsnm{Fitzmaurice}, \binits{G.M.}},
+\bauthor{\bsnm{Laird}, \binits{N.M.}},
+\bauthor{\bsnm{Ware}, \binits{J.H.}}:
+\bbtitle{Applied {Longitudinal} {Analysis}},
+\bedition{2 edition} edn.
+\bpublisher{Wiley}, \blocation{???}
+(\byear{2012})
+\end{bbook}
+\endbibitem
+
+%%% 5
+\bibitem{pinheiro_mixed-effects_2009}
+\begin{bbook}
+\bauthor{\bsnm{Pinheiro}, \binits{J.}},
+\bauthor{\bsnm{Bates}, \binits{D.}}:
+\bbtitle{Mixed-{Effects} {Models} in {S} And {S}-{PLUS}}.
+\bpublisher{Springer},
+\blocation{New York}
+(\byear{2009})
+\end{bbook}
+\endbibitem
+
+%%% 6
+\bibitem{kreft_introducing_1998}
+\begin{bbook}
+\bauthor{\bsnm{Kreft}, \binits{I.G.G.}}:
+\bbtitle{Introducing {Multilevel} {Modeling}},
+\bedition{1 edition} edn.
+\bpublisher{SAGE Publications Ltd},
+\blocation{London ; Thousand Oaks, Calif}
+(\byear{1998})
+\end{bbook}
+\endbibitem
+
+%%% 7
+\bibitem{kahan_increased_2016}
+\begin{botherref}
+\oauthor{\bsnm{Kahan}, \binits{B.C.}},
+\oauthor{\bsnm{Forbes}, \binits{G.}},
+\oauthor{\bsnm{Ali}, \binits{Y.}},
+\oauthor{\bsnm{Jairath}, \binits{V.}},
+\oauthor{\bsnm{Bremner}, \binits{S.}},
+\oauthor{\bsnm{Harhay}, \binits{M.O.}},
+\oauthor{\bsnm{Hooper}, \binits{R.}},
+\oauthor{\bsnm{Wright}, \binits{N.}},
+\oauthor{\bsnm{Eldridge}, \binits{S.M.}},
+\oauthor{\bsnm{Leyrat}, \binits{C.}}:
+Increased risk of type {I} errors in cluster randomised trials with small or
+  medium numbers of clusters: a review, reanalysis, and simulation study.
+Trials
+\textbf{17}(1)
+(2016).
+doi:\doiurl{10.1186/s13063-016-1571-2}.
+Accessed 2019-10-06
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem{schluchter_small-sample_1990}
+\begin{barticle}
+\bauthor{\bsnm{Schluchter}, \binits{M.D.}},
+\bauthor{\bsnm{Elashoff}, \binits{J.T.}}:
+\batitle{Small-sample adjustments to tests with unbalanced repeated measures
+  assuming several covariance structures}.
+\bjtitle{Journal of Statistical Computation and Simulation}
+\bvolume{37}(\bissue{1-2}),
+\bfpage{69}--\blpage{87}
+(\byear{1990}).
+doi:\doiurl{10.1080/00949659008811295}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{zucker_improved_2000}
+\begin{barticle}
+\bauthor{\bsnm{Zucker}, \binits{D.M.}},
+\bauthor{\bsnm{Lieberman}, \binits{O.}},
+\bauthor{\bsnm{Manor}, \binits{O.}}:
+\batitle{Improved small sample inference in the mixed linear model: {Bartlett}
+  correction and adjusted likelihood}.
+\bjtitle{Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)}
+\bvolume{62}(\bissue{4}),
+\bfpage{827}--\blpage{838}
+(\byear{2000}).
+doi:\doiurl{10.1111/1467-9868.00267}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{melo_improved_2009}
+\begin{barticle}
+\bauthor{\bsnm{Melo}, \binits{T.F.N.}},
+\bauthor{\bsnm{Ferrari}, \binits{S.L.P.}},
+\bauthor{\bsnm{Cribari-Neto}, \binits{F.}}:
+\batitle{Improved testing inference in mixed linear models}.
+\bjtitle{Computational Statistics \& Data Analysis}
+\bvolume{53}(\bissue{7}),
+\bfpage{2573}--\blpage{2582}
+(\byear{2009}).
+doi:\doiurl{10.1016/j.csda.2008.12.007}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{manor_small_2004}
+\begin{barticle}
+\bauthor{\bsnm{Manor}, \binits{O.}},
+\bauthor{\bsnm{Zucker}, \binits{D.M.}}:
+\batitle{Small sample inference for the fixed effects in the mixed linear
+  model}.
+\bjtitle{Computational Statistics \& Data Analysis}
+\bvolume{46}(\bissue{4}),
+\bfpage{801}--\blpage{817}
+(\byear{2004}).
+doi:\doiurl{10.1016/j.csda.2003.10.005}
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{stein_alternatives_2014}
+\begin{barticle}
+\bauthor{\bsnm{Stein}, \binits{M.C.}},
+\bauthor{\bparticle{da} \bsnm{Silva}, \binits{M.F.}},
+\bauthor{\bsnm{Duczmal}, \binits{L.H.}}:
+\batitle{Alternatives to the usual likelihood ratio test in mixed linear
+  models}.
+\bjtitle{Computational Statistics \& Data Analysis}
+\bvolume{69},
+\bfpage{184}--\blpage{197}
+(\byear{2014}).
+doi:\doiurl{10.1016/j.csda.2013.08.002}
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{bartlett_properties_1937}
+\begin{barticle}
+\bauthor{\bsnm{Bartlett}, \binits{M.S.}},
+\bauthor{\bsnm{Fowler}, \binits{R.H.}}:
+\batitle{Properties of sufficiency and statistical tests}.
+\bjtitle{Proceedings of the Royal Society of London. Series A - Mathematical
+  and Physical Sciences}
+\bvolume{160}(\bissue{901}),
+\bfpage{268}--\blpage{282}
+(\byear{1937}).
+doi:\doiurl{10.1098/rspa.1937.0109}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{luke_evaluating_2017}
+\begin{barticle}
+\bauthor{\bsnm{Luke}, \binits{S.G.}}:
+\batitle{Evaluating significance in linear mixed-effects models in {R}}.
+\bjtitle{Behavior Research Methods}
+\bvolume{49}(\bissue{4}),
+\bfpage{1494}--\blpage{1502}
+(\byear{2017}).
+doi:\doiurl{10.3758/s13428-016-0809-y}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{maas_sufficient_2005}
+\begin{barticle}
+\bauthor{\bsnm{Maas}, \binits{C.J.M.}},
+\bauthor{\bsnm{Hox}, \binits{J.J.}}:
+\batitle{Sufficient {Sample} {Sizes} for {Multilevel} {Modeling}}.
+\bjtitle{Methodology}
+\bvolume{1}(\bissue{3}),
+\bfpage{86}--\blpage{92}
+(\byear{2005}).
+doi:\doiurl{10.1027/1614-2241.1.3.86}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{bell_dancing_2010}
+\begin{botherref}
+\oauthor{\bsnm{Bell}, \binits{B.}},
+\oauthor{\bsnm{Morgan}, \binits{G.}},
+\oauthor{\bsnm{Schoeneberger}, \binits{J.}},
+\oauthor{\bsnm{Loudermilk}, \binits{L.}},
+\oauthor{\bsnm{Kromrey}, \binits{J.}},
+\oauthor{\bsnm{Ferron}, \binits{J.}}:
+Dancing the {Sample} {Size} {Limbo} with {Mixed} {Models}: {How} {Low} {Can}
+  {You} {Go}?
+SAS Global Forum
+\textbf{4}
+(2010)
+\end{botherref}
+\endbibitem
+
+%%% 17
+\bibitem{leyrat_cluster_2018}
+\begin{barticle}
+\bauthor{\bsnm{Leyrat}, \binits{C.}},
+\bauthor{\bsnm{Morgan}, \binits{K.E.}},
+\bauthor{\bsnm{Leurent}, \binits{B.}},
+\bauthor{\bsnm{Kahan}, \binits{B.C.}}:
+\batitle{Cluster randomized trials with a small number of clusters: which
+  analyses should be used?}
+\bjtitle{International Journal of Epidemiology}
+\bvolume{47}(\bissue{1}),
+\bfpage{321}--\blpage{331}
+(\byear{2018}).
+doi:\doiurl{10.1093/ije/dyx169}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{johnson_recommendations_2015}
+\begin{barticle}
+\bauthor{\bsnm{Johnson}, \binits{J.L.}},
+\bauthor{\bsnm{Kreidler}, \binits{S.M.}},
+\bauthor{\bsnm{Catellier}, \binits{D.J.}},
+\bauthor{\bsnm{Murray}, \binits{D.M.}},
+\bauthor{\bsnm{Muller}, \binits{K.E.}},
+\bauthor{\bsnm{Glueck}, \binits{D.H.}}:
+\batitle{Recommendations for choosing an analysis method that controls {Type}
+  {I} error for unbalanced cluster sample designs with {Gaussian} outcomes}.
+\bjtitle{Statistics in Medicine}
+\bvolume{34}(\bissue{27}),
+\bfpage{3531}--\blpage{3545}
+(\byear{2015}).
+doi:\doiurl{10.1002/sim.6565}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{li_comparing_2015}
+\begin{botherref}
+\oauthor{\bsnm{Li}, \binits{P.}},
+\oauthor{\bsnm{Redden}, \binits{D.T.}}:
+Comparing denominator degrees of freedom approximations for the generalized
+  linear mixed model in analyzing binary outcome in small sample
+  cluster-randomized trials.
+BMC Medical Research Methodology
+\textbf{15}
+(2015).
+doi:\doiurl{10.1186/s12874-015-0026-x}
+\end{botherref}
+\endbibitem
+
+%%% 20
+\bibitem{laird_random-effects_1982}
+\begin{barticle}
+\bauthor{\bsnm{Laird}, \binits{N.M.}},
+\bauthor{\bsnm{Ware}, \binits{J.H.}}:
+\batitle{Random-effects models for longitudinal data}.
+\bjtitle{Biometrics}
+\bvolume{38}(\bissue{4}),
+\bfpage{963}--\blpage{974}
+(\byear{1982})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{kish_survey_1965}
+\begin{bbook}
+\bauthor{\bsnm{Kish}, \binits{L.}}:
+\bbtitle{Survey {Sampling}}.
+\bpublisher{Wiley-Interscience},
+\blocation{New York}
+(\byear{1965})
+\end{bbook}
+\endbibitem
+
+%%% 22
+\bibitem{cox_theoretical_1979}
+\begin{bbook}
+\bauthor{\bsnm{Cox}, \binits{D.}},
+\bauthor{\bsnm{Hinkley}, \binits{D.}}:
+\bbtitle{Theoretical {Statistics}}.
+\bpublisher{Chapman \& Hall/CRC},
+\blocation{Boca Raton}
+(\byear{1979})
+\end{bbook}
+\endbibitem
+
+%%% 23
+\bibitem{bates_fitting_2015}
+\begin{barticle}
+\bauthor{\bsnm{Bates}, \binits{D.}},
+\bauthor{\bsnm{Mächler}, \binits{M.}},
+\bauthor{\bsnm{Bolker}, \binits{B.}},
+\bauthor{\bsnm{Walker}, \binits{S.}}:
+\batitle{Fitting {Linear} {Mixed}-{Effects} {Models} {Using} lme4}.
+\bjtitle{Journal of Statistical Software}
+\bvolume{67}(\bissue{1}),
+\bfpage{1}--\blpage{48}
+(\byear{2015}).
+doi:\doiurl{10.18637/jss.v067.i01}
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{satterthwaite_approximate_1946}
+\begin{barticle}
+\bauthor{\bsnm{Satterthwaite}, \binits{F.E.}}:
+\batitle{An {Approximate} {Distribution} of {Estimates} of {Variance}
+  {Components}}.
+\bjtitle{Biometrics Bulletin}
+\bvolume{2}(\bissue{6}),
+\bfpage{110}--\blpage{114}
+(\byear{1946}).
+doi:\doiurl{10.2307/3002019}
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{mcculloch_generalized_2008}
+\begin{bbook}
+\bauthor{\bsnm{McCulloch}, \binits{C.E.}},
+\bauthor{\bsnm{Searle}, \binits{S.R.}},
+\bauthor{\bsnm{Neuhaus}, \binits{J.M.}}:
+\bbtitle{Generalized, {Linear}, and {Mixed} {Models}},
+\bedition{2 edition} edn.
+\bpublisher{Wiley-Interscience},
+\blocation{Hoboken, N.J}
+(\byear{2008})
+\end{bbook}
+\endbibitem
+
+%%% 26
+\bibitem{kenward_small_1997}
+\begin{barticle}
+\bauthor{\bsnm{Kenward}, \binits{M.G.}},
+\bauthor{\bsnm{Roger}, \binits{J.H.}}:
+\batitle{Small {Sample} {Inference} for {Fixed} {Effects} from {Restricted}
+  {Maximum} {Likelihood}}.
+\bjtitle{Biometrics}
+\bvolume{53}(\bissue{3}),
+\bfpage{983}--\blpage{997}
+(\byear{1997}).
+doi:\doiurl{10.2307/2533558}
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{browne_comparison_2006}
+\begin{barticle}
+\bauthor{\bsnm{Browne}, \binits{W.J.}},
+\bauthor{\bsnm{Draper}, \binits{D.}}:
+\batitle{A comparison of {Bayesian} and likelihood-based methods for fitting
+  multilevel models}.
+\bjtitle{Bayesian Analysis}
+\bvolume{1}(\bissue{3}),
+\bfpage{473}--\blpage{514}
+(\byear{2006}).
+doi:\doiurl{10.1214/06-BA117}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{baldwin_bayesian_2013}
+\begin{barticle}
+\bauthor{\bsnm{Baldwin}, \binits{S.A.}},
+\bauthor{\bsnm{Fellingham}, \binits{G.W.}}:
+\batitle{Bayesian methods for the analysis of small sample multilevel data with
+  a complex variance structure}.
+\bjtitle{Psychological Methods}
+\bvolume{18}(\bissue{2}),
+\bfpage{151}--\blpage{164}
+(\byear{2013}).
+doi:\doiurl{10.1037/a0030642}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{ukyo_improved_2019}
+\begin{barticle}
+\bauthor{\bsnm{Ukyo}, \binits{Y.}},
+\bauthor{\bsnm{Noma}, \binits{H.}},
+\bauthor{\bsnm{Maruo}, \binits{K.}},
+\bauthor{\bsnm{Gosho}, \binits{M.}}:
+\batitle{Improved {Small} {Sample} {Inference} {Methods} for a
+  {Mixed}-{Effects} {Model} for {Repeated} {Measures} {Approach} in
+  {Incomplete} {Longitudinal} {Data} {Analysis}}.
+\bjtitle{Stats}
+\bvolume{2}(\bissue{2}),
+\bfpage{174}--\blpage{188}
+(\byear{2019}).
+doi:\doiurl{10.3390/stats2020013}
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{moerbeek_comparison_2003}
+\begin{barticle}
+\bauthor{\bsnm{Moerbeek}, \binits{M.}},
+\bauthor{\bparticle{van} \bsnm{Breukelen}, \binits{G.J.P.}},
+\bauthor{\bsnm{Berger}, \binits{M.P.F.}}:
+\batitle{A comparison between traditional methods and multilevel regression for
+  the analysis of multicenter intervention studies}.
+\bjtitle{Journal of Clinical Epidemiology}
+\bvolume{56}(\bissue{4}),
+\bfpage{341}--\blpage{350}
+(\byear{2003}).
+doi:\doiurl{10.1016/S0895-4356(03)00007-6}
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem{halekoh_kenward-roger_2014}
+\begin{barticle}
+\bauthor{\bsnm{Halekoh}, \binits{U.}},
+\bauthor{\bsnm{Hojsgaard}, \binits{S.}}:
+\batitle{A {Kenward}-{Roger} {Approximation} and {Parametric} {Bootstrap}
+  {Methods} for {Tests} in {Linear} {Mixed} {Models}: {The} {R} {Package}
+  pbkrtest}.
+\bjtitle{Journal of Statistical Software}
+\bvolume{59}(\bissue{1}),
+\bfpage{1}--\blpage{32}
+(\byear{2014}).
+doi:\doiurl{10.18637/jss.v059.i09}
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem{dedrick_multilevel_2009}
+\begin{barticle}
+\bauthor{\bsnm{Dedrick}, \binits{R.F.}},
+\bauthor{\bsnm{Ferron}, \binits{J.M.}},
+\bauthor{\bsnm{Hess}, \binits{M.R.}},
+\bauthor{\bsnm{Hogarty}, \binits{K.Y.}},
+\bauthor{\bsnm{Kromrey}, \binits{J.D.}},
+\bauthor{\bsnm{Lang}, \binits{T.R.}},
+\bauthor{\bsnm{Niles}, \binits{J.D.}},
+\bauthor{\bsnm{Lee}, \binits{R.S.}}:
+\batitle{Multilevel modeling: {A} review of methodological issues and
+  applications}.
+\bjtitle{Review of Educational Research}
+\bvolume{79}(\bissue{1}),
+\bfpage{69}--\blpage{102}
+(\byear{2009}).
+doi:\doiurl{10.3102/0034654308325581}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Cluster {Randomised} {Trials}</p></title>
+  <aug>
+    <au><snm>Hayes</snm><fnm>RJ</fnm></au>
+    <au><snm>Moulton</snm><fnm>LH</fnm></au>
+  </aug>
+  <publisher>Boca Raton: Chapman and Hall/CRC</publisher>
+  <edition>2</edition>
+  <pubdate>2017</pubdate>
+</bibl>
+
+<bibl id="B2">
+  <title><p>The {Effect} of {Nursing} {Quality} {Improvement} and {Mobile}
+  {Health} {Interventions} on {Infant} {Sleep} {Practices}: {A} {Randomized}
+  {Clinical} {Trial}</p></title>
+  <aug>
+    <au><snm>Moon</snm><fnm>RY</fnm></au>
+    <au><snm>Hauck</snm><fnm>FR</fnm></au>
+    <au><snm>Colson</snm><fnm>ER</fnm></au>
+    <au><snm>Kellams</snm><fnm>AL</fnm></au>
+    <au><snm>Geller</snm><fnm>NL</fnm></au>
+    <au><snm>Heeren</snm><fnm>T</fnm></au>
+    <au><snm>Kerr</snm><fnm>SM</fnm></au>
+    <au><snm>Drake</snm><fnm>EE</fnm></au>
+    <au><snm>Tanabe</snm><fnm>K</fnm></au>
+    <au><snm>McClain</snm><fnm>M</fnm></au>
+    <au><snm>Corwin</snm><fnm>MJ</fnm></au>
+  </aug>
+  <source>JAMA</source>
+  <pubdate>2017</pubdate>
+  <volume>318</volume>
+  <issue>4</issue>
+  <fpage>351</fpage>
+  <lpage>-359</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>Targeted versus {Universal} {Decolonization} to {Prevent} {ICU}
+  {Infection}</p></title>
+  <aug>
+    <au><snm>Huang</snm><fnm>SS</fnm></au>
+    <au><snm>Septimus</snm><fnm>E</fnm></au>
+    <au><snm>Kleinman</snm><fnm>K</fnm></au>
+    <au><snm>Moody</snm><fnm>J</fnm></au>
+    <au><snm>Hickok</snm><fnm>J</fnm></au>
+    <au><snm>Avery</snm><fnm>TR</fnm></au>
+    <au><snm>Lankiewicz</snm><fnm>J</fnm></au>
+    <au><snm>Gombosev</snm><fnm>A</fnm></au>
+    <au><snm>Terpstra</snm><fnm>L</fnm></au>
+    <au><snm>Hartford</snm><fnm>F</fnm></au>
+    <au><snm>Hayden</snm><fnm>MK</fnm></au>
+    <au><snm>Jernigan</snm><fnm>JA</fnm></au>
+    <au><snm>Weinstein</snm><fnm>RA</fnm></au>
+    <au><snm>Fraser</snm><fnm>VJ</fnm></au>
+    <au><snm>Haffenreffer</snm><fnm>K</fnm></au>
+    <au><snm>Cui</snm><fnm>E</fnm></au>
+    <au><snm>Kaganov</snm><fnm>RE</fnm></au>
+    <au><snm>Lolans</snm><fnm>K</fnm></au>
+    <au><snm>Perlin</snm><fnm>JB</fnm></au>
+    <au><snm>Platt</snm><fnm>R</fnm></au>
+  </aug>
+  <source>New England Journal of Medicine</source>
+  <pubdate>2013</pubdate>
+  <volume>368</volume>
+  <issue>24</issue>
+  <fpage>2255</fpage>
+  <lpage>-2265</lpage>
+  <url>https://doi.org/10.1056/NEJMoa1207290</url>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Applied {Longitudinal} {Analysis}</p></title>
+  <aug>
+    <au><snm>Fitzmaurice</snm><fnm>GM</fnm></au>
+    <au><snm>Laird</snm><fnm>NM</fnm></au>
+    <au><snm>Ware</snm><fnm>JH</fnm></au>
+  </aug>
+  <publisher>Wiley</publisher>
+  <edition>2</edition>
+  <pubdate>2012</pubdate>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Mixed-{Effects} {Models} in {S} and {S}-{PLUS}</p></title>
+  <aug>
+    <au><snm>Pinheiro</snm><fnm>J</fnm></au>
+    <au><snm>Bates</snm><fnm>D</fnm></au>
+  </aug>
+  <publisher>New York: Springer</publisher>
+  <pubdate>2009</pubdate>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Introducing {Multilevel} {Modeling}</p></title>
+  <aug>
+    <au><snm>Kreft</snm><fnm>IGG</fnm></au>
+  </aug>
+  <publisher>London ; Thousand Oaks, Calif: SAGE Publications Ltd</publisher>
+  <edition>1</edition>
+  <pubdate>1998</pubdate>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Increased risk of type {I} errors in cluster randomised trials with
+  small or medium numbers of clusters: a review, reanalysis, and simulation
+  study</p></title>
+  <aug>
+    <au><snm>Kahan</snm><fnm>BC</fnm></au>
+    <au><snm>Forbes</snm><fnm>G</fnm></au>
+    <au><snm>Ali</snm><fnm>Y</fnm></au>
+    <au><snm>Jairath</snm><fnm>V</fnm></au>
+    <au><snm>Bremner</snm><fnm>S</fnm></au>
+    <au><snm>Harhay</snm><fnm>MO</fnm></au>
+    <au><snm>Hooper</snm><fnm>R</fnm></au>
+    <au><snm>Wright</snm><fnm>N</fnm></au>
+    <au><snm>Eldridge</snm><fnm>SM</fnm></au>
+    <au><snm>Leyrat</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Trials</source>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+  <issue>1</issue>
+  <url>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5013635/</url>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Small-sample adjustments to tests with unbalanced repeated measures
+  assuming several covariance structures</p></title>
+  <aug>
+    <au><snm>Schluchter</snm><fnm>MD</fnm></au>
+    <au><snm>Elashoff</snm><fnm>JT</fnm></au>
+  </aug>
+  <source>Journal of Statistical Computation and Simulation</source>
+  <pubdate>1990</pubdate>
+  <volume>37</volume>
+  <issue>1-2</issue>
+  <fpage>69</fpage>
+  <lpage>-87</lpage>
+  <url>https://doi.org/10.1080/00949659008811295</url>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Improved small sample inference in the mixed linear model:
+  {Bartlett} correction and adjusted likelihood</p></title>
+  <aug>
+    <au><snm>Zucker</snm><fnm>DM</fnm></au>
+    <au><snm>Lieberman</snm><fnm>O</fnm></au>
+    <au><snm>Manor</snm><fnm>O</fnm></au>
+  </aug>
+  <source>Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)</source>
+  <pubdate>2000</pubdate>
+  <volume>62</volume>
+  <issue>4</issue>
+  <fpage>827</fpage>
+  <lpage>-838</lpage>
+  <url>http://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00267</url>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Improved testing inference in mixed linear models</p></title>
+  <aug>
+    <au><snm>Melo</snm><fnm>TFN</fnm></au>
+    <au><snm>Ferrari</snm><fnm>SLP</fnm></au>
+    <au><snm>Cribari Neto</snm><fnm>F</fnm></au>
+  </aug>
+  <source>Computational Statistics \& Data Analysis</source>
+  <pubdate>2009</pubdate>
+  <volume>53</volume>
+  <issue>7</issue>
+  <fpage>2573</fpage>
+  <lpage>-2582</lpage>
+  <url>http://www.sciencedirect.com/science/article/pii/S0167947308005756</url>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Small sample inference for the fixed effects in the mixed linear
+  model</p></title>
+  <aug>
+    <au><snm>Manor</snm><fnm>O</fnm></au>
+    <au><snm>Zucker</snm><fnm>DM</fnm></au>
+  </aug>
+  <source>Computational Statistics \& Data Analysis</source>
+  <pubdate>2004</pubdate>
+  <volume>46</volume>
+  <issue>4</issue>
+  <fpage>801</fpage>
+  <lpage>-817</lpage>
+  <url>https://linkinghub.elsevier.com/retrieve/pii/S016794730300238X</url>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Alternatives to the usual likelihood ratio test in mixed linear
+  models</p></title>
+  <aug>
+    <au><snm>Stein</snm><fnm>MC</fnm></au>
+    <au><snm>Silva</snm><fnm>MF</fnm></au>
+    <au><snm>Duczmal</snm><fnm>LH</fnm></au>
+  </aug>
+  <source>Computational Statistics \& Data Analysis</source>
+  <pubdate>2014</pubdate>
+  <volume>69</volume>
+  <fpage>184</fpage>
+  <lpage>-197</lpage>
+  <url>http://www.sciencedirect.com/science/article/pii/S0167947313002880</url>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Properties of sufficiency and statistical tests</p></title>
+  <aug>
+    <au><snm>Bartlett</snm><fnm>MS</fnm></au>
+    <au><snm>Fowler</snm><fnm>RH</fnm></au>
+  </aug>
+  <source>Proceedings of the Royal Society of London. Series A - Mathematical
+  and Physical Sciences</source>
+  <pubdate>1937</pubdate>
+  <volume>160</volume>
+  <issue>901</issue>
+  <fpage>268</fpage>
+  <lpage>-282</lpage>
+  <url>https://royalsocietypublishing.org/doi/abs/10.1098/rspa.1937.0109</url>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Evaluating significance in linear mixed-effects models in
+  {R}</p></title>
+  <aug>
+    <au><snm>Luke</snm><fnm>SG</fnm></au>
+  </aug>
+  <source>Behavior Research Methods</source>
+  <pubdate>2017</pubdate>
+  <volume>49</volume>
+  <issue>4</issue>
+  <fpage>1494</fpage>
+  <lpage>-1502</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Sufficient {Sample} {Sizes} for {Multilevel} {Modeling}</p></title>
+  <aug>
+    <au><snm>Maas</snm><fnm>CJM</fnm></au>
+    <au><snm>Hox</snm><fnm>JJ</fnm></au>
+  </aug>
+  <source>Methodology</source>
+  <pubdate>2005</pubdate>
+  <volume>1</volume>
+  <issue>3</issue>
+  <fpage>86</fpage>
+  <lpage>-92</lpage>
+  <url>https://econtent.hogrefe.com/doi/10.1027/1614-2241.1.3.86</url>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Dancing the {Sample} {Size} {Limbo} with {Mixed} {Models}: {How}
+  {Low} {Can} {You} {Go}?</p></title>
+  <aug>
+    <au><snm>Bell</snm><fnm>B</fnm></au>
+    <au><snm>Morgan</snm><fnm>G</fnm></au>
+    <au><snm>Schoeneberger</snm><fnm>J</fnm></au>
+    <au><snm>Loudermilk</snm><fnm>L</fnm></au>
+    <au><snm>Kromrey</snm><fnm>J</fnm></au>
+    <au><snm>Ferron</snm><fnm>J</fnm></au>
+  </aug>
+  <source>SAS Global Forum</source>
+  <pubdate>2010</pubdate>
+  <volume>4</volume>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Cluster randomized trials with a small number of clusters: which
+  analyses should be used?</p></title>
+  <aug>
+    <au><snm>Leyrat</snm><fnm>C</fnm></au>
+    <au><snm>Morgan</snm><fnm>KE</fnm></au>
+    <au><snm>Leurent</snm><fnm>B</fnm></au>
+    <au><snm>Kahan</snm><fnm>BC</fnm></au>
+  </aug>
+  <source>International Journal of Epidemiology</source>
+  <pubdate>2018</pubdate>
+  <volume>47</volume>
+  <issue>1</issue>
+  <fpage>321</fpage>
+  <lpage>-331</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Recommendations for choosing an analysis method that controls
+  {Type} {I} error for unbalanced cluster sample designs with {Gaussian}
+  outcomes</p></title>
+  <aug>
+    <au><snm>Johnson</snm><fnm>JL</fnm></au>
+    <au><snm>Kreidler</snm><fnm>SM</fnm></au>
+    <au><snm>Catellier</snm><fnm>DJ</fnm></au>
+    <au><snm>Murray</snm><fnm>DM</fnm></au>
+    <au><snm>Muller</snm><fnm>KE</fnm></au>
+    <au><snm>Glueck</snm><fnm>DH</fnm></au>
+  </aug>
+  <source>Statistics in Medicine</source>
+  <pubdate>2015</pubdate>
+  <volume>34</volume>
+  <issue>27</issue>
+  <fpage>3531</fpage>
+  <lpage>-3545</lpage>
+  <url>https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.6565</url>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Comparing denominator degrees of freedom approximations for the
+  generalized linear mixed model in analyzing binary outcome in small sample
+  cluster-randomized trials</p></title>
+  <aug>
+    <au><snm>Li</snm><fnm>P</fnm></au>
+    <au><snm>Redden</snm><fnm>DT</fnm></au>
+  </aug>
+  <source>BMC Medical Research Methodology</source>
+  <pubdate>2015</pubdate>
+  <volume>15</volume>
+  <url>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4458010/</url>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Random-effects models for longitudinal data</p></title>
+  <aug>
+    <au><snm>Laird</snm><fnm>N. M.</fnm></au>
+    <au><snm>Ware</snm><fnm>J. H.</fnm></au>
+  </aug>
+  <source>Biometrics</source>
+  <pubdate>1982</pubdate>
+  <volume>38</volume>
+  <issue>4</issue>
+  <fpage>963</fpage>
+  <lpage>-974</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>Survey {Sampling}</p></title>
+  <aug>
+    <au><snm>Kish</snm><fnm>L</fnm></au>
+  </aug>
+  <publisher>New York: Wiley-Interscience</publisher>
+  <pubdate>1965</pubdate>
+</bibl>
+
+<bibl id="B22">
+  <title><p>Theoretical {Statistics}</p></title>
+  <aug>
+    <au><snm>Cox</snm><fnm>D</fnm></au>
+    <au><snm>Hinkley</snm><fnm>D</fnm></au>
+  </aug>
+  <publisher>Boca Raton: Chapman \& Hall/CRC</publisher>
+  <pubdate>1979</pubdate>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Fitting {Linear} {Mixed}-{Effects} {Models} {Using}
+  lme4</p></title>
+  <aug>
+    <au><snm>Bates</snm><fnm>D</fnm></au>
+    <au><snm>Mächler</snm><fnm>M</fnm></au>
+    <au><snm>Bolker</snm><fnm>B</fnm></au>
+    <au><snm>Walker</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Journal of Statistical Software</source>
+  <pubdate>2015</pubdate>
+  <volume>67</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-48</lpage>
+  <url>https://www.jstatsoft.org/index.php/jss/article/view/v067i01</url>
+</bibl>
+
+<bibl id="B24">
+  <title><p>An {Approximate} {Distribution} of {Estimates} of {Variance}
+  {Components}</p></title>
+  <aug>
+    <au><snm>Satterthwaite</snm><fnm>F. E.</fnm></au>
+  </aug>
+  <source>Biometrics Bulletin</source>
+  <pubdate>1946</pubdate>
+  <volume>2</volume>
+  <issue>6</issue>
+  <fpage>110</fpage>
+  <lpage>-114</lpage>
+  <url>http://www.jstor.org/stable/3002019</url>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Generalized, {Linear}, and {Mixed} {Models}</p></title>
+  <aug>
+    <au><snm>McCulloch</snm><fnm>CE</fnm></au>
+    <au><snm>Searle</snm><fnm>SR</fnm></au>
+    <au><snm>Neuhaus</snm><fnm>JM</fnm></au>
+  </aug>
+  <publisher>Hoboken, N.J: Wiley-Interscience</publisher>
+  <edition>2</edition>
+  <pubdate>2008</pubdate>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Small {Sample} {Inference} for {Fixed} {Effects} from {Restricted}
+  {Maximum} {Likelihood}</p></title>
+  <aug>
+    <au><snm>Kenward</snm><fnm>MG</fnm></au>
+    <au><snm>Roger</snm><fnm>JH</fnm></au>
+  </aug>
+  <source>Biometrics</source>
+  <pubdate>1997</pubdate>
+  <volume>53</volume>
+  <issue>3</issue>
+  <fpage>983</fpage>
+  <lpage>-997</lpage>
+  <url>http://www.jstor.org/stable/2533558</url>
+</bibl>
+
+<bibl id="B27">
+  <title><p>A comparison of {Bayesian} and likelihood-based methods for fitting
+  multilevel models</p></title>
+  <aug>
+    <au><snm>Browne</snm><fnm>WJ</fnm></au>
+    <au><snm>Draper</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Bayesian Analysis</source>
+  <pubdate>2006</pubdate>
+  <volume>1</volume>
+  <issue>3</issue>
+  <fpage>473</fpage>
+  <lpage>-514</lpage>
+  <url>https://projecteuclid.org/euclid.ba/1340371047</url>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Bayesian methods for the analysis of small sample multilevel data
+  with a complex variance structure</p></title>
+  <aug>
+    <au><snm>Baldwin</snm><fnm>SA</fnm></au>
+    <au><snm>Fellingham</snm><fnm>GW</fnm></au>
+  </aug>
+  <source>Psychological Methods</source>
+  <pubdate>2013</pubdate>
+  <volume>18</volume>
+  <issue>2</issue>
+  <fpage>151</fpage>
+  <lpage>-164</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Improved {Small} {Sample} {Inference} {Methods} for a
+  {Mixed}-{Effects} {Model} for {Repeated} {Measures} {Approach} in
+  {Incomplete} {Longitudinal} {Data} {Analysis}</p></title>
+  <aug>
+    <au><snm>Ukyo</snm><fnm>Y</fnm></au>
+    <au><snm>Noma</snm><fnm>H</fnm></au>
+    <au><snm>Maruo</snm><fnm>K</fnm></au>
+    <au><snm>Gosho</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Stats</source>
+  <pubdate>2019</pubdate>
+  <volume>2</volume>
+  <issue>2</issue>
+  <fpage>174</fpage>
+  <lpage>-188</lpage>
+  <url>https://www.mdpi.com/2571-905X/2/2/13</url>
+</bibl>
+
+<bibl id="B30">
+  <title><p>A comparison between traditional methods and multilevel regression
+  for the analysis of multicenter intervention studies</p></title>
+  <aug>
+    <au><snm>Moerbeek</snm><fnm>M</fnm></au>
+    <au><snm>Breukelen</snm><fnm>GJP</fnm></au>
+    <au><snm>Berger</snm><fnm>MPF</fnm></au>
+  </aug>
+  <source>Journal of Clinical Epidemiology</source>
+  <pubdate>2003</pubdate>
+  <volume>56</volume>
+  <issue>4</issue>
+  <fpage>341</fpage>
+  <lpage>-350</lpage>
+  <url>http://www.sciencedirect.com/science/article/pii/S0895435603000076</url>
+</bibl>
+
+<bibl id="B31">
+  <title><p>A {Kenward}-{Roger} {Approximation} and {Parametric} {Bootstrap}
+  {Methods} for {Tests} in {Linear} {Mixed} {Models}: {The} {R} {Package}
+  pbkrtest</p></title>
+  <aug>
+    <au><snm>Halekoh</snm><fnm>U</fnm></au>
+    <au><snm>Hojsgaard</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Journal of Statistical Software</source>
+  <pubdate>2014</pubdate>
+  <volume>59</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-32</lpage>
+  <url>https://www.jstatsoft.org/index.php/jss/article/view/v059i09</url>
+</bibl>
+
+<bibl id="B32">
+  <title><p>Multilevel modeling: {A} review of methodological issues and
+  applications</p></title>
+  <aug>
+    <au><snm>Dedrick</snm><fnm>RF</fnm></au>
+    <au><snm>Ferron</snm><fnm>JM</fnm></au>
+    <au><snm>Hess</snm><fnm>MR</fnm></au>
+    <au><snm>Hogarty</snm><fnm>KY</fnm></au>
+    <au><snm>Kromrey</snm><fnm>JD</fnm></au>
+    <au><snm>Lang</snm><fnm>TR</fnm></au>
+    <au><snm>Niles</snm><fnm>JD</fnm></au>
+    <au><snm>Lee</snm><fnm>RS</fnm></au>
+  </aug>
+  <source>Review of Educational Research</source>
+  <pubdate>2009</pubdate>
+  <volume>79</volume>
+  <issue>1</issue>
+  <fpage>69</fpage>
+  <lpage>-102</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
