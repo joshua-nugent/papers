@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{32}
+\begin{thebibliography}{33}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -81,6 +81,237 @@ doi:\doiurl{10.1001/jama.2017.8982}
 \endbibitem
 
 %%% 3
+\bibitem{vinereanu_multifaceted_2017}
+\begin{barticle}
+\bauthor{\bsnm{Vinereanu}, \binits{D.}},
+\bauthor{\bsnm{Lopes}, \binits{R.D.}},
+\bauthor{\bsnm{Bahit}, \binits{M.C.}},
+\bauthor{\bsnm{Xavier}, \binits{D.}},
+\bauthor{\bsnm{Jiang}, \binits{J.}},
+\bauthor{\bsnm{Al-Khalidi}, \binits{H.R.}},
+\bauthor{\bsnm{He}, \binits{W.}},
+\bauthor{\bsnm{Xian}, \binits{Y.}},
+\bauthor{\bsnm{Ciobanu}, \binits{A.O.}},
+\bauthor{\bsnm{Kamath}, \binits{D.Y.}},
+\bauthor{\bsnm{Fox}, \binits{K.A.}},
+\bauthor{\bsnm{Rao}, \binits{M.P.}},
+\bauthor{\bsnm{Pokorney}, \binits{S.D.}},
+\bauthor{\bsnm{Berwanger}, \binits{O.}},
+\bauthor{\bsnm{Tajer}, \binits{C.}},
+\bauthor{\bsnm{Silva}, \binits{P.G.M.d.B.e.}},
+\bauthor{\bsnm{Roettig}, \binits{M.L.}},
+\bauthor{\bsnm{Huo}, \binits{Y.}},
+\bauthor{\bsnm{Granger}, \binits{C.B.}},
+\bauthor{\bsnm{Carbajales}, \binits{J.}},
+\bauthor{\bsnm{Gómez}, \binits{J.N.C.}},
+\bauthor{\bsnm{Principato}, \binits{M.B.}},
+\bauthor{\bsnm{Wulffen}, \binits{M.A.V.}},
+\bauthor{\bsnm{Acunzo}, \binits{J.G.R.S.}},
+\bauthor{\bsnm{Bonato}, \binits{R.R.}},
+\bauthor{\bsnm{Ciampi}, \binits{N.}},
+\bauthor{\bsnm{Marani}, \binits{A.B.}},
+\bauthor{\bsnm{Panigadi}, \binits{C.G.}},
+\bauthor{\bsnm{Pastura}, \binits{S.G.}},
+\bauthor{\bsnm{Onetto}, \binits{L.M.}},
+\bauthor{\bsnm{Moya}, \binits{C.R.}},
+\bauthor{\bsnm{Budassi}, \binits{N.}},
+\bauthor{\bsnm{Valle}, \binits{M.}},
+\bauthor{\bsnm{Camerini}, \binits{D.}},
+\bauthor{\bsnm{Monjes}, \binits{E.}},
+\bauthor{\bsnm{Zabala}, \binits{F.}},
+\bauthor{\bsnm{Ricart}, \binits{J.P.}},
+\bauthor{\bsnm{Medesani}, \binits{L.}},
+\bauthor{\bsnm{Campos}, \binits{E.N.O.}},
+\bauthor{\bsnm{Ferroni}, \binits{F.}},
+\bauthor{\bsnm{Torres}, \binits{M.F.}},
+\bauthor{\bsnm{Fassi}, \binits{D.O.}},
+\bauthor{\bsnm{Bosio}, \binits{F.J.D.}},
+\bauthor{\bsnm{Baztarrica}, \binits{G.E.P.}},
+\bauthor{\bsnm{Infantas}, \binits{T.Z.}},
+\bauthor{\bsnm{Perlo}, \binits{D.}},
+\bauthor{\bsnm{García}, \binits{C.F.}},
+\bauthor{\bsnm{Durán}, \binits{R.G.}},
+\bauthor{\bsnm{Durán}, \binits{L.G.}},
+\bauthor{\bsnm{Pettinari}, \binits{C.A.}},
+\bauthor{\bsnm{Vico}, \binits{M.L.}},
+\bauthor{\bsnm{Lanchiotti}, \binits{P.V.}},
+\bauthor{\bsnm{Gómez}, \binits{M.S.}},
+\bauthor{\bsnm{Poy}, \binits{C.A.}},
+\bauthor{\bsnm{Grazziani}, \binits{F.S.}},
+\bauthor{\bsnm{Laspina}, \binits{M.J.}},
+\bauthor{\bsnm{Poy}, \binits{M.L.}},
+\bauthor{\bsnm{Bahit}, \binits{M.C.}},
+\bauthor{\bsnm{Tajer}, \binits{C.}},
+\bauthor{\bsnm{García}, \binits{M.}},
+\bauthor{\bsnm{Lopes}, \binits{R.D.}},
+\bauthor{\bsnm{Silva}, \binits{P.G.M.d.B.e.}},
+\bauthor{\bsnm{Berwanger}, \binits{O.}},
+\bauthor{\bsnm{Egydio}, \binits{F.}},
+\bauthor{\bsnm{Restelli}, \binits{E.}},
+\bauthor{\bsnm{Kawakami}, \binits{A.}},
+\bauthor{\bsnm{Soares}, \binits{T.C.}},
+\bauthor{\bsnm{Valois}, \binits{M.V.}},
+\bauthor{\bsnm{Duarte}, \binits{T.B.}},
+\bauthor{\bsnm{Barbosa}, \binits{L.M.}},
+\bauthor{\bsnm{Paola}, \binits{A.A.V.d.}},
+\bauthor{\bsnm{Pimenta}, \binits{T.L.}},
+\bauthor{\bsnm{Jeronimo}, \binits{G.D.M.}},
+\bauthor{\bsnm{Costa}, \binits{B.S.F.d.}},
+\bauthor{\bsnm{Coutinho}, \binits{E.L.}},
+\bauthor{\bsnm{Guerrero}, \binits{A.Z.A.}},
+\bauthor{\bsnm{Maia}, \binits{L.N.}},
+\bauthor{\bsnm{Nakazone}, \binits{M.A.}},
+\bauthor{\bsnm{Lemos}, \binits{M.A.T.}},
+\bauthor{\bsnm{Costa}, \binits{O.M.C.}},
+\bauthor{\bsnm{Demore}, \binits{A.P.}},
+\bauthor{\bsnm{Brito}, \binits{R.P.}},
+\bauthor{\bsnm{Melo}, \binits{C.D.B.}},
+\bauthor{\bsnm{Góes}, \binits{N.C.}},
+\bauthor{\bsnm{Lorenço}, \binits{O.}},
+\bauthor{\bsnm{Gonçalves}, \binits{L.O.M.}},
+\bauthor{\bsnm{Nishiama}, \binits{K.}},
+\bauthor{\bsnm{Lima}, \binits{T.A.M.d.}},
+\bauthor{\bsnm{Backes}, \binits{L.M.}},
+\bauthor{\bsnm{Deucher}, \binits{K.L.A.d.L.}},
+\bauthor{\bsnm{Rodrigues}, \binits{M.P.}},
+\bauthor{\bsnm{Baldissera}, \binits{D.M.}},
+\bauthor{\bsnm{Reolão}, \binits{J.B.C.}},
+\bauthor{\bsnm{Santos}, \binits{T.A.d.}},
+\bauthor{\bsnm{Freisleben}, \binits{F.M.B.}},
+\bauthor{\bsnm{Kaross}, \binits{N.L.d.S.}},
+\bauthor{\bsnm{Montovani}, \binits{J.T.}},
+\bauthor{\bsnm{Cantarelli}, \binits{M.}},
+\bauthor{\bsnm{Lucion}, \binits{A.}},
+\bauthor{\bsnm{Amarante}, \binits{L.d.}},
+\bauthor{\bsnm{Foscarini}, \binits{P.}},
+\bauthor{\bsnm{Perez}, \binits{C.d.M.}},
+\bauthor{\bsnm{França}, \binits{F.R.}},
+\bauthor{\bsnm{Fialho}, \binits{L.}},
+\bauthor{\bsnm{Rey}, \binits{H.C.V.}},
+\bauthor{\bsnm{God}, \binits{E.M.G.}},
+\bauthor{\bsnm{Figueiredo}, \binits{E.L.}},
+\bauthor{\bsnm{Werner}, \binits{G.F.}},
+\bauthor{\bsnm{Garcia}, \binits{J.C.d.F.}},
+\bauthor{\bsnm{Azevedo}, \binits{B.}},
+\bauthor{\bsnm{Barbosa}, \binits{L.C.V.}},
+\bauthor{\bsnm{Pardi}, \binits{E.}},
+\bauthor{\bsnm{Oliveira}, \binits{M.D.}},
+\bauthor{\bsnm{Martinelli}, \binits{T.}},
+\bauthor{\bsnm{Cavalini}, \binits{R.G.}},
+\bauthor{\bsnm{Moraes}, \binits{M.S.M.d.}},
+\bauthor{\bsnm{Filho}, \binits{A.M.L.}},
+\bauthor{\bsnm{Palmegiani}, \binits{E.}},
+\bauthor{\bsnm{Megid}, \binits{T.B.C.}},
+\bauthor{\bsnm{Queirantes}, \binits{C.S.P.}},
+\bauthor{\bsnm{Cruz}, \binits{T.S.A.}},
+\bauthor{\bsnm{He}, \binits{P.}},
+\bauthor{\bsnm{Zhou}, \binits{X.}},
+\bauthor{\bsnm{Zhou}, \binits{N.}},
+\bauthor{\bsnm{Zhao}, \binits{M.}},
+\bauthor{\bsnm{Yu}, \binits{J.}},
+\bauthor{\bsnm{Cheng}, \binits{Y.}},
+\bauthor{\bsnm{Wang}, \binits{L.}},
+\bauthor{\bsnm{Liu}, \binits{L.}},
+\bauthor{\bsnm{Liu}, \binits{S.}},
+\bauthor{\bsnm{Li}, \binits{L.}},
+\bauthor{\bsnm{Li}, \binits{A.}},
+\bauthor{\bsnm{Yuan}, \binits{X.}},
+\bauthor{\bsnm{Xia}, \binits{G.}},
+\bauthor{\bsnm{Wang}, \binits{Z.}},
+\bauthor{\bsnm{Li}, \binits{C.}},
+\bauthor{\bsnm{Chen}, \binits{W.}},
+\bauthor{\bsnm{Tang}, \binits{Q.}},
+\bauthor{\bsnm{Tang}, \binits{Q.}},
+\bauthor{\bsnm{Xu}, \binits{W.}},
+\bauthor{\bsnm{Zhu}, \binits{X.}},
+\bauthor{\bsnm{Hou}, \binits{B.}},
+\bauthor{\bsnm{Ma}, \binits{W.}},
+\bauthor{\bsnm{Wang}, \binits{C.}},
+\bauthor{\bsnm{Jin}, \binits{Q.}},
+\bauthor{\bsnm{Wang}, \binits{J.}},
+\bauthor{\bsnm{Xie}, \binits{X.}},
+\bauthor{\bsnm{Joseph}, \binits{J.}},
+\bauthor{\bsnm{Davidson}, \binits{D.}},
+\bauthor{\bsnm{Thomas}, \binits{J.K.}},
+\bauthor{\bsnm{Kunjumon}, \binits{T.V.}},
+\bauthor{\bsnm{Stephen}, \binits{T.}},
+\bauthor{\bsnm{Fatania}, \binits{K.}},
+\bauthor{\bsnm{Rathi}, \binits{G.}},
+\bauthor{\bsnm{Garala}, \binits{K.}},
+\bauthor{\bsnm{Doshi}, \binits{D.}},
+\bauthor{\bsnm{Varghese}, \binits{K.}},
+\bauthor{\bsnm{Ma}, \binits{S.}},
+\bauthor{\bsnm{Sheeba}, \binits{L.}},
+\bauthor{\bsnm{Kumar}, \binits{S.}},
+\bauthor{\bsnm{Rao}, \binits{M.B.}},
+\bauthor{\bsnm{Rao}, \binits{K.D.}},
+\bauthor{\bsnm{Vuriya}, \binits{A.K.}},
+\bauthor{\bsnm{Kumari}, \binits{M.P.}},
+\bauthor{\bsnm{Khandelwal}, \binits{B.}},
+\bauthor{\bsnm{Dhakal}, \binits{M.}},
+\bauthor{\bsnm{Srivastava}, \binits{N.}},
+\bauthor{\bsnm{Khatri}, \binits{D.}},
+\bauthor{\bsnm{Moktan}, \binits{S.}},
+\bauthor{\bsnm{Gupta}, \binits{R.}},
+\bauthor{\bsnm{Roy}, \binits{S.}},
+\bauthor{\bsnm{Kumawat}, \binits{K.}},
+\bauthor{\bsnm{Sharma}, \binits{M.}},
+\bauthor{\bsnm{Sharma}, \binits{K.K.}},
+\bauthor{\bsnm{Jathappa}, \binits{N.}},
+\bauthor{\bsnm{Lokesh}, \binits{B.H.}},
+\bauthor{\bsnm{Kariyappa}, \binits{S.}},
+\bauthor{\bsnm{Leela}, \binits{A.C.}},
+\bauthor{\bsnm{Someshwara}, \binits{K.C.}},
+\bauthor{\bsnm{Desai}, \binits{S.}},
+\bauthor{\bsnm{Desai}, \binits{D.}},
+\bauthor{\bsnm{Patel}, \binits{K.}},
+\bauthor{\bsnm{Patel}, \binits{S.}},
+\bauthor{\bsnm{Bhartiya}, \binits{M.}},
+\bauthor{\bsnm{Mahanta}, \binits{B.N.}},
+\bauthor{\bsnm{Dutta}, \binits{D.J.}},
+\bauthor{\bsnm{Rajkonwer}, \binits{G.}},
+\bauthor{\bsnm{Gupta}, \binits{S.K.}},
+\bauthor{\bsnm{Mishra}, \binits{A.K.}},
+\bauthor{\bsnm{Singh}, \binits{A.}},
+\bauthor{\bsnm{Kesarwani}, \binits{N.}},
+\bauthor{\bsnm{Kumar}, \binits{S.}},
+\bauthor{\bsnm{Chioncel}, \binits{O.}},
+\bauthor{\bsnm{Balan}, \binits{A.}},
+\bauthor{\bsnm{Carstea}, \binits{N.}},
+\bauthor{\bsnm{Chitoiu}, \binits{G.T.}},
+\bauthor{\bsnm{Cornaciu}, \binits{S.}},
+\bauthor{\bsnm{Cinteza}, \binits{M.}},
+\bauthor{\bsnm{Rimbas}, \binits{R.C.}},
+\bauthor{\bsnm{Dimulescu}, \binits{D.}},
+\bauthor{\bsnm{Ionescu}, \binits{L.}},
+\bauthor{\bsnm{Fruntelata}, \binits{A.}},
+\bauthor{\bsnm{Dumitru}, \binits{N.}},
+\bauthor{\bsnm{Gaita}, \binits{D.}},
+\bauthor{\bsnm{Pleava}, \binits{R.}},
+\bauthor{\bsnm{Iliesiu}, \binits{A.}},
+\bauthor{\bsnm{Uscoiu}, \binits{G.}},
+\bauthor{\bsnm{Lighezan}, \binits{D.}},
+\bauthor{\bsnm{Buzas}, \binits{R.}},
+\bauthor{\bsnm{Sinescu}, \binits{C.J.}},
+\bauthor{\bsnm{Avram}, \binits{A.-M.}},
+\bauthor{\bsnm{Baldea}, \binits{S.}},
+\bauthor{\bsnm{Galrinho}, \binits{R.D.}},
+\bauthor{\bsnm{Magda}, \binits{S.L.}},
+\bauthor{\bsnm{Matei}, \binits{L.}}:
+\batitle{A multifaceted intervention to improve treatment with oral
+  anticoagulants in atrial fibrillation ({IMPACT}-{AF}): an international,
+  cluster-randomised trial}.
+\bjtitle{The Lancet}
+\bvolume{390}(\bissue{10104}),
+\bfpage{1737}--\blpage{1746}
+(\byear{2017}).
+doi:\doiurl{10.1016/S0140-6736(17)32165-7}.
+\bcomment{Publisher: Elsevier}.
+Accessed 2020-09-04
+\end{barticle}
+\endbibitem
+
+%%% 4
 \bibitem{huang_targeted_2013}
 \begin{barticle}
 \bauthor{\bsnm{Huang}, \binits{S.S.}},
@@ -113,7 +344,7 @@ doi:\doiurl{10.1056/NEJMoa1207290}
 \end{barticle}
 \endbibitem
 
-%%% 4
+%%% 5
 \bibitem{fitzmaurice_applied_2012}
 \begin{bbook}
 \bauthor{\bsnm{Fitzmaurice}, \binits{G.M.}},
@@ -126,7 +357,7 @@ doi:\doiurl{10.1056/NEJMoa1207290}
 \end{bbook}
 \endbibitem
 
-%%% 5
+%%% 6
 \bibitem{pinheiro_mixed-effects_2009}
 \begin{bbook}
 \bauthor{\bsnm{Pinheiro}, \binits{J.}},
@@ -138,7 +369,7 @@ doi:\doiurl{10.1056/NEJMoa1207290}
 \end{bbook}
 \endbibitem
 
-%%% 6
+%%% 7
 \bibitem{kreft_introducing_1998}
 \begin{bbook}
 \bauthor{\bsnm{Kreft}, \binits{I.G.G.}}:
@@ -150,7 +381,7 @@ doi:\doiurl{10.1056/NEJMoa1207290}
 \end{bbook}
 \endbibitem
 
-%%% 7
+%%% 8
 \bibitem{kahan_increased_2016}
 \begin{botherref}
 \oauthor{\bsnm{Kahan}, \binits{B.C.}},
@@ -173,7 +404,7 @@ Accessed 2019-10-06
 \end{botherref}
 \endbibitem
 
-%%% 8
+%%% 9
 \bibitem{schluchter_small-sample_1990}
 \begin{barticle}
 \bauthor{\bsnm{Schluchter}, \binits{M.D.}},
@@ -188,7 +419,7 @@ doi:\doiurl{10.1080/00949659008811295}
 \end{barticle}
 \endbibitem
 
-%%% 9
+%%% 10
 \bibitem{zucker_improved_2000}
 \begin{barticle}
 \bauthor{\bsnm{Zucker}, \binits{D.M.}},
@@ -205,7 +436,7 @@ doi:\doiurl{10.1111/1467-9868.00267}
 \end{barticle}
 \endbibitem
 
-%%% 10
+%%% 11
 \bibitem{melo_improved_2009}
 \begin{barticle}
 \bauthor{\bsnm{Melo}, \binits{T.F.N.}},
@@ -220,7 +451,7 @@ doi:\doiurl{10.1016/j.csda.2008.12.007}
 \end{barticle}
 \endbibitem
 
-%%% 11
+%%% 12
 \bibitem{manor_small_2004}
 \begin{barticle}
 \bauthor{\bsnm{Manor}, \binits{O.}},
@@ -235,7 +466,7 @@ doi:\doiurl{10.1016/j.csda.2003.10.005}
 \end{barticle}
 \endbibitem
 
-%%% 12
+%%% 13
 \bibitem{stein_alternatives_2014}
 \begin{barticle}
 \bauthor{\bsnm{Stein}, \binits{M.C.}},
@@ -251,7 +482,7 @@ doi:\doiurl{10.1016/j.csda.2013.08.002}
 \end{barticle}
 \endbibitem
 
-%%% 13
+%%% 14
 \bibitem{bartlett_properties_1937}
 \begin{barticle}
 \bauthor{\bsnm{Bartlett}, \binits{M.S.}},
@@ -266,7 +497,7 @@ doi:\doiurl{10.1098/rspa.1937.0109}
 \end{barticle}
 \endbibitem
 
-%%% 14
+%%% 15
 \bibitem{luke_evaluating_2017}
 \begin{barticle}
 \bauthor{\bsnm{Luke}, \binits{S.G.}}:
@@ -279,7 +510,7 @@ doi:\doiurl{10.3758/s13428-016-0809-y}
 \end{barticle}
 \endbibitem
 
-%%% 15
+%%% 16
 \bibitem{maas_sufficient_2005}
 \begin{barticle}
 \bauthor{\bsnm{Maas}, \binits{C.J.M.}},
@@ -293,7 +524,7 @@ doi:\doiurl{10.1027/1614-2241.1.3.86}
 \end{barticle}
 \endbibitem
 
-%%% 16
+%%% 17
 \bibitem{bell_dancing_2010}
 \begin{botherref}
 \oauthor{\bsnm{Bell}, \binits{B.}},
@@ -310,7 +541,7 @@ SAS Global Forum
 \end{botherref}
 \endbibitem
 
-%%% 17
+%%% 18
 \bibitem{leyrat_cluster_2018}
 \begin{barticle}
 \bauthor{\bsnm{Leyrat}, \binits{C.}},
@@ -327,7 +558,7 @@ doi:\doiurl{10.1093/ije/dyx169}
 \end{barticle}
 \endbibitem
 
-%%% 18
+%%% 19
 \bibitem{johnson_recommendations_2015}
 \begin{barticle}
 \bauthor{\bsnm{Johnson}, \binits{J.L.}},
@@ -346,7 +577,7 @@ doi:\doiurl{10.1002/sim.6565}
 \end{barticle}
 \endbibitem
 
-%%% 19
+%%% 20
 \bibitem{li_comparing_2015}
 \begin{botherref}
 \oauthor{\bsnm{Li}, \binits{P.}},
@@ -361,7 +592,7 @@ doi:\doiurl{10.1186/s12874-015-0026-x}
 \end{botherref}
 \endbibitem
 
-%%% 20
+%%% 21
 \bibitem{laird_random-effects_1982}
 \begin{barticle}
 \bauthor{\bsnm{Laird}, \binits{N.M.}},
@@ -374,7 +605,7 @@ doi:\doiurl{10.1186/s12874-015-0026-x}
 \end{barticle}
 \endbibitem
 
-%%% 21
+%%% 22
 \bibitem{kish_survey_1965}
 \begin{bbook}
 \bauthor{\bsnm{Kish}, \binits{L.}}:
@@ -385,7 +616,7 @@ doi:\doiurl{10.1186/s12874-015-0026-x}
 \end{bbook}
 \endbibitem
 
-%%% 22
+%%% 23
 \bibitem{cox_theoretical_1979}
 \begin{bbook}
 \bauthor{\bsnm{Cox}, \binits{D.}},
@@ -397,7 +628,7 @@ doi:\doiurl{10.1186/s12874-015-0026-x}
 \end{bbook}
 \endbibitem
 
-%%% 23
+%%% 24
 \bibitem{bates_fitting_2015}
 \begin{barticle}
 \bauthor{\bsnm{Bates}, \binits{D.}},
@@ -413,7 +644,7 @@ doi:\doiurl{10.18637/jss.v067.i01}
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 25
 \bibitem{satterthwaite_approximate_1946}
 \begin{barticle}
 \bauthor{\bsnm{Satterthwaite}, \binits{F.E.}}:
@@ -427,7 +658,7 @@ doi:\doiurl{10.2307/3002019}
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 26
 \bibitem{mcculloch_generalized_2008}
 \begin{bbook}
 \bauthor{\bsnm{McCulloch}, \binits{C.E.}},
@@ -441,7 +672,7 @@ doi:\doiurl{10.2307/3002019}
 \end{bbook}
 \endbibitem
 
-%%% 26
+%%% 27
 \bibitem{kenward_small_1997}
 \begin{barticle}
 \bauthor{\bsnm{Kenward}, \binits{M.G.}},
@@ -456,7 +687,7 @@ doi:\doiurl{10.2307/2533558}
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 28
 \bibitem{browne_comparison_2006}
 \begin{barticle}
 \bauthor{\bsnm{Browne}, \binits{W.J.}},
@@ -471,7 +702,7 @@ doi:\doiurl{10.1214/06-BA117}
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 29
 \bibitem{baldwin_bayesian_2013}
 \begin{barticle}
 \bauthor{\bsnm{Baldwin}, \binits{S.A.}},
@@ -486,7 +717,7 @@ doi:\doiurl{10.1037/a0030642}
 \end{barticle}
 \endbibitem
 
-%%% 29
+%%% 30
 \bibitem{ukyo_improved_2019}
 \begin{barticle}
 \bauthor{\bsnm{Ukyo}, \binits{Y.}},
@@ -504,7 +735,7 @@ doi:\doiurl{10.3390/stats2020013}
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 31
 \bibitem{moerbeek_comparison_2003}
 \begin{barticle}
 \bauthor{\bsnm{Moerbeek}, \binits{M.}},
@@ -520,7 +751,7 @@ doi:\doiurl{10.1016/S0895-4356(03)00007-6}
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 32
 \bibitem{halekoh_kenward-roger_2014}
 \begin{barticle}
 \bauthor{\bsnm{Halekoh}, \binits{U.}},
@@ -536,7 +767,7 @@ doi:\doiurl{10.18637/jss.v059.i09}
 \end{barticle}
 \endbibitem
 
-%%% 32
+%%% 33
 \bibitem{dedrick_multilevel_2009}
 \begin{barticle}
 \bauthor{\bsnm{Dedrick}, \binits{R.F.}},
@@ -602,6 +833,237 @@ doi:\doiurl{10.3102/0034654308325581}
 </bibl>
 
 <bibl id="B3">
+  <title><p>A multifaceted intervention to improve treatment with oral
+  anticoagulants in atrial fibrillation ({IMPACT}-{AF}): an international,
+  cluster-randomised trial</p></title>
+  <aug>
+    <au><snm>Vinereanu</snm><fnm>D</fnm></au>
+    <au><snm>Lopes</snm><fnm>RD</fnm></au>
+    <au><snm>Bahit</snm><fnm>MC</fnm></au>
+    <au><snm>Xavier</snm><fnm>D</fnm></au>
+    <au><snm>Jiang</snm><fnm>J</fnm></au>
+    <au><snm>Al Khalidi</snm><fnm>HR</fnm></au>
+    <au><snm>He</snm><fnm>W</fnm></au>
+    <au><snm>Xian</snm><fnm>Y</fnm></au>
+    <au><snm>Ciobanu</snm><fnm>AO</fnm></au>
+    <au><snm>Kamath</snm><fnm>DY</fnm></au>
+    <au><snm>Fox</snm><fnm>KA</fnm></au>
+    <au><snm>Rao</snm><fnm>MP</fnm></au>
+    <au><snm>Pokorney</snm><fnm>SD</fnm></au>
+    <au><snm>Berwanger</snm><fnm>O</fnm></au>
+    <au><snm>Tajer</snm><fnm>C</fnm></au>
+    <au><snm>Silva</snm><fnm>PGMdBe</fnm></au>
+    <au><snm>Roettig</snm><fnm>ML</fnm></au>
+    <au><snm>Huo</snm><fnm>Y</fnm></au>
+    <au><snm>Granger</snm><fnm>CB</fnm></au>
+    <au><snm>Carbajales</snm><fnm>J</fnm></au>
+    <au><snm>Gómez</snm><fnm>JNC</fnm></au>
+    <au><snm>Principato</snm><fnm>MB</fnm></au>
+    <au><snm>Wulffen</snm><fnm>MAV</fnm></au>
+    <au><snm>Acunzo</snm><fnm>JGRS</fnm></au>
+    <au><snm>Bonato</snm><fnm>RR</fnm></au>
+    <au><snm>Ciampi</snm><fnm>N</fnm></au>
+    <au><snm>Marani</snm><fnm>AB</fnm></au>
+    <au><snm>Panigadi</snm><fnm>CG</fnm></au>
+    <au><snm>Pastura</snm><fnm>SG</fnm></au>
+    <au><snm>Onetto</snm><fnm>LM</fnm></au>
+    <au><snm>Moya</snm><fnm>CR</fnm></au>
+    <au><snm>Budassi</snm><fnm>N</fnm></au>
+    <au><snm>Valle</snm><fnm>M</fnm></au>
+    <au><snm>Camerini</snm><fnm>D</fnm></au>
+    <au><snm>Monjes</snm><fnm>E</fnm></au>
+    <au><snm>Zabala</snm><fnm>F</fnm></au>
+    <au><snm>Ricart</snm><fnm>JP</fnm></au>
+    <au><snm>Medesani</snm><fnm>L</fnm></au>
+    <au><snm>Campos</snm><fnm>ENO</fnm></au>
+    <au><snm>Ferroni</snm><fnm>F</fnm></au>
+    <au><snm>Torres</snm><fnm>MF</fnm></au>
+    <au><snm>Fassi</snm><fnm>DO</fnm></au>
+    <au><snm>Bosio</snm><fnm>FJD</fnm></au>
+    <au><snm>Baztarrica</snm><fnm>GEP</fnm></au>
+    <au><snm>Infantas</snm><fnm>TZ</fnm></au>
+    <au><snm>Perlo</snm><fnm>D</fnm></au>
+    <au><snm>García</snm><fnm>CF</fnm></au>
+    <au><snm>Durán</snm><fnm>RG</fnm></au>
+    <au><snm>Durán</snm><fnm>LG</fnm></au>
+    <au><snm>Pettinari</snm><fnm>CA</fnm></au>
+    <au><snm>Vico</snm><fnm>ML</fnm></au>
+    <au><snm>Lanchiotti</snm><fnm>PV</fnm></au>
+    <au><snm>Gómez</snm><fnm>MS</fnm></au>
+    <au><snm>Poy</snm><fnm>CA</fnm></au>
+    <au><snm>Grazziani</snm><fnm>FS</fnm></au>
+    <au><snm>Laspina</snm><fnm>MJ</fnm></au>
+    <au><snm>Poy</snm><fnm>ML</fnm></au>
+    <au><snm>Bahit</snm><fnm>MC</fnm></au>
+    <au><snm>Tajer</snm><fnm>C</fnm></au>
+    <au><snm>García</snm><fnm>M</fnm></au>
+    <au><snm>Lopes</snm><fnm>RD</fnm></au>
+    <au><snm>Silva</snm><fnm>PGMdBe</fnm></au>
+    <au><snm>Berwanger</snm><fnm>O</fnm></au>
+    <au><snm>Egydio</snm><fnm>F</fnm></au>
+    <au><snm>Restelli</snm><fnm>E</fnm></au>
+    <au><snm>Kawakami</snm><fnm>A</fnm></au>
+    <au><snm>Soares</snm><fnm>TC</fnm></au>
+    <au><snm>Valois</snm><fnm>MV</fnm></au>
+    <au><snm>Duarte</snm><fnm>TB</fnm></au>
+    <au><snm>Barbosa</snm><fnm>LM</fnm></au>
+    <au><snm>Paola</snm><fnm>AAVd</fnm></au>
+    <au><snm>Pimenta</snm><fnm>TL</fnm></au>
+    <au><snm>Jeronimo</snm><fnm>GDM</fnm></au>
+    <au><snm>Costa</snm><fnm>BSFd</fnm></au>
+    <au><snm>Coutinho</snm><fnm>EL</fnm></au>
+    <au><snm>Guerrero</snm><fnm>AZA</fnm></au>
+    <au><snm>Maia</snm><fnm>LN</fnm></au>
+    <au><snm>Nakazone</snm><fnm>MA</fnm></au>
+    <au><snm>Lemos</snm><fnm>MAT</fnm></au>
+    <au><snm>Costa</snm><fnm>OMC</fnm></au>
+    <au><snm>Demore</snm><fnm>AP</fnm></au>
+    <au><snm>Brito</snm><fnm>RP</fnm></au>
+    <au><snm>Melo</snm><fnm>CDB</fnm></au>
+    <au><snm>Góes</snm><fnm>NC</fnm></au>
+    <au><snm>Lorenço</snm><fnm>O</fnm></au>
+    <au><snm>Gonçalves</snm><fnm>LOM</fnm></au>
+    <au><snm>Nishiama</snm><fnm>K</fnm></au>
+    <au><snm>Lima</snm><fnm>TAMd</fnm></au>
+    <au><snm>Backes</snm><fnm>LM</fnm></au>
+    <au><snm>Deucher</snm><fnm>KLAdL</fnm></au>
+    <au><snm>Rodrigues</snm><fnm>MP</fnm></au>
+    <au><snm>Baldissera</snm><fnm>DM</fnm></au>
+    <au><snm>Reolão</snm><fnm>JBC</fnm></au>
+    <au><snm>Santos</snm><fnm>TAd</fnm></au>
+    <au><snm>Freisleben</snm><fnm>FMB</fnm></au>
+    <au><snm>Kaross</snm><fnm>NLdS</fnm></au>
+    <au><snm>Montovani</snm><fnm>JT</fnm></au>
+    <au><snm>Cantarelli</snm><fnm>M</fnm></au>
+    <au><snm>Lucion</snm><fnm>A</fnm></au>
+    <au><snm>Amarante</snm><fnm>Ld</fnm></au>
+    <au><snm>Foscarini</snm><fnm>P</fnm></au>
+    <au><snm>Perez</snm><fnm>CdM</fnm></au>
+    <au><snm>França</snm><fnm>FR</fnm></au>
+    <au><snm>Fialho</snm><fnm>L</fnm></au>
+    <au><snm>Rey</snm><fnm>HCV</fnm></au>
+    <au><snm>God</snm><fnm>EMG</fnm></au>
+    <au><snm>Figueiredo</snm><fnm>EL</fnm></au>
+    <au><snm>Werner</snm><fnm>GF</fnm></au>
+    <au><snm>Garcia</snm><fnm>JCdF</fnm></au>
+    <au><snm>Azevedo</snm><fnm>B</fnm></au>
+    <au><snm>Barbosa</snm><fnm>LCV</fnm></au>
+    <au><snm>Pardi</snm><fnm>E</fnm></au>
+    <au><snm>Oliveira</snm><fnm>MD</fnm></au>
+    <au><snm>Martinelli</snm><fnm>T</fnm></au>
+    <au><snm>Cavalini</snm><fnm>RG</fnm></au>
+    <au><snm>Moraes</snm><fnm>MSMd</fnm></au>
+    <au><snm>Filho</snm><fnm>AML</fnm></au>
+    <au><snm>Palmegiani</snm><fnm>E</fnm></au>
+    <au><snm>Megid</snm><fnm>TBC</fnm></au>
+    <au><snm>Queirantes</snm><fnm>CSP</fnm></au>
+    <au><snm>Cruz</snm><fnm>TSA</fnm></au>
+    <au><snm>He</snm><fnm>P</fnm></au>
+    <au><snm>Zhou</snm><fnm>X</fnm></au>
+    <au><snm>Zhou</snm><fnm>N</fnm></au>
+    <au><snm>Zhao</snm><fnm>M</fnm></au>
+    <au><snm>Yu</snm><fnm>J</fnm></au>
+    <au><snm>Cheng</snm><fnm>Y</fnm></au>
+    <au><snm>Wang</snm><fnm>L</fnm></au>
+    <au><snm>Liu</snm><fnm>L</fnm></au>
+    <au><snm>Liu</snm><fnm>S</fnm></au>
+    <au><snm>Li</snm><fnm>L</fnm></au>
+    <au><snm>Li</snm><fnm>A</fnm></au>
+    <au><snm>Yuan</snm><fnm>X</fnm></au>
+    <au><snm>Xia</snm><fnm>G</fnm></au>
+    <au><snm>Wang</snm><fnm>Z</fnm></au>
+    <au><snm>Li</snm><fnm>C</fnm></au>
+    <au><snm>Chen</snm><fnm>W</fnm></au>
+    <au><snm>Tang</snm><fnm>Q</fnm></au>
+    <au><snm>Tang</snm><fnm>Q</fnm></au>
+    <au><snm>Xu</snm><fnm>W</fnm></au>
+    <au><snm>Zhu</snm><fnm>X</fnm></au>
+    <au><snm>Hou</snm><fnm>B</fnm></au>
+    <au><snm>Ma</snm><fnm>W</fnm></au>
+    <au><snm>Wang</snm><fnm>C</fnm></au>
+    <au><snm>Jin</snm><fnm>Q</fnm></au>
+    <au><snm>Wang</snm><fnm>J</fnm></au>
+    <au><snm>Xie</snm><fnm>X</fnm></au>
+    <au><snm>Joseph</snm><fnm>J</fnm></au>
+    <au><snm>Davidson</snm><fnm>D</fnm></au>
+    <au><snm>Thomas</snm><fnm>JK</fnm></au>
+    <au><snm>Kunjumon</snm><fnm>TV</fnm></au>
+    <au><snm>Stephen</snm><fnm>T</fnm></au>
+    <au><snm>Fatania</snm><fnm>K</fnm></au>
+    <au><snm>Rathi</snm><fnm>G</fnm></au>
+    <au><snm>Garala</snm><fnm>K</fnm></au>
+    <au><snm>Doshi</snm><fnm>D</fnm></au>
+    <au><snm>Varghese</snm><fnm>K</fnm></au>
+    <au><snm>Ma</snm><fnm>S</fnm></au>
+    <au><snm>Sheeba</snm><fnm>L</fnm></au>
+    <au><snm>Kumar</snm><fnm>S</fnm></au>
+    <au><snm>Rao</snm><fnm>MB</fnm></au>
+    <au><snm>Rao</snm><fnm>KD</fnm></au>
+    <au><snm>Vuriya</snm><fnm>AK</fnm></au>
+    <au><snm>Kumari</snm><fnm>MP</fnm></au>
+    <au><snm>Khandelwal</snm><fnm>B</fnm></au>
+    <au><snm>Dhakal</snm><fnm>M</fnm></au>
+    <au><snm>Srivastava</snm><fnm>N</fnm></au>
+    <au><snm>Khatri</snm><fnm>D</fnm></au>
+    <au><snm>Moktan</snm><fnm>S</fnm></au>
+    <au><snm>Gupta</snm><fnm>R</fnm></au>
+    <au><snm>Roy</snm><fnm>S</fnm></au>
+    <au><snm>Kumawat</snm><fnm>K</fnm></au>
+    <au><snm>Sharma</snm><fnm>M</fnm></au>
+    <au><snm>Sharma</snm><fnm>K. K.</fnm></au>
+    <au><snm>Jathappa</snm><fnm>N</fnm></au>
+    <au><snm>Lokesh</snm><fnm>B. H.</fnm></au>
+    <au><snm>Kariyappa</snm><fnm>S</fnm></au>
+    <au><snm>Leela</snm><fnm>A. C.</fnm></au>
+    <au><snm>Someshwara</snm><fnm>K. C.</fnm></au>
+    <au><snm>Desai</snm><fnm>S</fnm></au>
+    <au><snm>Desai</snm><fnm>D</fnm></au>
+    <au><snm>Patel</snm><fnm>K</fnm></au>
+    <au><snm>Patel</snm><fnm>S</fnm></au>
+    <au><snm>Bhartiya</snm><fnm>M</fnm></au>
+    <au><snm>Mahanta</snm><fnm>BN</fnm></au>
+    <au><snm>Dutta</snm><fnm>DJ</fnm></au>
+    <au><snm>Rajkonwer</snm><fnm>G</fnm></au>
+    <au><snm>Gupta</snm><fnm>SK</fnm></au>
+    <au><snm>Mishra</snm><fnm>AK</fnm></au>
+    <au><snm>Singh</snm><fnm>A</fnm></au>
+    <au><snm>Kesarwani</snm><fnm>N</fnm></au>
+    <au><snm>Kumar</snm><fnm>S</fnm></au>
+    <au><snm>Chioncel</snm><fnm>O</fnm></au>
+    <au><snm>Balan</snm><fnm>A</fnm></au>
+    <au><snm>Carstea</snm><fnm>N</fnm></au>
+    <au><snm>Chitoiu</snm><fnm>GT</fnm></au>
+    <au><snm>Cornaciu</snm><fnm>S</fnm></au>
+    <au><snm>Cinteza</snm><fnm>M</fnm></au>
+    <au><snm>Rimbas</snm><fnm>RC</fnm></au>
+    <au><snm>Dimulescu</snm><fnm>D</fnm></au>
+    <au><snm>Ionescu</snm><fnm>L</fnm></au>
+    <au><snm>Fruntelata</snm><fnm>A</fnm></au>
+    <au><snm>Dumitru</snm><fnm>N</fnm></au>
+    <au><snm>Gaita</snm><fnm>D</fnm></au>
+    <au><snm>Pleava</snm><fnm>R</fnm></au>
+    <au><snm>Iliesiu</snm><fnm>A</fnm></au>
+    <au><snm>Uscoiu</snm><fnm>G</fnm></au>
+    <au><snm>Lighezan</snm><fnm>D</fnm></au>
+    <au><snm>Buzas</snm><fnm>R</fnm></au>
+    <au><snm>Sinescu</snm><fnm>CJ</fnm></au>
+    <au><snm>Avram</snm><fnm>AM</fnm></au>
+    <au><snm>Baldea</snm><fnm>S</fnm></au>
+    <au><snm>Galrinho</snm><fnm>RD</fnm></au>
+    <au><snm>Magda</snm><fnm>SL</fnm></au>
+    <au><snm>Matei</snm><fnm>L</fnm></au>
+  </aug>
+  <source>The Lancet</source>
+  <pubdate>2017</pubdate>
+  <volume>390</volume>
+  <issue>10104</issue>
+  <fpage>1737</fpage>
+  <lpage>-1746</lpage>
+  <url>https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)32165-7/abstract</url>
+  <note>Publisher: Elsevier</note>
+</bibl>
+
+<bibl id="B4">
   <title><p>Targeted versus {Universal} {Decolonization} to {Prevent} {ICU}
   {Infection}</p></title>
   <aug>
@@ -635,7 +1097,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://doi.org/10.1056/NEJMoa1207290</url>
 </bibl>
 
-<bibl id="B4">
+<bibl id="B5">
   <title><p>Applied {Longitudinal} {Analysis}</p></title>
   <aug>
     <au><snm>Fitzmaurice</snm><fnm>GM</fnm></au>
@@ -647,7 +1109,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>2012</pubdate>
 </bibl>
 
-<bibl id="B5">
+<bibl id="B6">
   <title><p>Mixed-{Effects} {Models} in {S} and {S}-{PLUS}</p></title>
   <aug>
     <au><snm>Pinheiro</snm><fnm>J</fnm></au>
@@ -657,7 +1119,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>2009</pubdate>
 </bibl>
 
-<bibl id="B6">
+<bibl id="B7">
   <title><p>Introducing {Multilevel} {Modeling}</p></title>
   <aug>
     <au><snm>Kreft</snm><fnm>IGG</fnm></au>
@@ -667,7 +1129,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>1998</pubdate>
 </bibl>
 
-<bibl id="B7">
+<bibl id="B8">
   <title><p>Increased risk of type {I} errors in cluster randomised trials with
   small or medium numbers of clusters: a review, reanalysis, and simulation
   study</p></title>
@@ -690,7 +1152,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5013635/</url>
 </bibl>
 
-<bibl id="B8">
+<bibl id="B9">
   <title><p>Small-sample adjustments to tests with unbalanced repeated measures
   assuming several covariance structures</p></title>
   <aug>
@@ -706,7 +1168,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://doi.org/10.1080/00949659008811295</url>
 </bibl>
 
-<bibl id="B9">
+<bibl id="B10">
   <title><p>Improved small sample inference in the mixed linear model:
   {Bartlett} correction and adjusted likelihood</p></title>
   <aug>
@@ -724,7 +1186,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9868.00267</url>
 </bibl>
 
-<bibl id="B10">
+<bibl id="B11">
   <title><p>Improved testing inference in mixed linear models</p></title>
   <aug>
     <au><snm>Melo</snm><fnm>TFN</fnm></au>
@@ -740,7 +1202,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://www.sciencedirect.com/science/article/pii/S0167947308005756</url>
 </bibl>
 
-<bibl id="B11">
+<bibl id="B12">
   <title><p>Small sample inference for the fixed effects in the mixed linear
   model</p></title>
   <aug>
@@ -756,7 +1218,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://linkinghub.elsevier.com/retrieve/pii/S016794730300238X</url>
 </bibl>
 
-<bibl id="B12">
+<bibl id="B13">
   <title><p>Alternatives to the usual likelihood ratio test in mixed linear
   models</p></title>
   <aug>
@@ -772,7 +1234,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://www.sciencedirect.com/science/article/pii/S0167947313002880</url>
 </bibl>
 
-<bibl id="B13">
+<bibl id="B14">
   <title><p>Properties of sufficiency and statistical tests</p></title>
   <aug>
     <au><snm>Bartlett</snm><fnm>MS</fnm></au>
@@ -788,7 +1250,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://royalsocietypublishing.org/doi/abs/10.1098/rspa.1937.0109</url>
 </bibl>
 
-<bibl id="B14">
+<bibl id="B15">
   <title><p>Evaluating significance in linear mixed-effects models in
   {R}</p></title>
   <aug>
@@ -802,7 +1264,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <lpage>-1502</lpage>
 </bibl>
 
-<bibl id="B15">
+<bibl id="B16">
   <title><p>Sufficient {Sample} {Sizes} for {Multilevel} {Modeling}</p></title>
   <aug>
     <au><snm>Maas</snm><fnm>CJM</fnm></au>
@@ -817,7 +1279,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://econtent.hogrefe.com/doi/10.1027/1614-2241.1.3.86</url>
 </bibl>
 
-<bibl id="B16">
+<bibl id="B17">
   <title><p>Dancing the {Sample} {Size} {Limbo} with {Mixed} {Models}: {How}
   {Low} {Can} {You} {Go}?</p></title>
   <aug>
@@ -833,7 +1295,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <volume>4</volume>
 </bibl>
 
-<bibl id="B17">
+<bibl id="B18">
   <title><p>Cluster randomized trials with a small number of clusters: which
   analyses should be used?</p></title>
   <aug>
@@ -850,7 +1312,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <lpage>-331</lpage>
 </bibl>
 
-<bibl id="B18">
+<bibl id="B19">
   <title><p>Recommendations for choosing an analysis method that controls
   {Type} {I} error for unbalanced cluster sample designs with {Gaussian}
   outcomes</p></title>
@@ -871,7 +1333,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.6565</url>
 </bibl>
 
-<bibl id="B19">
+<bibl id="B20">
   <title><p>Comparing denominator degrees of freedom approximations for the
   generalized linear mixed model in analyzing binary outcome in small sample
   cluster-randomized trials</p></title>
@@ -885,7 +1347,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4458010/</url>
 </bibl>
 
-<bibl id="B20">
+<bibl id="B21">
   <title><p>Random-effects models for longitudinal data</p></title>
   <aug>
     <au><snm>Laird</snm><fnm>N. M.</fnm></au>
@@ -899,7 +1361,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <lpage>-974</lpage>
 </bibl>
 
-<bibl id="B21">
+<bibl id="B22">
   <title><p>Survey {Sampling}</p></title>
   <aug>
     <au><snm>Kish</snm><fnm>L</fnm></au>
@@ -908,7 +1370,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>1965</pubdate>
 </bibl>
 
-<bibl id="B22">
+<bibl id="B23">
   <title><p>Theoretical {Statistics}</p></title>
   <aug>
     <au><snm>Cox</snm><fnm>D</fnm></au>
@@ -918,7 +1380,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>1979</pubdate>
 </bibl>
 
-<bibl id="B23">
+<bibl id="B24">
   <title><p>Fitting {Linear} {Mixed}-{Effects} {Models} {Using}
   lme4</p></title>
   <aug>
@@ -936,7 +1398,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://www.jstatsoft.org/index.php/jss/article/view/v067i01</url>
 </bibl>
 
-<bibl id="B24">
+<bibl id="B25">
   <title><p>An {Approximate} {Distribution} of {Estimates} of {Variance}
   {Components}</p></title>
   <aug>
@@ -951,7 +1413,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://www.jstor.org/stable/3002019</url>
 </bibl>
 
-<bibl id="B25">
+<bibl id="B26">
   <title><p>Generalized, {Linear}, and {Mixed} {Models}</p></title>
   <aug>
     <au><snm>McCulloch</snm><fnm>CE</fnm></au>
@@ -963,7 +1425,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <pubdate>2008</pubdate>
 </bibl>
 
-<bibl id="B26">
+<bibl id="B27">
   <title><p>Small {Sample} {Inference} for {Fixed} {Effects} from {Restricted}
   {Maximum} {Likelihood}</p></title>
   <aug>
@@ -979,7 +1441,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://www.jstor.org/stable/2533558</url>
 </bibl>
 
-<bibl id="B27">
+<bibl id="B28">
   <title><p>A comparison of {Bayesian} and likelihood-based methods for fitting
   multilevel models</p></title>
   <aug>
@@ -995,7 +1457,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://projecteuclid.org/euclid.ba/1340371047</url>
 </bibl>
 
-<bibl id="B28">
+<bibl id="B29">
   <title><p>Bayesian methods for the analysis of small sample multilevel data
   with a complex variance structure</p></title>
   <aug>
@@ -1010,7 +1472,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <lpage>-164</lpage>
 </bibl>
 
-<bibl id="B29">
+<bibl id="B30">
   <title><p>Improved {Small} {Sample} {Inference} {Methods} for a
   {Mixed}-{Effects} {Model} for {Repeated} {Measures} {Approach} in
   {Incomplete} {Longitudinal} {Data} {Analysis}</p></title>
@@ -1029,7 +1491,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://www.mdpi.com/2571-905X/2/2/13</url>
 </bibl>
 
-<bibl id="B30">
+<bibl id="B31">
   <title><p>A comparison between traditional methods and multilevel regression
   for the analysis of multicenter intervention studies</p></title>
   <aug>
@@ -1046,7 +1508,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>http://www.sciencedirect.com/science/article/pii/S0895435603000076</url>
 </bibl>
 
-<bibl id="B31">
+<bibl id="B32">
   <title><p>A {Kenward}-{Roger} {Approximation} and {Parametric} {Bootstrap}
   {Methods} for {Tests} in {Linear} {Mixed} {Models}: {The} {R} {Package}
   pbkrtest</p></title>
@@ -1063,7 +1525,7 @@ doi:\doiurl{10.3102/0034654308325581}
   <url>https://www.jstatsoft.org/index.php/jss/article/view/v059i09</url>
 </bibl>
 
-<bibl id="B32">
+<bibl id="B33">
   <title><p>Multilevel modeling: {A} review of methodological issues and
   applications</p></title>
   <aug>
