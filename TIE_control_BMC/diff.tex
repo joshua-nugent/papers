@@ -1,7 +1,7 @@
 %% BioMed_Central_Tex_Template_v1.06
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL tie_rates_LMMv1.tex   Wed Sep 30 07:33:46 2020
-%DIF ADD tie_rates_LMM.tex     Wed Sep 30 07:25:19 2020
+%DIF ADD tie_rates_LMM.tex     Mon Oct  5 12:47:35 2020
 %%                                      %
 %  bmc_article.tex            ver: 1.06 %
 %                                       %
@@ -360,7 +360,7 @@ Finally, given the balanced nature of our data and the lack of other covariates,
 , the only difference being that the LMM estimates two variances ($\hat{\sigma}_b^2$ and $\hat{\sigma}^2$), while the $t$-test only estimates their sum, leading to slighly different inferences.
 }\DIFaddend 
 
-\section*{\DIFaddbegin \DIFadd{Conclusions \& }\DIFaddend Discussion}
+\section*{\DIFdelbegin \DIFdel{Discussion}\DIFdelend \DIFaddbegin \DIFadd{Conclusions}\DIFaddend }
 
 
 To our knowledge, the \DIFdelbegin \DIFdel{interactions between our data-generating parameters, analysis approach , and }\DIFdelend \DIFaddbegin \DIFadd{effect of different combinations of design factors and analysis approach on }\DIFaddend TIE rates have not been examined comprehensively in previous reports. Our results show that none of the approaches meet the nominal alpha level in all cases examined, and the departures from the nominal level are directionally different based on the approach and data structure. Hence, there is no one-size-fits all recommendation for data analysts in these small-sample cases.
@@ -403,28 +403,29 @@ Given that small sample sizes are not uncommon in CRT literature, there is need 
 
 \begin{backmatter}
 
-\section*{\DIFdelbegin \DIFdel{Competing interests}\DIFdelend \DIFaddbegin \DIFadd{Declarations}\DIFaddend }
-\DIFaddbegin 
+\section*{\DIFdelbegin \DIFdel{Competing interests}%DIFDELCMD < \MBLOCKRIGHTBRACE
+%DIFDELCMD <   %%%
+\DIFdel{The authors }\DIFdelend \DIFaddbegin \DIFadd{Declarations}}
 
 \subsection*{\DIFadd{Ethics approval and consent to participate}}
-\DIFadd{No ethics approvals were needed for this work.
+\DIFadd{No ethics approvals or consent to participate were needed for this work.
 }
 
 \subsection*{\DIFadd{Consent for publication}}
-\DIFadd{We consent to publication.
+\DIFadd{The authors consent to publication.
 }
 
 \subsection*{\DIFadd{Availability of data and material}}
-\DIFadd{Code and data is available upon request.
+\DIFadd{The datasets generated and analysed during the current study are available in the following repository: }\url{https://github.com/joshua-nugent/joshua-nugent.github.io/tree/master/missingtie}\DIFadd{.
 }
 
 \subsection*{\DIFadd{Competing interests}}
-\DIFaddend The authors declare that they have no competing interests.
+\DIFadd{The authors }\DIFaddend declare that they have no competing interests.
 
 \DIFdelbegin \section*{\DIFdel{Author's contributions}}
 %DIFAUXCMD
 \DIFdelend \DIFaddbegin \subsection*{\DIFadd{Funding}}
-\DIFadd{Support for this work for provided by NIH/NIGMS grant R01GM121370. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+\DIFadd{Support for this work for provided by NIH/NIGMS grant R01GM121370. The funders had no role in study design, data collection, analysis, interpretation of the data, decision to publish, or writing of the manuscript.
 }
 
 \subsection*{\DIFadd{Authors' contributions}}
