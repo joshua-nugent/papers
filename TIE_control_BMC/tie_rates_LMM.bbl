@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{33}
+\begin{thebibliography}{36}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -788,6 +788,59 @@ doi:\doiurl{10.3102/0034654308325581}
 \end{barticle}
 \endbibitem
 
+%%% 34
+\bibitem{guittet_planning_2006}
+\begin{barticle}
+\bauthor{\bsnm{Guittet}, \binits{L.}},
+\bauthor{\bsnm{Ravaud}, \binits{P.}},
+\bauthor{\bsnm{Giraudeau}, \binits{B.}}:
+\batitle{Planning a cluster randomized trial with unequal cluster sizes:
+  practical issues involving continuous outcomes}.
+\bjtitle{BMC Medical Research Methodology}
+\bvolume{6}(\bissue{1}),
+\bfpage{1}--\blpage{15}
+(\byear{2006}).
+doi:\doiurl{10.1186/1471-2288-6-17}.
+Accessed 2021-01-15
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem{carrasco_generalized_2010}
+\begin{barticle}
+\bauthor{\bsnm{Carrasco}, \binits{J.L.}}:
+\batitle{A {Generalized} {Concordance} {Correlation} {Coefficient} {Based} on
+  the {Variance} {Components} {Generalized} {Linear} {Mixed} {Models} for
+  {Overdispersed} {Count} {Data}}.
+\bjtitle{Biometrics}
+\bvolume{66}(\bissue{3}),
+\bfpage{897}--\blpage{904}
+(\byear{2010}).
+doi:\doiurl{10.1111/j.1541-0420.2009.01335.x}.
+\bcomment{\_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1541-0420.2009.01335.x}.
+Accessed 2021-01-16
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{aly_reliability_2014}
+\begin{barticle}
+\bauthor{\bsnm{Aly}, \binits{S.S.}},
+\bauthor{\bsnm{Zhao}, \binits{J.}},
+\bauthor{\bsnm{Li}, \binits{B.}},
+\bauthor{\bsnm{Jiang}, \binits{J.}}:
+\batitle{Reliability of environmental sampling culture results using the
+  negative binomial intraclass correlation coefficient}.
+\bjtitle{SpringerPlus}
+\bvolume{3}(\bissue{1}),
+\bfpage{40}
+(\byear{2014}).
+doi:\doiurl{10.1186/2193-1801-3-40}.
+Accessed 2021-01-16
+\end{barticle}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -1544,6 +1597,58 @@ doi:\doiurl{10.3102/0034654308325581}
   <issue>1</issue>
   <fpage>69</fpage>
   <lpage>-102</lpage>
+</bibl>
+
+<bibl id="B34">
+  <title><p>Planning a cluster randomized trial with unequal cluster sizes:
+  practical issues involving continuous outcomes</p></title>
+  <aug>
+    <au><snm>Guittet</snm><fnm>L</fnm></au>
+    <au><snm>Ravaud</snm><fnm>P</fnm></au>
+    <au><snm>Giraudeau</snm><fnm>B</fnm></au>
+  </aug>
+  <source>BMC Medical Research Methodology</source>
+  <pubdate>2006</pubdate>
+  <volume>6</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-15</lpage>
+  <url>https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-6-17</url>
+</bibl>
+
+<bibl id="B35">
+  <title><p>A {Generalized} {Concordance} {Correlation} {Coefficient} {Based}
+  on the {Variance} {Components} {Generalized} {Linear} {Mixed} {Models} for
+  {Overdispersed} {Count} {Data}</p></title>
+  <aug>
+    <au><snm>Carrasco</snm><fnm>JL</fnm></au>
+  </aug>
+  <source>Biometrics</source>
+  <pubdate>2010</pubdate>
+  <volume>66</volume>
+  <issue>3</issue>
+  <fpage>897</fpage>
+  <lpage>-904</lpage>
+  <url>http://onlinelibrary.wiley.com/doi/abs/10.1111/j.1541-0420.2009.01335.x</url>
+  <note>\_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1541-0420.2009.01335.x</note>
+</bibl>
+
+<bibl id="B36">
+  <title><p>Reliability of environmental sampling culture results using the
+  negative binomial intraclass correlation coefficient</p></title>
+  <aug>
+    <au><snm>Aly</snm><fnm>SS</fnm></au>
+    <au><snm>Zhao</snm><fnm>J</fnm></au>
+    <au><snm>Li</snm><fnm>B</fnm></au>
+    <au><snm>Jiang</snm><fnm>J</fnm></au>
+  </aug>
+  <source>SpringerPlus</source>
+  <pubdate>2014</pubdate>
+  <volume>3</volume>
+  <issue>1</issue>
+  <fpage>40</fpage>
+  <url>https://doi.org/10.1186/2193-1801-3-40</url>
 </bibl>
 
 </refgrp>
